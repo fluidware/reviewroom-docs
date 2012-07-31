@@ -1,0 +1,399 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Responses &mdash; FluidSurveys 4.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="FluidSurveys 4.0 documentation" href="../../index.html" />
+    <link rel="up" title="Analyze" href="index.html" />
+    <link rel="next" title="Export Data" href="exportdata.html" />
+    <link rel="prev" title="Reports" href="reports.html" />
+	 
+	<script type="text/javascript" src="http://use.typekit.com/hfr5qlq.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+  </head>
+  <body>
+	<div class="top-bar">
+		<div class="center">
+			<span class="logo"><a href="/">FluidSurveys Documentation</a></span>
+		</div>
+	</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../http-routingtable.html" title="HTTP Routing Table"
+             >routing table</a> |</li>
+        <li class="right" >
+          <a href="exportdata.html" title="Export Data"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="reports.html" title="Reports"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">FluidSurveys 4.0 documentation</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">Analyze</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="responses">
+<h1>Responses<a class="headerlink" href="#responses" title="Permalink to this headline">¶</a></h1>
+<p>The most important part of any survey are the responses. Thankfully, we provide an intuitive Response Viewer, which is free for all accounts.</p>
+<p>The Response Table is available via the [Analyze] &gt; &#8220;Response&#8221; within the Editor, or [Analyze] &gt; &#8220;Responses&#8221; via a survey in the Surveys Dashboard</p>
+<p>The response viewer displays all of your survey responses in a tabular format. Each response is shown in an individual row, while the questions/answers are displayed in the columns.</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/response_table.png"><img alt="Response Table" class="screenshot" src="../../_images/response_table.png" style="width: 674.1px; height: 228.2px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Response Table for a Small Survey</p>
+</div>
+<div class="section" id="actions">
+<h2>Actions<a class="headerlink" href="#actions" title="Permalink to this headline">¶</a></h2>
+<p>Much like a great Arnold Schwarzenegger 1980&#8217;s flick, the Response Table comes packed with an “Actions…” dropdown (located at the top and bottom) which allows for further data manipulation.</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/actions_dropdown.png"><img alt="Available Actions" class="screenshot" src="../../_images/actions_dropdown.png" style="width: 142.1px; height: 176.4px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Available Actions</p>
+</div>
+<table border="1" class="docutils">
+<colgroup>
+<col width="26%" />
+<col width="74%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Section</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><ol class="first last arabic simple">
+<li>Delete selected responses</li>
+</ol>
+</td>
+<td>Any selected responses in the table will be deleted when this option is selected. If a response is not selected, an error message will appear stating to, &#8220;Please select responses in the table to delete them&#8221;</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="2">
+<li>Delete test responses</li>
+</ol>
+</td>
+<td>A response is categorized as &#8220;Test&#8221; when the (Test Data) string is appended at the end of a status, eg., &#8220;Complete (Test Data)&#8221; which happens whenever the [Preview] icon is clicked in either the Editor or the Surveys Dashboard, and a response is completed, or started, ie., Incomplete. It is very common for an Administrator to clear all responses before sending a survey out</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="3">
+<li>Delete imported responses</li>
+</ol>
+</td>
+<td>A response is categorized as &#8220;Imported&#8221; when the (Imported) string is appended at the end of a status, eg., &#8220;Completed (Imported)&#8221; which happens whenever a response is uploaded using either the &#8220;Import Responses&#8221; or Offline Mode feature.</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="4">
+<li>Delete all responses</li>
+</ol>
+</td>
+<td>First and foremost, it is not possible to retrieve deleted responses. When &#8220;Delete all responses&#8221; is selected, a pop-up will appear asking, &#8220;Are you sure?&#8221; which requires the keywords, &#8220;I agree&#8221; to be entered by the Administrator. Once &#8220;Ok&#8221; is clicked, the responses will be deleted.</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="5">
+<li>Add response</li>
+</ol>
+</td>
+<td>Add response, is very much like clicking the [Preview] icon, with the major different being that a new window will appear, and when [Submit] is clicked, the response will be marked as &#8220;Complete&#8221;, without the (Test Data) string</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="6">
+<li>Add multiple response</li>
+</ol>
+</td>
+<td>A blank entry will be added to your response database. A window will appear that will ask for the &#8220;Amount of Responses&#8221; to be created. Once &#8220;Ok&#8221; is clicked, depending on the value, n amount of responses (rows) will be created. From there, Right-Clicking and selecting, &#8220;Edit Response&#8221; allows for the response to be completed.</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="7">
+<li>Import responses</li>
+</ol>
+</td>
+<td>Allows for responses to be imported via a CSV file. To learn more about importing responses, refer to &#8220;Import Responses&#8221; in the Tutorial section</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="8">
+<li>Download selected responses</li>
+</ol>
+</td>
+<td>Download the selected responses into either PDF, Word, or CSV</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">It is NOT possible to undo the &#8220;Delete all responses&#8221; action. Once &#8220;I agree&#8221; and &#8220;Ok&#8221; has been clicked, the responses are permanently deleted.</p>
+</div>
+</div>
+<div class="section" id="right-click-menu">
+<h2>Right-Click Menu<a class="headerlink" href="#right-click-menu" title="Permalink to this headline">¶</a></h2>
+<p>A response table contains a options specific to 1 row of data. For instance, right clicking on a single response will produce a dropdown window with options to explicitly alter the state of that response. Therefore, any change made using the right-click menu, will only adhere to only 1 row (response)</p>
+<a class="screenshot reference internal image-reference" href="../../_images/right_click_menu1.png"><img alt="Right-Click Menu" class="screenshot align-center" src="../../_images/right_click_menu1.png" style="width: 99.4px; height: 82.6px;" /></a>
+<table border="1" class="docutils">
+<colgroup>
+<col width="26%" />
+<col width="74%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Section</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><ol class="first last arabic simple">
+<li>Edit Response</li>
+</ol>
+</td>
+<td>Alter the user’s response</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="2">
+<li>Delete Response</li>
+</ol>
+</td>
+<td>Delete the selected response</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="3">
+<li>Change Response</li>
+</ol>
+</td>
+<td>You can change the status of a response to Incomplete, Complete, Terminated, or Quota Reached</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="4">
+<li>Download Response</li>
+</ol>
+</td>
+<td>Download the response into a Adobe PDF, Microsoft Word, or a Microsoft Excel format</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="search">
+<h2>Search<a class="headerlink" href="#search" title="Permalink to this headline">¶</a></h2>
+<p>A popular survey can easily generate upwards of 1000 responses, which can become a cumbersome act of sifting through the data in order to find a specific persons response. The Search bar (located beside &#8220;Actions&#8221;)</p>
+<a class="screenshot reference internal image-reference" href="../../_images/search_option.png"><img alt="Search in Response Table" class="screenshot align-center" src="../../_images/search_option.png" style="width: 660.8px; height: 24.5px;" /></a>
+<p>When searching for a strong, eg., PDF, only text responses with &#8220;PDF&#8221; will appear.</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/search_string_entered.png"><img alt="Search Result in Response Table" class="screenshot" src="../../_images/search_string_entered.png" style="width: 674.8px; height: 164.5px;" /></a>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The Search box will only search for strings entered via the text response question type. Since choices are static, and dependent entirely on forced options, it is more advantageous to create a Filter for such questions.</p>
+</div>
+</div>
+<div class="section" id="filter">
+<h2>Filter<a class="headerlink" href="#filter" title="Permalink to this headline">¶</a></h2>
+<p>In the response viewer, you also have the ability to create filters and drill down farther into the data. Filters allow you to alter which responses are displayed.</p>
+<a class="screenshot reference internal image-reference" href="../../_images/find_filter.png"><img alt="Green Plus in Response Table" class="screenshot align-center" src="../../_images/find_filter.png" style="width: 660.8px; height: 24.5px;" /></a>
+<p>To create a filter, click on the plus sign at the top right of the Response Table and you’ll be taken to the all too familiar Filter Builder.</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/filter_in_response_table.png"><img alt="Filtered Responses" class="screenshot" src="../../_images/filter_in_response_table.png" style="width: 596.4px; height: 351.4px;" /></a>
+</div>
+<p>When &#8220;Ok&#8221; is clicked, only responses that adhere to the aforementioned Filter will reign dominate in the Response Table.</p>
+<a class="screenshot reference internal image-reference" href="../../_images/filtered_responses.png"><img alt="Filtered Responses" class="screenshot align-center" src="../../_images/filtered_responses.png" style="width: 674.1px; height: 226.8px;" /></a>
+<p>When a Filter is applied, a broom will appear in place of the Green Plus. When the broom is clicked, the Filter will &#8220;brush off&#8221; and all previous responses before the Filter will re-reveal themselves.</p>
+</div>
+<div class="section" id="selection-columns">
+<h2>Selection Columns<a class="headerlink" href="#selection-columns" title="Permalink to this headline">¶</a></h2>
+<p>By default, only a fraction of information is displayed at any given time for all collected data. There are a series of Columns which must be added in order to see the collected information.</p>
+<p>Below are a series of Columns available for every surveys response data</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="26%" />
+<col width="74%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Section</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><ol class="first last arabic simple">
+<li>Status</li>
+</ol>
+</td>
+<td>Contains the status, ie., &#8220;Complete&#8221;, &#8220;Incomplete&#8221;, &#8220;Viewed&#8221;</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="2">
+<li>Last updated</li>
+</ol>
+</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="3">
+<li>Date started</li>
+</ol>
+</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="4">
+<li>id</li>
+</ol>
+</td>
+<td>Every response group contains a unique ID that allows for the Admistrator to use it as an archiving tool. The formula is as secret as Colonel Sanders deep fried chicken.</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="5">
+<li>Language</li>
+</ol>
+</td>
+<td>The language the survey was created in, in this case, en represents &#8220;English&#8221;</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="6">
+<li>IP Address</li>
+</ol>
+</td>
+<td>The network address, 77.64.233.59 of where the individual completed the response. The IP Address is important in determining where specifically in the world an individual completed their survey, thus allowing for our geo-location tables to accurately pin-point them on the map found at [Analyze] &gt; &#8220;Statistics&#8221;</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="7">
+<li>Location</li>
+</ol>
+</td>
+<td>Based on the IP Address, the location will indicate specifically where the individual came from, eg., Canada, United States, Germany, etc.</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="8">
+<li>Username</li>
+</ol>
+</td>
+<td>If the user has an account with FluidSurveys, and is still logged in via cached cookies in their browser, their username will appear here.</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="9">
+<li>GET Variables</li>
+</ol>
+</td>
+<td>This column will only show information when a survey used GET Variables, eg., ?name=FluidSurveysDocs when sending out the links originally to respondents</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="10">
+<li>Referrer</li>
+</ol>
+</td>
+<td>If the survey is completed outside of FluidSurveys.com, ie., a pop-up on your Sales page on your web site, the referrer link will contain the URL to your Sales page on your web site, indicating that the survey was completed via a pop-up.</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="11">
+<li>Number of Saves</li>
+</ol>
+</td>
+<td>The number of times &#8220;Save and Continue Later&#8221; was clicked before the survey was finally submitted</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="12">
+<li>Weighted Score</li>
+</ol>
+</td>
+<td>This column is commonly used heavily when a survey was used a Quiz, ie., the individuals final score on the Quiz</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="13">
+<li>Completion Time</li>
+</ol>
+</td>
+<td>The amount of time it took for a respondent to traverse across a survey. Note, this column will only contain information if a survey contains more than 1 page.</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="14">
+<li>Invite Code</li>
+</ol>
+</td>
+<td>If the Invite tool was used, then this column will contain the Invite Code said respondent used to complete their response, ie., ?code=XiA3k</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="15">
+<li>Invite Email</li>
+</ol>
+</td>
+<td>If the invite tool was used, then this column will contain the Invite Email of said respondent</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="16">
+<li>Invite Name</li>
+</ol>
+</td>
+<td>If the Invite tool was used, then this column will contain the Invite Name of said respondent</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="17">
+<li>Collector</li>
+</ol>
+</td>
+<td>If a survey contained multiple Collectors, this column will contain the specific Collector, ie., container, for the individuals response, eg., &#8220;Apple&#8221;, &#8220;Microsoft&#8221; (Assuming those were Collector names for a survey). Note, this column will only contain information when a collector group was used for a survey</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="pages-and-response-amount">
+<h2>Pages and Response Amount<a class="headerlink" href="#pages-and-response-amount" title="Permalink to this headline">¶</a></h2>
+<p>Have you ever wanted to turn your amplifier up to 11, but couldn&#8217;t since you were restricted to 10? While some surveys can grow exponentially in responses, it can become quite cumbersome to manage and sift through all the data. Luckily, there is a way to specify the amount of information shown on one page, essentially kicking the amplifier up to 11.</p>
+<p>To adjust the amount of responses you wish to display at once, or to move between response pages, adjust the values as seen below.</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/pages_with_response_amount.png"><img alt="Filtered Responses" class="screenshot" src="../../_images/pages_with_response_amount.png" style="width: 676.2px; height: 375.9px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Page 1, with 20 responses per page selected</p>
+</div>
+<p>Selecting 10, 20, or 50 will display the respective amount of responses on the page.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">By default, only 10 responses are shown per page. Altering the value (10, 20, 50) will show that many per page, as shown in Figure how the response group was raised to 11.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Responses</a><ul>
+<li><a class="reference internal" href="#actions">Actions</a></li>
+<li><a class="reference internal" href="#right-click-menu">Right-Click Menu</a></li>
+<li><a class="reference internal" href="#search">Search</a></li>
+<li><a class="reference internal" href="#filter">Filter</a></li>
+<li><a class="reference internal" href="#selection-columns">Selection Columns</a></li>
+<li><a class="reference internal" href="#pages-and-response-amount">Pages and Response Amount</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../http-routingtable.html" title="HTTP Routing Table"
+             >routing table</a> |</li>
+        <li class="right" >
+          <a href="exportdata.html" title="Export Data"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="reports.html" title="Reports"
+             >previous</a> |</li>
+        <li><a href="../../index.html">FluidSurveys 4.0 documentation</a> &raquo;</li>
+          <li><a href="index.html" >Analyze</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012, FluidSurveys.
+    </div>
+  </body>
+</html>

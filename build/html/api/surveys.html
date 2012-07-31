@@ -1,0 +1,329 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Surveys API &mdash; FluidSurveys 4.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="FluidSurveys 4.0 documentation" href="../index.html" />
+    <link rel="next" title="Invites and Email API" href="invites.html" />
+    <link rel="prev" title="Custom Authentication" href="authentication.html" />
+	 
+	<script type="text/javascript" src="http://use.typekit.com/hfr5qlq.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+  </head>
+  <body>
+	<div class="top-bar">
+		<div class="center">
+			<span class="logo"><a href="/">FluidSurveys Documentation</a></span>
+		</div>
+	</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../http-routingtable.html" title="HTTP Routing Table"
+             >routing table</a> |</li>
+        <li class="right" >
+          <a href="invites.html" title="Invites and Email API"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="authentication.html" title="Custom Authentication"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FluidSurveys 4.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="surveys-api">
+<h1>Surveys API<a class="headerlink" href="#surveys-api" title="Permalink to this headline">¶</a></h1>
+<p>The REST API is accessed through HTTPS with Basic authentication using the user&#8217;s API key
+and password.</p>
+<div class="section" id="getting-a-list-of-surveys">
+<h2>Getting a list of surveys<a class="headerlink" href="#getting-a-list-of-surveys" title="Permalink to this headline">¶</a></h2>
+<dl class="get">
+<dt id="get--api-v2-surveys-">
+<tt class="descname">GET </tt><tt class="descname">/api/v2/surveys/</tt><a class="headerlink" href="#get--api-v2-surveys-" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns surveys that are accessible to the currently authenticated user. This method
+returns data in <em class="mimetype">application/json</em> format.</p>
+<p>Sample response:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+  <span class="s">&quot;total&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="s">&quot;surveys&quot;</span><span class="p">:</span> <span class="p">[{</span>
+    <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="mi">17461</span><span class="p">,</span>
+    <span class="s">&quot;uri&quot;</span><span class="p">:</span> <span class="s">&quot;https://app.fluidsurveys.com/api/v2/surveys/17461/&quot;</span><span class="p">,</span>
+    <span class="s">&quot;deploy_uri&quot;</span><span class="p">:</span> <span class="s">&quot;http://app.fluidsurveys.com/s/test-survey/&quot;</span><span class="p">,</span>
+    <span class="s">&quot;responses&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+    <span class="s">&quot;creator&quot;</span><span class="p">:</span> <span class="s">&quot;username&quot;</span><span class="p">,</span>
+    <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;survey name&quot;</span>
+  <span class="p">}]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="survey-status">
+<h2>Survey Status<a class="headerlink" href="#survey-status" title="Permalink to this headline">¶</a></h2>
+<dl class="get">
+<dt id="get--api-v2-surveys--id-status-">
+<tt class="descname">GET </tt><tt class="descname">/api/v2/surveys/:id/status/</tt><a class="headerlink" href="#get--api-v2-surveys--id-status-" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div>Returns a JSON object with status either &#8220;live&#8221; or &#8220;closed&#8221;.</div></blockquote>
+<p>Sample response:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+        <span class="s">&quot;status&quot;</span> <span class="p">:</span> <span class="s">&quot;live&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="post">
+<dt id="post--api-v2-surveys--id-status-">
+<tt class="descname">POST </tt><tt class="descname">/api/v2/surveys/:id/status/</tt><a class="headerlink" href="#post--api-v2-surveys--id-status-" title="Permalink to this definition">¶</a></dt>
+<dd><p>Toggles the survey status from <em>closed</em> to <em>live</em> and vice versa.
+Optionally, you can pass a switch parameter with the value <cite>closed</cite> or <cite>live</cite> to set it to a specific status.</p>
+</dd></dl>
+
+<dl class="post">
+<dt id="post--api-v2-surveys--id-status-?switch=closed">
+<tt class="descname">POST </tt><tt class="descname">/api/v2/surveys/:id/status/?switch=closed</tt><a class="headerlink" href="#post--api-v2-surveys--id-status-?switch=closed" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="getting-survey-details">
+<h2>Getting survey details<a class="headerlink" href="#getting-survey-details" title="Permalink to this headline">¶</a></h2>
+<dl class="get">
+<dt id="get--api-v2-surveys--id-">
+<tt class="descname">GET </tt><tt class="descname">/api/v2/surveys/:id/</tt><a class="headerlink" href="#get--api-v2-surveys--id-" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns summary details about the specified survey. This method returns data in
+<em class="mimetype">application/json</em> format.</p>
+<p>Sample response:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+  <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="mi">17461</span><span class="p">,</span>
+  <span class="s">&quot;uri&quot;</span><span class="p">:</span> <span class="s">&quot;https://app.fluidsurveys.com/api/v2/surveys/17461/&quot;</span><span class="p">,</span>
+  <span class="s">&quot;deploy_uri&quot;</span><span class="p">:</span> <span class="s">&quot;http://app.fluidsurveys.com/s/test-survey/&quot;</span><span class="p">,</span>
+  <span class="s">&quot;responses&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+  <span class="s">&quot;creator&quot;</span><span class="p">:</span> <span class="s">&quot;username&quot;</span><span class="p">,</span>
+  <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;survey name&quot;</span><span class="p">,</span>
+  <span class="s">&quot;title&quot;</span><span class="p">:</span> <span class="s">&quot;survey title&quot;</span><span class="p">,</span>
+  <span class="s">&quot;description&quot;</span><span class="p">:</span> <span class="s">&quot;survey description&quot;</span><span class="p">,</span>
+  <span class="s">&quot;variables&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s">&quot;var1&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s">&quot;type&quot;</span><span class="p">:</span> <span class="s">&quot;string&quot;</span><span class="p">,</span>
+      <span class="s">&quot;label&quot;</span><span class="p">:</span> <span class="s">&quot;Question 1&quot;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<p>You may also send a GET parameter called <cite>structure</cite> to receive the entire survey object.</p>
+<dl class="get">
+<dt id="get--api-v2-surveys--id-?structure">
+<tt class="descname">GET </tt><tt class="descname">/api/v2/surveys/:id/?structure</tt><a class="headerlink" href="#get--api-v2-surveys--id-?structure" title="Permalink to this definition">¶</a></dt>
+<dd><p>This may be useful if you require advanced information such as if a question is required or not.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="getting-survey-responses">
+<h2>Getting survey responses<a class="headerlink" href="#getting-survey-responses" title="Permalink to this headline">¶</a></h2>
+<dl class="get">
+<dt id="get--api-v2-surveys--id-responses-">
+<tt class="descname">GET </tt><tt class="descname">/api/v2/surveys/:id/responses/</tt><a class="headerlink" href="#get--api-v2-surveys--id-responses-" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a list of responses to the specified survey that are accessible to the
+currently authenticated user. Pagination is supported through the <cite>offset</cite> and
+<cite>limit</cite> query parameters. This method returns data in <em class="mimetype">application/json</em>
+format.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Query Parameters:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
+<li><strong>offset</strong> &#8211; response pagination offset (defaults to 0).</li>
+<li><strong>limit</strong> &#8211; maximum number of results to return (defaults to 50 max is 200).</li>
+<li><strong>filter</strong> &#8211; name of the filter you wish to filter responses by</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Example:</p>
+</dd></dl>
+
+<dl class="get">
+<dt id="get--api-v2-surveys--id-responses-?filter=myfilter">
+<tt class="descname">GET </tt><tt class="descname">/api/v2/surveys/:id/responses/?filter=myfilter</tt><a class="headerlink" href="#get--api-v2-surveys--id-responses-?filter=myfilter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filters are created from the web interface and are on a <strong>per-survey basis</strong>.  You may also use one of the pre-defined filters: <em>completed</em>, <em>invite_emails</em>, or <em>invite_codes</em>.</p>
+<p>Sample response:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+  <span class="s">&quot;total&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+  <span class="s">&quot;responses&quot;</span><span class="p">:</span> <span class="p">[{</span>
+    <span class="s">&quot;_completed&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="s">&quot;_ip_address&quot;</span><span class="p">:</span> <span class="s">&quot;0.0.0.0&quot;</span>
+  <span class="p">},</span> <span class="p">{</span>
+    <span class="s">&quot;_completed&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s">&quot;_ip_address&quot;</span><span class="p">:</span> <span class="s">&quot;0.0.0.0&quot;</span>
+  <span class="p">}]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="creating-a-new-response">
+<h2>Creating a new response<a class="headerlink" href="#creating-a-new-response" title="Permalink to this headline">¶</a></h2>
+<dl class="post">
+<dt id="post--api-v2-surveys--id-responses-">
+<tt class="descname">POST </tt><tt class="descname">/api/v2/surveys/:id/responses/</tt><a class="headerlink" href="#post--api-v2-surveys--id-responses-" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a new response to the survey specified by <tt class="docutils literal"><span class="pre">id</span></tt>.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="submitting-a-new-response">
+<h2>Submitting a new response<a class="headerlink" href="#submitting-a-new-response" title="Permalink to this headline">¶</a></h2>
+<dl class="post">
+<dt id="post--api-v2-surveys--id-responses-">
+<tt class="descname">POST </tt><tt class="descname">/api/v2/surveys/:id/responses/</tt><a class="headerlink" href="#post--api-v2-surveys--id-responses-" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>Note:</em> Submitting responses currently only works on single page surveys.</p>
+<p>Submits a new response.  Send a post request as <em>application/json</em> with a dictionary of question ids and response values.</p>
+<p>You will get a <tt class="docutils literal"><span class="pre">{success:true,</span> <span class="pre">id:response_id}</span></tt> response if your request was successful.</p>
+<p>If there is an error, the sever will return a <strong>status code 500</strong> with JSON:</p>
+<p>Example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">requests</span><span class="o">,</span> <span class="nn">json</span>
+<span class="n">uri</span> <span class="o">=</span> <span class="s">&#39;https://app.fluidsurveys.com/api/v2/survey/55023/responses/&#39;</span>
+<span class="n">API_KEY</span> <span class="o">=</span> <span class="s">&#39;ABCDEFGHIJKLMNOPQRSTUVWXYZ&#39;</span>
+<span class="n">PASSWORD</span> <span class="o">=</span> <span class="s">&#39;password&#39;</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;Content-Type&#39;</span><span class="p">:</span> <span class="s">&#39;application/json&#39;</span><span class="p">}</span>
+<span class="n">payload</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;DiBzfaXB6b&#39;</span><span class="p">:</span> <span class="s">&#39;3&#39;</span><span class="p">}</span>   <span class="c">#must post strings</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">uri</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">payload</span><span class="p">),</span>
+        <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="p">(</span><span class="n">API_KEY</span><span class="p">,</span><span class="n">PASSWORD</span><span class="p">))</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">content</span>
+</pre></div>
+</div>
+<p>Sample response:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+  <span class="s">&quot;code&quot;</span><span class="p">:</span> <span class="s">&quot;survey_error&quot;</span><span class="p">,</span>
+  <span class="s">&quot;description&quot;</span><span class="p">:</span> <span class="p">[</span>
+                  <span class="p">[</span><span class="s">&quot;DiBzfaXB6b&quot;</span><span class="p">,</span> <span class="s">&quot;&#39;3&#39; is not a valid choice for this field&quot;</span><span class="p">],</span>
+                  <span class="p">[</span><span class="s">&quot;5yEXFv1Bob&quot;</span><span class="p">,</span> <span class="s">&quot;An answer to this question is required.&quot;</span><span class="p">]</span>
+                 <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>You can also send a standard <em>application/x-www-form-urlencoded</em> POST request.  e.g.</p>
+<div class="highlight-python"><pre>5yEXFv1Bob=hello%20world&amp;zIthHJ9tvZ=0&amp;DiBzfaXB6b=1</pre>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="deleting-responses">
+<h2>Deleting responses<a class="headerlink" href="#deleting-responses" title="Permalink to this headline">¶</a></h2>
+<dl class="delete">
+<dt id="delete--api-v2-surveys--id-responses-">
+<tt class="descname">DELETE </tt><tt class="descname">/api/v2/surveys/:id/responses/</tt><a class="headerlink" href="#delete--api-v2-surveys--id-responses-" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes response(s) to the survey specified by <tt class="docutils literal"><span class="pre">id</span></tt>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Query Parameters:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
+<li><strong>response_ids</strong> &#8211; a &#8220;<tt class="docutils literal"><span class="pre">+</span></tt>&#8220;-separated list of response identifiers to be deleted.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="getting-responses-as-a-csv">
+<h2>Getting responses as a CSV<a class="headerlink" href="#getting-responses-as-a-csv" title="Permalink to this headline">¶</a></h2>
+<dl class="get">
+<dt id="get--api-v2-surveys--id-csv-">
+<tt class="descname">GET </tt><tt class="descname">/api/v2/surveys/:id/csv/</tt><a class="headerlink" href="#get--api-v2-surveys--id-csv-" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns details about the specified survey.</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Surveys API</a><ul>
+<li><a class="reference internal" href="#getting-a-list-of-surveys">Getting a list of surveys</a></li>
+<li><a class="reference internal" href="#survey-status">Survey Status</a></li>
+<li><a class="reference internal" href="#getting-survey-details">Getting survey details</a></li>
+<li><a class="reference internal" href="#getting-survey-responses">Getting survey responses</a></li>
+<li><a class="reference internal" href="#creating-a-new-response">Creating a new response</a></li>
+<li><a class="reference internal" href="#submitting-a-new-response">Submitting a new response</a></li>
+<li><a class="reference internal" href="#deleting-responses">Deleting responses</a></li>
+<li><a class="reference internal" href="#getting-responses-as-a-csv">Getting responses as a CSV</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../http-routingtable.html" title="HTTP Routing Table"
+             >routing table</a> |</li>
+        <li class="right" >
+          <a href="invites.html" title="Invites and Email API"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="authentication.html" title="Custom Authentication"
+             >previous</a> |</li>
+        <li><a href="../index.html">FluidSurveys 4.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012, FluidSurveys.
+    </div>
+  </body>
+</html>

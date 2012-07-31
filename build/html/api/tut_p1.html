@@ -1,0 +1,293 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Tutorial Part I: ‘GET’ the Basics &mdash; FluidSurveys 4.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="FluidSurveys 4.0 documentation" href="../index.html" />
+	 
+	<script type="text/javascript" src="http://use.typekit.com/hfr5qlq.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+  </head>
+  <body>
+	<div class="top-bar">
+		<div class="center">
+			<span class="logo"><a href="/">FluidSurveys Documentation</a></span>
+		</div>
+	</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../http-routingtable.html" title="HTTP Routing Table"
+             >routing table</a> |</li>
+        <li><a href="../index.html">FluidSurveys 4.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="tutorial-part-i-get-the-basics">
+<span id="tutorial-one"></span><h1>Tutorial Part I: &#8216;GET&#8217; the Basics<a class="headerlink" href="#tutorial-part-i-get-the-basics" title="Permalink to this headline">¶</a></h1>
+<p>In this part of the tutorial we will show you how to set up a proxy between the FluidSurveys API and your website and how to GET surveys and responses.</p>
+<div class="section" id="building-a-proxy">
+<h2>Building a Proxy<a class="headerlink" href="#building-a-proxy" title="Permalink to this headline">¶</a></h2>
+<p>For Part I our proxy only needs to be able to <cite>GET</cite>. In Part II we will need to add the ability to <cite>POST</cite>.</p>
+<p>This function takes a <em>url</em> and uses cURL to GET the result.  Most of it is just setting up the cURL options.  See the <a class="reference external" href="http://php.net/manual/en/book.curl.php">php docs</a> for more info.  It simply returns the unmodified response back to our app.  We will put this in a file called <em>proxy.php</em>.</p>
+<p>Simarily for GET:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+<span class="k">function</span> <span class="nf">GET</span><span class="p">(</span><span class="nv">$url</span><span class="p">){</span>
+        <span class="k">global</span> <span class="nv">$api_key</span><span class="p">,</span> <span class="nv">$password</span><span class="p">;</span>
+        <span class="nv">$curl</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">();</span>
+        <span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_HTTPAUTH</span><span class="p">,</span> <span class="nx">CURLAUTH_BASIC</span><span class="p">);</span>
+        <span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_USERPWD</span><span class="p">,</span> <span class="nv">$api_key</span><span class="o">.</span><span class="s1">&#39;:&#39;</span><span class="o">.</span><span class="nv">$password</span><span class="p">);</span>
+        <span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_SSLVERSION</span><span class="p">,</span><span class="mi">3</span><span class="p">);</span>
+        <span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_SSL_VERIFYPEER</span><span class="p">,</span> <span class="k">FALSE</span><span class="p">);</span>
+        <span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_SSL_VERIFYHOST</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+        <span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_HEADER</span><span class="p">,</span> <span class="k">false</span><span class="p">);</span>
+        <span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_RETURNTRANSFER</span><span class="p">,</span> <span class="k">true</span><span class="p">);</span>
+        <span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_USERAGENT</span><span class="p">,</span> <span class="s2">&quot;Mozilla/4.0 (compatible;</span>
+<span class="s2">                MSIE 5.01; Windows NT 5.0)&quot;</span><span class="p">);</span>
+        <span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_URL</span><span class="p">,</span> <span class="nv">$url</span><span class="p">);</span>
+        <span class="nv">$data</span> <span class="o">=</span> <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+        <span class="nb">curl_close</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+        <span class="k">return</span> <span class="nv">$data</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Now we just need some code to call the function:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+<span class="k">if</span> <span class="p">(</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">&#39;REQUEST_METHOD&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;GET&#39;</span><span class="p">){</span>
+        <span class="k">echo</span> <span class="nx">GET</span><span class="p">(</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">&#39;uri&#39;</span><span class="p">]);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>If the proxy receives a <cite>GET</cite> request it sends calls the <em>GET</em> function to forward the request to the API.</p>
+</div>
+<div class="section" id="creating-our-web-app">
+<h2>Creating our Web App<a class="headerlink" href="#creating-our-web-app" title="Permalink to this headline">¶</a></h2>
+<p>For the first parts of this tutorial we are going to use plain HTML and barely any CSS.  Eventually, in a later part of the tutorial we will enhance this with a mobile framework.  We also have two javascript files, <em>functions.js</em> to hold all our functions and <em>script.js</em>, as well as the latest version of jQuery.</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+        <span class="nt">&lt;head&gt;</span>
+        <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">&quot;utf-8&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;title&gt;</span>FluidSurveys<span class="nt">&lt;/title&gt;</span>
+        <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;http://code.jquery.com/jquery-1.7.1.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+        <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">src=</span><span class="s">&quot;functions.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+        <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">src=</span><span class="s">&quot;script.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+        <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">type=</span><span class="s">&quot;text/css&quot;</span> <span class="na">href=</span><span class="s">&quot;basic.css&quot;</span> <span class="nt">/&gt;</span>
+
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+        <span class="nt">&lt;h1&gt;</span>My Surveys<span class="nt">&lt;/h1&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;content&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;ul&gt;&lt;/ul&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="calling-the-proxy">
+<h2>Calling the Proxy<a class="headerlink" href="#calling-the-proxy" title="Permalink to this headline">¶</a></h2>
+<p>Now that we have a proxy to forward our requests to the API, we need something to create those requests.  This is all going to happen from within your application, in this case our website.  We will write a function around jQuery&#8217;s ajax method to send our request to the proxy and store it in <em>functions.js</em>.</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">function</span> <span class="nx">callAPI</span><span class="p">(</span><span class="nx">type</span><span class="p">,</span><span class="nx">uri</span><span class="p">,</span><span class="nx">callback</span><span class="p">){</span>
+        <span class="kd">var</span> <span class="nx">proxy</span> <span class="o">=</span> <span class="s1">&#39;http://www.yourdomain.com/proxy.php?uri=&#39;</span><span class="p">;</span>
+        <span class="kd">var</span> <span class="nx">j</span> <span class="o">=</span> <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+        <span class="nx">url</span><span class="o">:</span> <span class="nx">proxy</span><span class="o">+</span><span class="nx">uri</span><span class="p">,</span>
+                <span class="nx">type</span><span class="o">:</span> <span class="nx">type</span><span class="p">,</span>
+                <span class="nx">success</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">){</span>
+                        <span class="nx">callback</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">data</span><span class="p">));</span>
+                <span class="p">}</span>
+        <span class="p">});</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Our function, aptly named callAPI accepts three parameters.  The type of request it&#8217;s going to make (&#8216;GET&#8217;), the uri that it is requesting, and a callback function to execute when it receives a response.  Since we are expecting all our responses to be JSON we parse the response into an object before passing it to the callback function.</p>
+<p>In <em>script.js</em> we will make out first API call when the document is ready and get a list of our surveys.</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+        <span class="nx">callAPI</span><span class="p">(</span><span class="s1">&#39;GET&#39;</span><span class="p">,</span> <span class="nx">base</span><span class="o">+</span><span class="s1">&#39;/surveys/&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">){</span>
+                <span class="kd">var</span> <span class="nx">markup</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
+
+                 <span class="nx">$</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">surveys</span><span class="p">.</span><span class="nx">reverse</span><span class="p">(),</span><span class="kd">function</span><span class="p">(){</span>
+                        <span class="nx">markup</span> <span class="o">+=</span> <span class="s1">&#39;&lt;li&gt;&lt;a href=&quot;#&#39;</span><span class="o">+</span><span class="k">this</span><span class="p">.</span><span class="nx">id</span><span class="o">+</span><span class="s1">&#39;&quot;&gt;&#39;</span><span class="o">+</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="o">+</span><span class="s1">&#39;&lt;/a&gt;&lt;/li&gt;&#39;</span><span class="p">;</span>
+                        <span class="nx">SURVEYS</span><span class="p">[</span><span class="s1">&#39;s_&#39;</span><span class="o">+</span><span class="k">this</span><span class="p">.</span><span class="nx">id</span><span class="p">]</span> <span class="o">=</span>
+                                <span class="p">{</span>       <span class="nx">title</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">,</span>
+                                        <span class="nx">creator</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">creator</span><span class="p">,</span>
+                                        <span class="nx">created_at</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">created_at</span><span class="p">,</span>
+                                        <span class="nx">responses</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">responses</span><span class="p">,</span>
+                                        <span class="nx">deploy</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">deploy_uri</span><span class="p">,</span>
+                                        <span class="nx">id</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">id</span>
+                                <span class="p">};</span>
+                <span class="p">});</span>
+
+                <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#content ul&#39;</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="nx">markup</span><span class="p">);</span>
+
+                <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#content ul&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+                        <span class="c1">//delegate click event to survey links</span>
+                        <span class="nx">showSurvey</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">hash</span><span class="p">);</span>
+                <span class="p">});</span>
+        <span class="p">});</span>
+<span class="p">});</span> <span class="c1">//end of document ready.</span>
+</pre></div>
+</div>
+<p>We loop through the surveys we get back (found in <em>data.surveys</em>) and save them in a object <em>SURVEYS</em> for later use.  We then populate the HTML with the name of each survey.  We also delegate the survey links to the showSurvey function.</p>
+</div>
+<div class="section" id="show-survey">
+<h2>Show Survey<a class="headerlink" href="#show-survey" title="Permalink to this headline">¶</a></h2>
+<p>We use the id of the survey as the <em>href</em> attribute to use to access from our <em>SURVEY</em> container.  When the user clicks a link we will know which survey to load by examining the url hash.</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">function</span> <span class="nx">showSurvey</span><span class="p">(</span> <span class="nx">url</span> <span class="p">){</span>
+
+        <span class="kd">var</span> <span class="nx">surveyID</span> <span class="o">=</span> <span class="nx">url</span><span class="p">.</span><span class="nx">substring</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span>
+
+                <span class="nx">survey</span> <span class="o">=</span> <span class="nx">SURVEYS</span><span class="p">[</span> <span class="s1">&#39;s_&#39;</span><span class="o">+</span><span class="nx">surveyID</span> <span class="p">];</span>
+
+        <span class="k">if</span> <span class="p">(</span> <span class="nx">survey</span> <span class="p">)</span> <span class="p">{</span>
+
+                <span class="nx">markup</span> <span class="o">=</span> <span class="s2">&quot;&lt;h3&gt;Created by &quot;</span><span class="o">+</span><span class="nx">survey</span><span class="p">.</span><span class="nx">creator</span><span class="o">+</span><span class="s2">&quot; on &quot;</span><span class="o">+</span><span class="nx">survey</span><span class="p">.</span><span class="nx">created_at</span><span class="o">+</span>
+                        <span class="s2">&quot;.&lt;/h3&gt;&lt;a href=\&quot;#\&quot; id=\&quot;responses\&quot;&gt;View &quot;</span><span class="o">+</span><span class="nx">survey</span><span class="p">.</span><span class="nx">responses</span><span class="o">+</span>
+                        <span class="s2">&quot; Responses&lt;a&gt;&lt;br /&gt;&lt;br /&gt;&lt;a href=\&quot;&quot;</span><span class="o">+</span><span class="nx">survey</span><span class="p">.</span><span class="nx">deploy</span><span class="o">+</span><span class="s2">&quot;\&quot;&gt;</span>
+<span class="s2">                        Take the Survey&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;&lt;a href=&#39;./&#39;&gt;</span>
+<span class="s2">                        &amp;larr;&amp;nbsp;Surveys&lt;/a&gt;&quot;</span><span class="p">;</span>
+
+                <span class="nx">callAPI</span><span class="p">(</span><span class="s1">&#39;GET&#39;</span><span class="p">,</span><span class="nx">base</span><span class="o">+</span><span class="s1">&#39;/surveys/&#39;</span><span class="o">+</span><span class="nx">survey</span><span class="p">.</span><span class="nx">id</span><span class="o">+</span><span class="s1">&#39;/responses/&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span>
+                        <span class="p">{</span>
+                        <span class="c1">//add each of the responses to the responses list.</span>
+                        <span class="nx">RESPONSES</span> <span class="o">=</span> <span class="p">[];</span>
+                        <span class="nx">$</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">responses</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span><span class="nx">response</span><span class="p">){</span>
+                                <span class="nx">re</span> <span class="o">=</span> <span class="p">[];</span>
+                                <span class="nx">$</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="nx">response</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">key</span><span class="p">,</span><span class="nx">value</span><span class="p">){</span>
+                                        <span class="k">if</span><span class="p">(</span><span class="nx">key</span><span class="p">.</span><span class="nx">lastIndexOf</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">===</span> <span class="mi">0</span><span class="p">){</span>
+                                                <span class="c1">//this is a property of the response,</span>
+                                                <span class="c1">//ignore for now.</span>
+                                        <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+                                                <span class="c1">//console.log(key,value);</span>
+                                                <span class="nx">re</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span><span class="nx">id</span><span class="o">:</span><span class="nx">key</span><span class="p">,</span>
+                                                                <span class="s1">&#39;value&#39;</span><span class="o">:</span><span class="nx">value</span>
+                                                                <span class="p">});</span>
+                                        <span class="p">}</span>
+                                <span class="p">});</span>
+                                <span class="nx">RESPONSES</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">re</span><span class="p">);</span>
+                        <span class="p">});</span>
+                <span class="p">});</span><span class="c1">//end callAPI</span>
+
+                <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;h1&#39;</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="nx">survey</span><span class="p">.</span><span class="nx">title</span><span class="p">);</span>
+                <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#content&#39;</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="nx">markup</span><span class="p">);</span>
+                <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#responses&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
+                        <span class="nx">showResponses</span><span class="p">();</span>
+                <span class="p">});</span>
+        <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><em>showSurvey</em> takes the survey id from the url hash and populates the screen with the survey info.  It also calls the API and fetches the responses to this survey.  Storing them in the <em>RESPONSES</em> array. This is so that when the user clicks view responses they are preloaded and the user won&#8217;t have to wait for them to load.  The <em>showResponses</em> function is also bound to the show responses.</p>
+</div>
+<div class="section" id="showing-responses">
+<h2>Showing Responses<a class="headerlink" href="#showing-responses" title="Permalink to this headline">¶</a></h2>
+<p>Similar to showing a survey, <em>showResponses</em> takes the data we stored from our previous API call and displays it on the screen.</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">function</span> <span class="nx">showResponses</span><span class="p">(){</span>
+        <span class="c1">//displays the currently stored RESPONSES</span>
+
+        <span class="k">if</span> <span class="p">(</span> <span class="nx">RESPONSES</span> <span class="p">)</span> <span class="p">{</span>
+                <span class="kd">var</span> <span class="nx">markup</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                        <span class="nx">numItems</span> <span class="o">=</span> <span class="nx">RESPONSES</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
+
+                <span class="c1">// Generate a list for each response.</span>
+                <span class="k">for</span> <span class="p">(</span> <span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">numItems</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span> <span class="p">)</span> <span class="p">{</span>
+                        <span class="nx">markup</span> <span class="o">+=</span> <span class="s2">&quot;&lt;ul&gt;&quot;</span><span class="p">;</span>
+                        <span class="kd">var</span> <span class="nx">questions</span> <span class="o">=</span> <span class="nx">RESPONSES</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">length</span><span class="p">;</span>
+
+                        <span class="c1">//Generate a list item for each answer in the response.</span>
+                        <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">j</span> <span class="o">&lt;</span> <span class="nx">questions</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span><span class="p">){</span>
+                                <span class="nx">markup</span> <span class="o">+=</span> <span class="s2">&quot;&lt;li&gt;&quot;</span> <span class="o">+</span> <span class="nx">RESPONSES</span><span class="p">[</span><span class="nx">i</span><span class="p">][</span><span class="nx">j</span><span class="p">].</span><span class="nx">id</span> <span class="o">+</span> <span class="s2">&quot; : &quot;</span><span class="o">+</span>
+                                <span class="nx">RESPONSES</span><span class="p">[</span><span class="nx">i</span><span class="p">][</span><span class="nx">j</span><span class="p">].</span><span class="nx">value</span><span class="o">+</span><span class="s2">&quot;&lt;/li&gt;&quot;</span><span class="p">;</span>
+                        <span class="p">}</span>
+                        <span class="nx">markup</span> <span class="o">+=</span> <span class="s2">&quot;&lt;/ul&gt;&quot;</span>
+                 <span class="p">}</span>
+
+                 <span class="nx">markup</span> <span class="o">+=</span> <span class="s2">&quot;&lt;a href=\&quot;./\&quot;&gt;&amp;larr;&amp;nbsp;Surveys&lt;/a&gt;&quot;</span><span class="p">;</span>
+                <span class="nx">$</span><span class="p">(</span> <span class="s2">&quot;h1&quot;</span> <span class="p">).</span><span class="nx">html</span><span class="p">(</span> <span class="s1">&#39;Responses&#39;</span> <span class="p">);</span>
+                <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#content&quot;</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="nx">markup</span><span class="p">);</span>
+        <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><em>showResponses</em> displays each response group in it&#8217;s own list.  Unfortunately at the time of this writing the question labels were not included with the responses so we have just labeled them with their ID&#8217;s here.</p>
+</div>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<p>We have shown you how to set up a simple proxy that you can use to forward GET requests to the FluidSurveys API and back to your website.  Check back soon for Part II were we get interactive and start <tt class="docutils literal"><span class="pre">POST</span></tt>-ing some data to the API</p>
+<p>In the meantime be sure to checkout the <a class="reference external" href="http://docs.fluidsurveys.com">documentation</a> for more details and examples.</p>
+<p>View the source on <a class="reference external" href="https://github.com/chideit/fluidsurveys-docs/tree/master/samples/tutorial/part1">Github</a></p>
+<p>In <a class="reference internal" href="tut_p2.html#tutorial-two"><em>Tutorial Part II: POST-IT</em></a> - we get our contact lists, create an email and send it to a contact list!</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Tutorial Part I: &#8216;GET&#8217; the Basics</a><ul>
+<li><a class="reference internal" href="#building-a-proxy">Building a Proxy</a></li>
+<li><a class="reference internal" href="#creating-our-web-app">Creating our Web App</a></li>
+<li><a class="reference internal" href="#calling-the-proxy">Calling the Proxy</a></li>
+<li><a class="reference internal" href="#show-survey">Show Survey</a></li>
+<li><a class="reference internal" href="#showing-responses">Showing Responses</a></li>
+<li><a class="reference internal" href="#summary">Summary</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../http-routingtable.html" title="HTTP Routing Table"
+             >routing table</a> |</li>
+        <li><a href="../index.html">FluidSurveys 4.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012, FluidSurveys.
+    </div>
+  </body>
+</html>

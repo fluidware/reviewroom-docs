@@ -1,0 +1,206 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Editor &mdash; FluidSurveys 4.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="FluidSurveys 4.0 documentation" href="../../index.html" />
+    <link rel="next" title="Editor Features" href="editorfeatures.html" />
+    <link rel="prev" title="Assemble" href="../Assemble/index.html" />
+	 
+	<script type="text/javascript" src="http://use.typekit.com/hfr5qlq.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+  </head>
+  <body>
+	<div class="top-bar">
+		<div class="center">
+			<span class="logo"><a href="/">FluidSurveys Documentation</a></span>
+		</div>
+	</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../http-routingtable.html" title="HTTP Routing Table"
+             >routing table</a> |</li>
+        <li class="right" >
+          <a href="editorfeatures.html" title="Editor Features"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../Assemble/index.html" title="Assemble"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">FluidSurveys 4.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="editor">
+<span id="id1"></span><h1>Editor<a class="headerlink" href="#editor" title="Permalink to this headline">¶</a></h1>
+<p>You will likely spend much of your time within the Editor, so this chapter is the fries, cheese, and gravy of the manual. Take some time to become familiar with the basic breakdown of how to use the Editor and watch your survey building experience expand your horizons.</p>
+<p>In this chapter, you will be introduced to the basic features within the Editor, which will segue you nicely into understanding the basic elements of your survey. From there, you will learn the many dozen question types, and their available options. Finally, we will discuss advanced features, such as File Upload, and a feature we&#8217;re proud of, Advanced Branching Logic</p>
+<p>Therefore, this chapter will teach you how to:</p>
+<ul class="simple">
+<li>Build a survey from scratch</li>
+<li>Understand the basic and advanced fundamentals of FluidSurveys questions</li>
+<li>Edit survey questions and answers</li>
+</ul>
+<div class="admonition-question admonition">
+<p class="first admonition-title">Question</p>
+<p class="last">How many question types does FluidSurveys offer that gives you the flexibility you need to collect information? <em>Many Dozens</em></p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">If a survey has already begun its response collecting phase, then any changes made to variables, choices, or deleting questions will result in a loss of collected data.</p>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="editorfeatures.html">Editor Features</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="editorfeatures.html#survey-title-survey-description">Survey Title/Survey Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="editorfeatures.html#keyboard-shortcuts">Keyboard Shortcuts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="editorfeatures.html#save">Save</a></li>
+<li class="toctree-l2"><a class="reference internal" href="editorfeatures.html#preview">Preview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="editorfeatures.html#publish">Publish</a></li>
+<li class="toctree-l2"><a class="reference internal" href="editorfeatures.html#find-replace">Find &amp; Replace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="editorfeatures.html#survey-versioning">Survey Versioning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="editorfeatures.html#page-drag-and-drop">Page Drag-and-Drop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="editorfeatures.html#page-labels">Page Labels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="editorfeatures.html#right-click-menu">Right-click Menu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="editorfeatures.html#add-questions-drag-and-drop">Add questions (Drag-and-drop)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="editorfeatures.html#add-questions-double-click">Add questions (Double click)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="editorfeatures.html#question-morphing">Question Morphing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="editorfeatures.html#bulk">Bulk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="editorfeatures.html#template-save">Template (Save)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="editorfeatures.html#template-apply">Template (Apply)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="editorfeatures.html#show-branching-skip-info">Show Branching/Skip Info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="editorfeatures.html#visual-editor">Visual Editor</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="basicquestions.html">Basic Questions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="basicquestions.html#section-heading">Section Heading</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basicquestions.html#yes-no">Yes/No</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basicquestions.html#text-response">Text Response</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basicquestions.html#checkbox">Checkbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basicquestions.html#multiple-choice">Multiple Choice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basicquestions.html#dropdown">Dropdown</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basicquestions.html#date-time">Date/Time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basicquestions.html#text-response-grid">Text Response Grid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basicquestions.html#multiple-choice-grid">Multiple Choice Grid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basicquestions.html#dropdown-grid">Dropdown Grid</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="advancedquestions.html">Advanced Questions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="advancedquestions.html#score-display">Score Display</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advancedquestions.html#checkbox-grid">Checkbox Grid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advancedquestions.html#n-atrix">N-atrix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advancedquestions.html#drill-down">Drill Down</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advancedquestions.html#d-matrix">3D Matrix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advancedquestions.html#semantic-differential">Semantic Differential</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advancedquestions.html#file-upload">File Upload</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advancedquestions.html#net-promoter">Net Promoter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advancedquestions.html#hidden-field">Hidden Field</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advancedquestions.html#timer">Timer</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="questionoptions.html">Question Options</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="questionoptions.html#randomize">Randomize</a></li>
+<li class="toctree-l2"><a class="reference internal" href="questionoptions.html#alphabetize">Alphabetize</a></li>
+<li class="toctree-l2"><a class="reference internal" href="questionoptions.html#side-by-side">Side-By-Side</a></li>
+<li class="toctree-l2"><a class="reference internal" href="questionoptions.html#append-to-previous">Append to Previous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="questionoptions.html#width">Width</a></li>
+<li class="toctree-l2"><a class="reference internal" href="questionoptions.html#choices-variables">Choices/Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="questionoptions.html#add-other-choice">Add Other Choice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="questionoptions.html#scores">Scores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="questionoptions.html#simple-branching">Simple Branching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="questionoptions.html#question-title">Question Title</a></li>
+<li class="toctree-l2"><a class="reference internal" href="questionoptions.html#question-description">Question Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="questionoptions.html#appearance">Appearance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="questionoptions.html#columns">Columns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="questionoptions.html#optional">Optional</a></li>
+<li class="toctree-l2"><a class="reference internal" href="questionoptions.html#validation">Validation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="questionoptions.html#identifiers">Identifiers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="questionoptions.html#force-unique">Force Unique</a></li>
+<li class="toctree-l2"><a class="reference internal" href="questionoptions.html#background-color">Background Color</a></li>
+<li class="toctree-l2"><a class="reference internal" href="questionoptions.html#borders">Borders</a></li>
+<li class="toctree-l2"><a class="reference internal" href="questionoptions.html#st-column-size">1st Column Size</a></li>
+<li class="toctree-l2"><a class="reference internal" href="questionoptions.html#st-column-static">1st Column Static</a></li>
+<li class="toctree-l2"><a class="reference internal" href="questionoptions.html#initial-value">Initial Value</a></li>
+<li class="toctree-l2"><a class="reference internal" href="questionoptions.html#multiline">Multiline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="questionoptions.html#sum">Sum</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="advancedfeatures.html">Advanced Survey Features</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="advancedfeatures.html#jumping">Jumping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advancedfeatures.html#looping">Looping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advancedfeatures.html#quotas">Quotas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advancedfeatures.html#piping">Piping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advancedfeatures.html#branching">Branching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advancedfeatures.html#extraction">Extraction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advancedfeatures.html#languages-translations">Languages/Translations</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../http-routingtable.html" title="HTTP Routing Table"
+             >routing table</a> |</li>
+        <li class="right" >
+          <a href="editorfeatures.html" title="Editor Features"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../Assemble/index.html" title="Assemble"
+             >previous</a> |</li>
+        <li><a href="../../index.html">FluidSurveys 4.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012, FluidSurveys.
+    </div>
+  </body>
+</html>

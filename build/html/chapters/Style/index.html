@@ -1,0 +1,507 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Style &mdash; FluidSurveys 4.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="FluidSurveys 4.0 documentation" href="../../index.html" />
+    <link rel="next" title="Preview" href="../Preview/index.html" />
+    <link rel="prev" title="Advanced Survey Features" href="../Editor/advancedfeatures.html" />
+	 
+	<script type="text/javascript" src="http://use.typekit.com/hfr5qlq.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+  </head>
+  <body>
+	<div class="top-bar">
+		<div class="center">
+			<span class="logo"><a href="/">FluidSurveys Documentation</a></span>
+		</div>
+	</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../http-routingtable.html" title="HTTP Routing Table"
+             >routing table</a> |</li>
+        <li class="right" >
+          <a href="../Preview/index.html" title="Preview"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../Editor/advancedfeatures.html" title="Advanced Survey Features"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">FluidSurveys 4.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="style">
+<span id="themer"></span><h1>Style<a class="headerlink" href="#style" title="Permalink to this headline">¶</a></h1>
+<p>If the Editor is the meat and potatoes, then the Themer is the desert capable of delivering a polished product. By default, every new survey adheres to a basic template, which holds the signature colours of FluidSurveys (Grey, Light Grey, Black, Blue). This style may not fit the needs of every individual, and therefore we provided the option to fully allow for everything to be changed.</p>
+<p>In this chapter, you will be introduced to the ability of changing not only basic elements, but complex aspects of your survey. Regardless of your CSS prowess, you can add your companies logo, alter the survey background colour, question fonts, all the way to how buttons look-and-feel. However, when venturing into the CSS Editor, it would not hurt to brush up on some basic CSS knowledge, or use it as a database of knowledge, then <a class="reference external" href="http://www.w3schools.com/">w3schools</a> is the perfect starting point.</p>
+<p>To get started, the Themer can be found through either the &#8220;Style&#8221; button within the Editor</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/quick_links_style.png"><img alt="Quick Link Style" class="screenshot" src="../../_images/quick_links_style.png" style="width: 340.9px; height: 28.7px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Quick Link Style button found in the Editor</p>
+</div>
+<p>Or the paint brush on the Survey Dashboard.</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/quick_links_style_dashboard.png"><img alt="Quick Link Style on Survey Dashboard" class="screenshot" src="../../_images/quick_links_style_dashboard.png" style="width: 656.6px; height: 268.8px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Quick Link Style button in the Survey Dashboard</p>
+</div>
+<p>When the Themer is loaded up for the first time, the first page will be on display, with an Administrator Toolbar sticking at the top of the page with all styling options available. The Administrator bar will hold all changes available to an Administrator and the survey.</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/themer_admin_bar.png"><img alt="Themer Admin Bar" class="screenshot" src="../../_images/themer_admin_bar.png" style="width: 676.2px; height: 46.9px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Administrator Theming Toolbar</p>
+</div>
+<table border="1" class="docutils">
+<colgroup>
+<col width="30%" />
+<col width="70%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Section</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><ol class="first last arabic simple">
+<li>Theme</li>
+</ol>
+</td>
+<td>Apply a pre-built theme to your survey</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="2">
+<li>Customize</li>
+</ol>
+</td>
+<td>Alter Colours, Elements, or a specific Question without knowing any CSS</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="3">
+<li>Advanced</li>
+</ol>
+</td>
+<td>Customize CSS or grab a template from an already built web site.</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="4">
+<li>Pages</li>
+</ol>
+</td>
+<td>If your survey consists of multiple pages, directly jump from page to page. Based on the complexity of a theme, it might be advantageous to ensure that all pages, and question types adhere to any CSS styling.</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="theme">
+<h2>Theme<a class="headerlink" href="#theme" title="Permalink to this headline">¶</a></h2>
+<p>The Theme is the first option available on the Toolbar. Essentially, the Theme allows for a survey to adhere to an already pre-styled colouring, outline and CSS format. To apply a Theme, click on [Theme], select the desired theme (see Live examples below) and then [Save Changes].</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/theme_stylings.png"><img alt="Themes" class="screenshot" src="../../_images/theme_stylings.png" style="width: 359.8px; height: 536.2px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Available Themes</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">A Theme is not &#8216;stuck&#8217; to a survey. You can alter anything at anytime, even go so far as to remove all styling formats on a survey at any time.</p>
+</div>
+<p>Click on one of the links below to see an example of a Theme in action</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Basic : <a class="reference external" href="http://fluidsurveys.com/surveys/FluidSurveysDocs/basic-theme-example">Basic Theme Example</a></li>
+<li>Chirp : <a class="reference external" href="http://fluidsurveys.com/surveys/FluidSurveysDocs/chirp-theme-example">Chirp Theme Example</a></li>
+<li>Green Tartan : <a class="reference external" href="http://fluidsurveys.com/surveys/FluidSurveysDocs/green-tartan-theme-example/">Green Tartan Theme Example</a></li>
+<li>Blue Tartan : <a class="reference external" href="http://fluidsurveys.com/surveys/FluidSurveysDocs/blue-tartan-theme-example">Blue Tartan Theme Example</a></li>
+<li>Green Wallpaper : <a class="reference external" href="http://fluidsurveys.com/surveys/FluidSurveysDocs/green-theme-example">Green Theme Example</a></li>
+<li>Console : <a class="reference external" href="http://fluidsurveys.com/surveys/FluidSurveysDocs/console-theme-example">Console Theme Example</a></li>
+<li>Matrices : <a class="reference external" href="http://fluidsurveys.com/surveys/FluidSurveysDocs/matrices-theme-example/">Matrices Theme Example</a></li>
+<li>Pretty : <a class="reference external" href="http://fluidsurveys.com/surveys/FluidSurveysDocs/pretty-theme-example">Pretty Theme Example</a></li>
+<li>Sunburst : <a class="reference external" href="http://fluidsurveys.com/surveys/FluidSurveysDocs/sunburst-theme-example">Sunburst Theme Example</a></li>
+<li>Aztec : <a class="reference external" href="http://fluidsurveys.com/surveys/FluidSurveysDocs/aztec-theme-example/">Aztec Theme Example</a></li>
+<li>Classic Blue : <a class="reference external" href="http://fluidsurveys.com/surveys/FluidSurveysDocs/classic-blue-theme-example">Classic Blue Theme Example</a></li>
+<li>Social : <a class="reference external" href="http://fluidsurveys.com/surveys/FluidSurveysDocs/social-theme-example">Social Theme Example</a></li>
+<li>Mobile : <a class="reference external" href="http://fluidsurveys.com/surveys/FluidSurveysDocs/mobile-theme-example/">Mobile Theme Example</a></li>
+</ol>
+</div></blockquote>
+</div>
+<div class="section" id="customize">
+<h2>Customize<a class="headerlink" href="#customize" title="Permalink to this headline">¶</a></h2>
+<p>Customize is the start of recasting your survey to fit the needs and styles of what you desire. Within the Customize option, you can alter the:</p>
+<ul class="simple">
+<li>Color</li>
+<li>Elements</li>
+<li>Questions</li>
+</ul>
+<p>Altering each option within Color can either slightly or drastically change the outlook of your survey. Refer to the bolded points below to see a brief example of what each Color option will modifyBody</p>
+<div class="section" id="color">
+<h3>Color<a class="headerlink" href="#color" title="Permalink to this headline">¶</a></h3>
+<p><strong>Background Color</strong></p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/body_background_color.png"><img alt="Modified Background Color" class="screenshot" src="../../_images/body_background_color.png" style="width: 652.4px; height: 405.3px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Body Background Color (#663322)</p>
+</div>
+<p><strong>Header text color</strong></p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/header_text_color.png"><img alt="Modified Header Text color" class="screenshot" src="../../_images/header_text_color.png" style="width: 631.4px; height: 394.8px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Header text color (#9881ff)</p>
+</div>
+<p><strong>Survey background color</strong></p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/survey_background_color.png"><img alt="Modified Survey Background Color" class="screenshot" src="../../_images/survey_background_color.png" style="width: 627.9px; height: 398.3px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Altered Survey Background Color (#ea64c0)</p>
+</div>
+<p><strong>Survey text color</strong></p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/survey_text_color.png"><img alt="Modified Survey text color" class="screenshot" src="../../_images/survey_text_color.png" style="width: 630.7px; height: 397.6px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Altered Survey Text Color (#e1d14e)</p>
+</div>
+<p><strong>Question Background color</strong></p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/question_background_color.png"><img alt="Modified Question Background Color" class="screenshot" src="../../_images/question_background_color.png" style="width: 627.9px; height: 401.8px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Altered Question Background Color (#8b22d4)</p>
+</div>
+<p><strong>Question title color</strong></p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/question_title_color.png"><img alt="Modified Question Title Color" class="screenshot" src="../../_images/question_title_color.png" style="width: 628.6px; height: 394.1px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Altered Question Title Color (#fd2d98)</p>
+</div>
+</div>
+<div class="section" id="elements">
+<h3>Elements<a class="headerlink" href="#elements" title="Permalink to this headline">¶</a></h3>
+<p>Allows for all things found in a survey to be altered. For instance, every survey allows for a logo to be uploaded, which can be altered under the &#8220;Elements&#8221; second. Specific elements of the Question, Question Title, Termination Message, etc., can be altered, eg., Width, Height, Margin, Font family, etc. Every &#8220;Element&#8221; will have a different set of options.</p>
+<p>The Elements available for alteration are seen and described below.</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/survey_elements_number.png"><img alt="Places of Element Modification" class="screenshot" src="../../_images/survey_elements_number.png" style="width: 676.9px; height: 300.3px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Survey Elements Numbered</p>
+</div>
+<p>While there are too many customizable options available for each Element to list them off in a logical display order, refer to the &#8220;Style&#8221; section of your survey to gather a closer look. However, the table below contains a high-level overview of each and every available element that you can change.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="30%" />
+<col width="70%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Section</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><ol class="first last arabic simple">
+<li>Survey Logo</li>
+</ol>
+</td>
+<td>A logo can be uploaded for a survey that will reside above the Survey Title (#5). Not shown in Figure above. By default, there is no survey logo.</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="2">
+<li>Background</li>
+</ol>
+</td>
+<td>Altering this element will change the background that contains the survey.</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="3">
+<li>Survey</li>
+</ol>
+</td>
+<td>Change the survey background independent to the overall background (#2).</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="4">
+<li>Survey (Header)</li>
+</ol>
+</td>
+<td>Alter the background color for the element that holds both the Survey Title and Survey Description.</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="5">
+<li>Survey Title</li>
+</ol>
+</td>
+<td>Change only the title to your survey, ie., color, font, size, etc.</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="6">
+<li>Survey Description</li>
+</ol>
+</td>
+<td>Change the survey description to your survey, which will have settings independent to the survey title</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="7">
+<li>Question Title</li>
+</ol>
+</td>
+<td>Change only the title to your questions, ie., color, font, size, etc.</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="8">
+<li>Question Description</li>
+</ol>
+</td>
+<td>Change the survey description to your survey, which will have settings independent to the question title</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="9">
+<li>Question</li>
+</ol>
+</td>
+<td>Alter the settings behind the Choices and Variables.</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="10">
+<li>Question Body</li>
+</ol>
+</td>
+<td>Alter the container of #7, #8 and #9, ie., the background color, position, width, etc.</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="11">
+<li>Progress Bar (Outer)</li>
+</ol>
+</td>
+<td>Alter the outside of the progress bar</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="12">
+<li>Progress Bar (Text)</li>
+</ol>
+</td>
+<td>Alter only the text of the progress bar</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="13">
+<li>Progress Bar (Inner)</li>
+</ol>
+</td>
+<td>Alter the inside of the progress bar</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="14">
+<li>Error Message (Outer)</li>
+</ol>
+</td>
+<td>If a question is required, or has validation on it, and the user enters invalid information, they are prompted with an error message. This allows for the style to be altered. In this case, only the outside of the Error Message. <strong>Not showing in Figure above</strong></td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="15">
+<li>Error Message (Inner)</li>
+</ol>
+</td>
+<td>This will only affect the inside of the Error Message. <strong>Not showing in Figure above</strong></td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="16">
+<li>Button Region</li>
+</ol>
+</td>
+<td>Change the region, such as distance between buttons, height, margin, etc.</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="17">
+<li>Buttons</li>
+</ol>
+</td>
+<td>Change the buttons text, font, color, etc.</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="18">
+<li>Footer</li>
+</ol>
+</td>
+<td>Alter the footer text. The text cannot be changed within the Footer.</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="19">
+<li>Footer (Link)</li>
+</ol>
+</td>
+<td>Only alter the link within the Footer</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="20">
+<li>Finish Message</li>
+</ol>
+</td>
+<td>Alter the look-and-feel of the final page, which a respondent sees when they successfully completed a survey path. <strong>Not showing in Figure above</strong></td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="21">
+<li>Termination Message</li>
+</ol>
+</td>
+<td>Alter the look-and-feel of the final page, which a respondent seens when they were terminated due to a previous response. <strong>Not showing in Figure above</strong></td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="22">
+<li>Save and Continue Container</li>
+</ol>
+</td>
+<td>Change the container that holds the text within the &#8220;Save and Continue Later&#8221; page. This is only found within the &#8220;Save and Continue Later&#8221; page when the button is pressed. <strong>Not showing in Figure above</strong></td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="23">
+<li>Save and Continue (Header)</li>
+</ol>
+</td>
+<td>Change the header that has, &#8220;Save and Continue Later&#8221;. This is only found within the &#8220;Save and Continue Later&#8221; page when the button is pressed. <strong>Not showing in Figure above</strong></td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="24">
+<li>Save and Continue (Link)</li>
+</ol>
+</td>
+<td>Change the look-and-feel of the link. This is only found within the &#8220;Save and Continue Later&#8221; page when the button is pressed.  <strong>Not showing in Figure above</strong></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="questions">
+<h3>Questions<a class="headerlink" href="#questions" title="Permalink to this headline">¶</a></h3>
+<p>By default, every question type can be tailored to your various needs. Where Elements allows for key elements in a survey to be altered, Question(s) allows for only your questions to be altered. Question(s) has the same customizable options across all question types. Overall, Title, Description, Question Body, as well as individual Variables and Choices are the available elements of a specific question type that are customizable.</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/questions_elements.png"><img alt="Customizable Question Elements" class="screenshot" src="../../_images/questions_elements.png" style="width: 347.9px; height: 400.4px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Elements available for customization</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">You can reset your theme at any time by clicking &#8220;Reset&#8221; under the &#8220;Template Grabber&#8221;</p>
+</div>
+</div>
+</div>
+<div class="section" id="advanced">
+<h2>Advanced<a class="headerlink" href="#advanced" title="Permalink to this headline">¶</a></h2>
+<p>Advanced allows for any element in a survey to be altered with either CSS, or scrapped from a pre-defined web site using Template Grabber.</p>
+<div class="section" id="custom-css">
+<h3>Custom CSS<a class="headerlink" href="#custom-css" title="Permalink to this headline">¶</a></h3>
+<p>If none of the available Colors, Survey Elements, or Question styles push for a deeper experience, then you can use the built in CSS Editor. The Survey Themer allows users to edit
+the survey’s CSS. To do so, simply select &#8220;Advanced&#8221; &gt; “CSS” and a dialog will appear displaying the CSS for the survey. Changes can be made to the existing code, and/or custom code can be entered.</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/custom_css.png"><img alt="Custom CSS Editor" class="screenshot" src="../../_images/custom_css.png" style="width: 501.2px; height: 308.0px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Custom CSS Editor</p>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Any changes made in the CSS editor will show on your survey in real time. To reset any changes, simply press the “Reset” button.</p>
+</div>
+</div>
+<div class="section" id="template-grabber">
+<h3>Template Grabber<a class="headerlink" href="#template-grabber" title="Permalink to this headline">¶</a></h3>
+<p>Grabbing a template from a pre-existing web site requires a little bit of digging, but it will allow for you to take everything, ie., colours, format, outline, pictures, CSS files, etc. and allow for them to reside within your survey. In order to successfully execute a Template Grab, you will need the following information seen below. This is an advanced portion of FluidSurveys, and if you are unfamiliar with HTML or CSS, then this section may be slighter harder to follow. Nonetheless, the interface is very intuitive and
+straight forward.</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/grab_template.png"><img alt="Grab Template" class="screenshot" src="../../_images/grab_template.png" style="width: 495.6px; height: 186.2px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Grab Template Window</p>
+</div>
+<table border="1" class="docutils">
+<colgroup>
+<col width="30%" />
+<col width="70%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Section</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><ol class="first last arabic simple">
+<li>Page URL {{ name }}</li>
+</ol>
+</td>
+<td>The link to the web site that you&#8217;d like to grab from</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="2">
+<li>Target id</li>
+</ol>
+</td>
+<td>This is where the survey will go in the grabbed theme. Using the example below, Metacritic.com has a section of its web site that has an id, &#8220;critic_user_reviews_wrap&#8221;. The survey will go where the summary of a critics review goes.</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="3">
+<li>Language link id</li>
+</ol>
+</td>
+<td>If the survey you are grabbing from has a multi-language front facing section of their web site, then the URL can be entered here. This only applies when you have a survey with multiple languages, ie., French,</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">If the wrong Target id was provided, then your survey may simply flash once, and retain its old base template. If this happens, then return back to the web site in question, and ensure that the appropriate id was copied.</p>
+</div>
+<p>The end result, after finding the correct div id (critic_user_reviews_wrap) on Metacritic (<a class="reference external" href="http://www.metacritic.com/movie/prometheus">http://www.metacritic.com/movie/prometheus</a>) yields the following result. Notice anything familiar under the films description?</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/template_grabbed_prometheus.png"><img alt="Metacritic Template Grab" class="screenshot" src="../../_images/template_grabbed_prometheus.png" style="width: 690.2px; height: 594.3px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Template Grabbed from Prometheus Review on Metacritic</p>
+</div>
+<p>To learn more on how to successfully grab a template from any web site, refer to the, &#8220;Grab a Template&#8221; found under the Tutorial section of this manual.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">You can reset your theme at any time by clicking &#8220;Reset&#8221; under the &#8220;Template Grabber&#8221;</p>
+</div>
+</div>
+</div>
+<div class="section" id="pages">
+<h2>Pages<a class="headerlink" href="#pages" title="Permalink to this headline">¶</a></h2>
+<p>When working with a multi-paged survey, it is advantageous to alternate between the pages to ensure that any CSS or styling added, adhere beautifully across the entirety of your survey. Pages, found on the top-right of the toolbar, allows for you to quickly jump between pages.</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/pages_top_right.png"><img alt="Pages Selection" class="screenshot" src="../../_images/pages_top_right.png" style="width: 186.2px; height: 133.7px;" /></a>
+<p class="caption"><em>Figure 9.1</em> All # pages available</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Style</a><ul>
+<li><a class="reference internal" href="#theme">Theme</a></li>
+<li><a class="reference internal" href="#customize">Customize</a><ul>
+<li><a class="reference internal" href="#color">Color</a></li>
+<li><a class="reference internal" href="#elements">Elements</a></li>
+<li><a class="reference internal" href="#questions">Questions</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#advanced">Advanced</a><ul>
+<li><a class="reference internal" href="#custom-css">Custom CSS</a></li>
+<li><a class="reference internal" href="#template-grabber">Template Grabber</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#pages">Pages</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../http-routingtable.html" title="HTTP Routing Table"
+             >routing table</a> |</li>
+        <li class="right" >
+          <a href="../Preview/index.html" title="Preview"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../Editor/advancedfeatures.html" title="Advanced Survey Features"
+             >previous</a> |</li>
+        <li><a href="../../index.html">FluidSurveys 4.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012, FluidSurveys.
+    </div>
+  </body>
+</html>

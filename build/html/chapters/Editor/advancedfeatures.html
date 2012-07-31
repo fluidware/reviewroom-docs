@@ -1,0 +1,595 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Advanced Survey Features &mdash; FluidSurveys 4.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="FluidSurveys 4.0 documentation" href="../../index.html" />
+    <link rel="up" title="Editor" href="index.html" />
+    <link rel="next" title="Style" href="../Style/index.html" />
+    <link rel="prev" title="Question Options" href="questionoptions.html" />
+	 
+	<script type="text/javascript" src="http://use.typekit.com/hfr5qlq.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+  </head>
+  <body>
+	<div class="top-bar">
+		<div class="center">
+			<span class="logo"><a href="/">FluidSurveys Documentation</a></span>
+		</div>
+	</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../http-routingtable.html" title="HTTP Routing Table"
+             >routing table</a> |</li>
+        <li class="right" >
+          <a href="../Style/index.html" title="Style"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="questionoptions.html" title="Question Options"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">FluidSurveys 4.0 documentation</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">Editor</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="advanced-survey-features">
+<span id="advanced-features"></span><h1>Advanced Survey Features<a class="headerlink" href="#advanced-survey-features" title="Permalink to this headline">¶</a></h1>
+<p>This chapter will teach you how to:</p>
+<ul class="simple">
+<li>Randomize questions on a page</li>
+<li>How to randomize questions</li>
+<li>Advanced Branching</li>
+<li>Looping</li>
+<li>Fully complete your knowledge banks of FluidSurveys Editor features</li>
+</ul>
+<div class="section" id="jumping">
+<h2>Jumping<a class="headerlink" href="#jumping" title="Permalink to this headline">¶</a></h2>
+<p>Jumping allows you to create named points in your survey in which the respondent can easily navigate to.</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/enable_jumping.png"><img alt="Enable Jumping" class="screenshot" src="../../_images/enable_jumping.png" style="width: 227.5px; height: 335.3px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Enable Jumping</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Jumping will only become available when the page labels have been altered to anything other than 1, 2, 3, etc. By default, this option is disabled</p>
+</div>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/jumping_in_survey.png"><img alt="Breadcrumb on survey" class="screenshot" src="../../_images/jumping_in_survey.png" style="width: 627.2px; height: 273.7px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Breadcrumb on survey</p>
+</div>
+<p>When a respondent takes your survey, as opposed to unknowingly progressing through the pages of your survey, they will be able to see each-and-every upcoming page. Enabling this option allows for the respondent to jump between pages. This option is perfect for when FluidSurveys is being used for something other than a survey, ie., account information, gathering financial information, etc. By default, the option for jumping is disabled.</p>
+<p>However, you can hide which pages you do not want to appear in the jumping menu.</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/hide_jumping_options.png"><img alt="Hide Jumping Options" class="screenshot" src="../../_images/hide_jumping_options.png" style="width: 228.2px; height: 328.3px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Disable Jumping between pages</p>
+</div>
+</div>
+<div class="section" id="looping">
+<h2>Looping<a class="headerlink" href="#looping" title="Permalink to this headline">¶</a></h2>
+<p>Looping allows for the ability to create a block of questions that contain questions about the quality of previously asked questions, ie., why the selected hotel was chosen over the others. Looping will save time, as it replaces the necessity to create 1 block for each potential question, by adhering to a loop that appears to be dynamically created specifically for each and every respondent.</p>
+<p>Looping is available through the Right-Click menu</p>
+<a class="screenshot reference internal image-reference" href="../../_images/looping_right_click.png"><img alt="Looping through Right-Click" class="screenshot align-center" src="../../_images/looping_right_click.png" style="width: 445.2px; height: 348.6px;" /></a>
+<p>Once &#8220;Looping&#8221; has been selected, a new window will reveal itself, presenting you with the option of selecting which pages you&#8217;d like to loop. Conversely, you can select which page will be the last within the looping cycle.</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/looping_popup.png"><img alt="Looping Pop-up" class="screenshot" src="../../_images/looping_popup.png" style="width: 352.1px; height: 306.6px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Pop-up window for Looping</p>
+</div>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="75%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Option</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><ol class="first last arabic simple">
+<li>Choice</li>
+</ol>
+</td>
+<td>Only the following choices, 6, 7, 8, 9, 10, will set off the Looping condition. When either value is chosen for any of the # choices, it will loop once for each choice that hit the required condition.</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="2">
+<li>First Page</li>
+</ol>
+</td>
+<td>Looping will begin on &#8220;Reason For Choice&#8221; page, ie., Page 2</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="3">
+<li>Last Page</li>
+</ol>
+</td>
+<td>Looping will end on &#8220;What is holding you back?&#8221;, ie., Page 3</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The Looping Pop-up window will present slightly different options depending on the question type that is being used as the looping pivot point. The figure above uses a Dropdown Grid as the test</p>
+</div>
+<p>Looping is only available to the following question types:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Text Response</li>
+<li>Checkbox</li>
+<li>Text Response Grid</li>
+<li>Multiple Choice Grid</li>
+<li>Checkbox Grid</li>
+<li>Semantic Differential</li>
+</ul>
+</div></blockquote>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">When Piping is used, Looping is put into overdrive. Each and every page can contain previously inputted responses by the respondent, which gives off the illusion of a survey created uniquely for an individual. Refer to Piping in the manual to learn more.</p>
+</div>
+</div>
+<div class="section" id="quotas">
+<h2>Quotas<a class="headerlink" href="#quotas" title="Permalink to this headline">¶</a></h2>
+<p>Dynamic quotas allow for the surveyor to limit the amount of responses for a given question. If the response limit is reached for a particular question, then the survey can be exited, terminated or finished, the question can be hidden, or no action can be carried out.</p>
+<p>The Advanced Quota window is available under [Page] &gt; [Edit Advanced Quotas] within the Editor</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/advanced_quotas_logic.png"><img alt="Advanced Logic" class="screenshot" src="../../_images/advanced_quotas_logic.png" style="width: 644.0px; height: 378.0px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Only 50 responses for &#8220;Amour&#8221;/&#8221;Reality&#8221; AND those that stayed at &#8220;Hotel Nelligan&#8221; allowed</p>
+</div>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="75%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Option</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><ol class="first last arabic simple">
+<li>Response Total</li>
+</ol>
+</td>
+<td>The value entered will determine that amount of desired responses for a block of logic. In the example above, only 50 complete responses for the logic (seen in #2) is allowed. By default, this number is 10.</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="2">
+<li>Logic Rule</li>
+</ol>
+</td>
+<td>The deciding factor when determining the end point of the respondents journey. In the example above, if 50 respondents completed the survey with the response of &#8220;Amour&#8221; AND stayed at the Hotel Nelligan, then the 51st respondent will be redirected to the &#8220;Quota Filled&#8221; screen.</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="3">
+<li>Survey Path</li>
+</ol>
+</td>
+<td><dl class="first last docutils">
+<dt>Depending on what you determine in the &#8220;then&#8221; clause, the respondent will the defined path. In this case, the user will be brought to the &#8220;Quota filled&#8221; page at the end of the survey. The available branching paths are:</dt>
+<dd><ul class="first last simple">
+<li>Exit the survey with a quota filled message</li>
+<li>Finish the survey</li>
+<li>Terminate the survey</li>
+<li>Hide a question</li>
+</ul>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="4">
+<li>Add Quota</li>
+</ol>
+</td>
+<td>Add a new quota rule, with its own survey path, logic rule, and response total.</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="5">
+<li>Command</li>
+</ol>
+</td>
+<td>Save or Cancel any changes made</td>
+</tr>
+</tbody>
+</table>
+<p>Additionally, a survey itself can have a quota, that when reached, eg., 100 completed responses, will automatically close the survey. The survey quota is found under [Publish] &gt; [Settings]</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/settings_survey_quotas.png"><img alt="Survey Quota" class="screenshot" src="../../_images/settings_survey_quotas.png" style="width: 675.5px; height: 167.3px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Final quota on a survey, where # equals the total amount desired</p>
+</div>
+</div>
+<div class="section" id="piping">
+<h2>Piping<a class="headerlink" href="#piping" title="Permalink to this headline">¶</a></h2>
+<p>Piping is defined as taking the respondent’s answer to a previous question and inserting it (a.k.a piping it) into a later question. This sort of behavior will help keep your respondent more engaged and will make them feel as if the survey is customized to their particular situation. Piping is definitely recommended for anyone who’d like to increase their avg. survey completion rate.</p>
+<p>The Piping Wizard, found by right-clicking on a question and selecting &#8220;Piping Wizard&#8221; from the right-click menu, will present a new pop-up</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/piping_wizard_popup_drag.png"><img alt="Piping Wizard popup" class="screenshot" src="../../_images/piping_wizard_popup_drag.png" style="width: 505.4px; height: 351.4px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Piping Wizard popup</p>
+</div>
+<p>Dragging over {{ film }} (a question identifier on Page 1) into the Question Title for the Text Response on Page 2 will pipe in what the respondent selected on Page 1. In this example, the respondent selected, &#8220;Love/Amour&#8221;, which appears into the title on the following page.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Only questions with an identifier will appear in the piping wizard. To learn more about Identifiers, please refer to the section in the manual.</p>
+</div>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/result_of_piping.png"><img alt="Result of Piping" class="screenshot" src="../../_images/result_of_piping.png" style="width: 626.5px; height: 445.9px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Piping from 1 question to another</p>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">One of the unsung hero features is that you can pipe in custom fields that you have already uploaded into your address book. Let’s say that you have uploaded the contact info for 100 people into your address book and that one of these fields is “City”. You could then pipe this value into a question like: “How long have you lived in {{ invite.city }}. The correct value would then be inserted for each contact who responds. We won&#8217;t go into too much detail about this here, but you can check the Email section of the manual, which talks about Custom Variables, to learn more.</p>
+</div>
+</div>
+<div class="section" id="branching">
+<h2>Branching<a class="headerlink" href="#branching" title="Permalink to this headline">¶</a></h2>
+<p>Branching is similar to simple skipping in that it allows you to send respondents to different sections of your survey based on their responses. There are however, several differences. With advanced branching, you can skip based on multiple conditions (multiple questions), as well as based on questions on previous pages. You can also implement dynamic on-page skipping (hide, show, disable questions), and trigger a variety of actions (email messages, terminate the survey, etc). Plus, you can implement branching on additional question types, such as text response fields, grid questions and checkbox (multi-answer) questions. All in all, advanced branching can do everything that simple skipping can + more.</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/survey_logic_wizard.png"><img alt="Survey Logic Wizard start" class="screenshot" src="../../_images/survey_logic_wizard.png" style="width: 490.7px; height: 297.5px;" /></a>
+<p class="caption"><em>Figure 9.1</em> The first window seen when &#8220;Advanced Logic&#8221; is clicked</p>
+</div>
+<table border="1" class="docutils">
+<colgroup>
+<col width="30%" />
+<col width="70%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Option</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><ol class="first last arabic simple">
+<li>Add Branching Logic</li>
+</ol>
+</td>
+<td>Click &#8220;Add Branching Logic&#8221; to add a rule. Please note that in order to associate branching with a question in your survey, the question must first have a question identifier. To learn how to add an identifier, refer to the Identifier section in the manual.</td>
+</tr>
+</tbody>
+</table>
+<p>Every branching logic condition has a quality that will execute when a block has been satisfied. There are 11 choices available to help better farther assist you in customizing your survey to your specific needs.</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/choices_logic.png"><img alt="Available Choices" class="screenshot" src="../../_images/choices_logic.png" style="width: 150.5px; height: 137.9px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Available Logic Branches</p>
+</div>
+<table border="1" class="docutils">
+<colgroup>
+<col width="40%" />
+<col width="60%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Option</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><ol class="first last arabic simple">
+<li>Page #</li>
+</ol>
+</td>
+<td>Jump to a specific page. You cannot select a previous page</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="2">
+<li>Finish the survey</li>
+</ol>
+</td>
+<td>Jump to the &#8220;Thank you&#8221; page. This will mark any response as &#8220;Complete&#8221;. This branching logic is perfect.</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="3">
+<li>Terminate the survey</li>
+</ol>
+</td>
+<td>Jump to the end. This will mark any response as &#8220;Incomplete&#8221;. This branching logic is perfect when you want to keep track of a demographic you may not specifically be tailoring to, ie., a survey only for females, those that watch more than 10 movies a year, etc.</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="4">
+<li>Redirect to a URL</li>
+</ol>
+</td>
+<td>Redirect the respondent to a web site.</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="5">
+<li>Skip to a random page</li>
+</ol>
+</td>
+<td>Randomly jump to a random page. You cannot select a previous page.</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="6">
+<li>Randomly traverse specified range</li>
+</ol>
+</td>
+<td>Jump between specified pages, ie., 4, 10, 11</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="7">
+<li>Hide a question</li>
+</ol>
+</td>
+<td>Based on a response, hide a question from the respondents view outright</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="8">
+<li>Show a question</li>
+</ol>
+</td>
+<td>Based on a response, show a question to the respondents view</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="9">
+<li>Disable a question</li>
+</ol>
+</td>
+<td>Disabling a question will make it so that its choices and variables cannot be selected, ie., grayed out</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="10">
+<li>E-mail...</li>
+</ol>
+</td>
+<td>Email an individual(s) with the satisfied branching logic with a customizable Subject, Message, and adjustable Advanced Options</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="11">
+<li>Mark this response as complete</li>
+</ol>
+</td>
+<td>Responses are either Incomplete, or Complete. Based on a condition, some Administrators would want a survey to be marked &#8220;Complete&#8221; right away based on a response, as opposed to waiting until the [Submit] button is clicked at the end of the survey.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Randomly traverse specified range has the ability to branch backwards into a survey, but the issue of an infinite recursive looping issue has the possibility of arises. For instance, based on a response, you could go back to Page 2, but if the respondent follows the same path and choices to have the logic loop them back to Page 2, the respondent may grow frustrated, leave your survey, and mark their response group as &#8220;Incomplete&#8221;. It is advised against branching back into a survey.</p>
+</div>
+<p>Branching Logic can include more than 1 condition. It is best to look at logic as a series of logical statements. While it may be confusing to understanding at first glance, breaking down the conditions is as simple as deciding, &#8220;if the user selects A&amp;E Root Beer, and if the user selects Barq&#8217;s Root Beer, then I do not want them to answer the rest of the survey. I want them to leave&#8221;. A block contains 1 logic condition, as seen in Figure 9.1</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/survey_logic_conditions.png"><img alt="Survey Logic Wizard start" class="screenshot" src="../../_images/survey_logic_conditions.png" style="width: 481.6px; height: 429.1px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Logic applied to a page in a survey</p>
+</div>
+<table border="1" class="docutils">
+<colgroup>
+<col width="30%" />
+<col width="70%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Option</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><ol class="first last arabic simple">
+<li>Condition 1</li>
+</ol>
+</td>
+<td>If &#8220;drinks&#8221; contains &#8220;A&amp;E&#8221; Root Beer AND &#8220;drinks&#8221; contains Barq&#8217;s Root Beer, then &#8220;Finish the survey&#8221;</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="2">
+<li>Condition 2</li>
+</ol>
+</td>
+<td>If &#8220;Language&#8221; equals English, NOT, then go to page 4</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="3">
+<li>Add Branching Logic</li>
+</ol>
+</td>
+<td>Click &#8220;Add Branching Logic&#8221; to add a rule. Please note that in order to associate branching with a question in your survey, the question must first have a question identifier. To learn how to add an identifier, refer to the Identifier section in the manual</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="4">
+<li>Otherwise</li>
+</ol>
+</td>
+<td>If any of the above conditions in the survey logic wizard pop-up,</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="5">
+<li>Control</li>
+</ol>
+</td>
+<td>Save, Cancel, or Reset your advanced branching logic in your survey.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">It’s not recommended to use advanced branching and simple skipping together. If one is used, the other shouldn&#8217;t. Using both could lead to clashing conditions and unexpected results.</p>
+</div>
+</div>
+<div class="section" id="extraction">
+<h2>Extraction<a class="headerlink" href="#extraction" title="Permalink to this headline">¶</a></h2>
+<p>Data extraction is the act or process of retrieving data out of a previous data source for further data processing (in the case with surveys, part of another question). Essentially, data extraction allows the selected choices from one question to appear in a following question.</p>
+<p>Extraction, like all Advanced Logic within FluidSurveys, requires multiple pages. When extracting choices selected by a respondent, they must reside on a page before the fact.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">By default, &#8220;Extraction&#8221; is disabled</p>
+</div>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/click_extraction.png"><img alt="Randomize questions on the page" class="screenshot" src="../../_images/click_extraction.png" style="width: 676.9px; height: 244.3px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Randomize choices on the page</p>
+</div>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/select_variable.png"><img alt="Randomize questions on the page" class="screenshot" src="../../_images/select_variable.png" style="width: 229.6px; height: 86.8px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Randomize choices on the page</p>
+</div>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/final_step.png"><img alt="Randomize questions on the page" class="screenshot" src="../../_images/final_step.png" style="width: 674.1px; height: 266.7px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Randomize choices on the page</p>
+</div>
+<table border="1" class="docutils">
+<colgroup>
+<col width="30%" />
+<col width="70%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Option</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><ol class="first last arabic simple">
+<li>Extraction</li>
+</ol>
+</td>
+<td>Clicking Extraction will lead to the next section that allows for you to choose which question you&#8217;d like to extract from</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="2">
+<li>Variable</li>
+</ol>
+</td>
+<td><dl class="first last docutils">
+<dt>Select the question with the correct variable name.</dt>
+<dd><strong>Note</strong> You must give the question you&#8217;re extracting from a variable name</dd>
+</dl>
+</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="3">
+<li>Extracted Choices</li>
+</ol>
+</td>
+<td>Notice how the choices are now all the choices from the previous question. Do not be alarmed by this. Only the choices that the user selects will be shown here. Additionally, you can alter the Extraction choices to only pull [Inverted Choices], ie, choices other than what they chose, and [Extract Choices], ie., extract only the choices instead of the variables</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p>You can [Extract From]</p>
+<blockquote>
+<div><ul class="simple">
+<li>Checkbox</li>
+<li>Multiple Choice Grid</li>
+<li>Text response grid</li>
+<li>Dropdown Matrix</li>
+</ul>
+</div></blockquote>
+<p class="last">and you can [Extract To] any question except a 3D Matrix</p>
+</div>
+</div>
+<div class="section" id="languages-translations">
+<h2>Languages/Translations<a class="headerlink" href="#languages-translations" title="Permalink to this headline">¶</a></h2>
+<p>Languages and Translations are a powerful way to reach a wide target audience by allowing for the surveyor to select from 70+ languages to reside in a single survey.</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/language_bar.png"><img alt="Language top bar" class="screenshot" src="../../_images/language_bar.png" style="width: 442.4px; height: 23.8px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Language option in the Editor</p>
+</div>
+<p>The respondent will then be able to choose the language they would like to take the survey in, by selecting it from a dropdown language bar in the upper right-hand corner of the survey. Regardless of the language selected by the respondent, the data will be overlayed into the one single survey.</p>
+<p>When the language button has been selected, a new window will appear that allows for the desired languages to be selected. To add a language, simply move it from the &#8220;Available Languages&#8221; side to the &#8220;Selected Languages&#8221; side by using the appropriate arrows, ie., right to add, left to remove.</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/survey_languages.png"><img alt="Survey Languages Pop-up" class="screenshot" src="../../_images/survey_languages.png" style="width: 273.7px; height: 228.9px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Available Survey Languages</p>
+</div>
+<table border="1" class="docutils">
+<colgroup>
+<col width="30%" />
+<col width="70%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Option</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><ol class="first last arabic simple">
+<li>Available Languages</li>
+</ol>
+</td>
+<td>Selected the language you wish to have in your survey. There are 70+ languages available to chose from.</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="2">
+<li>Selected Languages</li>
+</ol>
+</td>
+<td>All languages presently in your survey. There is no limit to the amount of languages you can have on a survey.</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="3">
+<li>Default Language</li>
+</ol>
+</td>
+<td>Select the default language. By default, English is the base language</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="4">
+<li>Style</li>
+</ol>
+</td>
+<td>Change the style between Radio Buttons, or a Dropdown menu. By default, the language selector is a dropdown menu.</td>
+</tr>
+</tbody>
+</table>
+<p>Multiple languages on a survey will become prevalent when using the [Bulk] feature. In order to a smooth transition between multiple languages, it is advised to be aware of those</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/multi_language_bulk.png"><img alt="Multi Language Bulk Window" class="screenshot" src="../../_images/multi_language_bulk.png" style="width: 472.5px; height: 213.5px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Bulk Window when dealing with multiple languages</p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Only specific sections will be translated, such as [Back], [Next], [Submit], and the &#8220;Yes/No&#8221; question type. The entirety of the question title/description, its variables and choices will need to be translated by the survey creator. If the scope and size of a survey reaches 50+ questions, spread across 20+ pages, it may be advantageous to use &#8220;Mass Translations&#8221; to quickly, and efficiently translate the entirety of the content. To learn more, refer to the &#8220;Mass Translations&#8221; section of the manual</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Advanced Survey Features</a><ul>
+<li><a class="reference internal" href="#jumping">Jumping</a></li>
+<li><a class="reference internal" href="#looping">Looping</a></li>
+<li><a class="reference internal" href="#quotas">Quotas</a></li>
+<li><a class="reference internal" href="#piping">Piping</a></li>
+<li><a class="reference internal" href="#branching">Branching</a></li>
+<li><a class="reference internal" href="#extraction">Extraction</a></li>
+<li><a class="reference internal" href="#languages-translations">Languages/Translations</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../http-routingtable.html" title="HTTP Routing Table"
+             >routing table</a> |</li>
+        <li class="right" >
+          <a href="../Style/index.html" title="Style"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="questionoptions.html" title="Question Options"
+             >previous</a> |</li>
+        <li><a href="../../index.html">FluidSurveys 4.0 documentation</a> &raquo;</li>
+          <li><a href="index.html" >Editor</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012, FluidSurveys.
+    </div>
+  </body>
+</html>

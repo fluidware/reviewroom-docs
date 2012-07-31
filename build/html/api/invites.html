@@ -1,0 +1,562 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Invites and Email API &mdash; FluidSurveys 4.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="FluidSurveys 4.0 documentation" href="../index.html" />
+    <link rel="next" title="Tutorial" href="tutorial.html" />
+    <link rel="prev" title="Surveys API" href="surveys.html" />
+	 
+	<script type="text/javascript" src="http://use.typekit.com/hfr5qlq.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+  </head>
+  <body>
+	<div class="top-bar">
+		<div class="center">
+			<span class="logo"><a href="/">FluidSurveys Documentation</a></span>
+		</div>
+	</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../http-routingtable.html" title="HTTP Routing Table"
+             >routing table</a> |</li>
+        <li class="right" >
+          <a href="tutorial.html" title="Tutorial"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="surveys.html" title="Surveys API"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FluidSurveys 4.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="invites-and-email-api">
+<h1>Invites and Email API<a class="headerlink" href="#invites-and-email-api" title="Permalink to this headline">¶</a></h1>
+<p>The invites API allows you to create and modify contacts, generate invitation codes, and
+send emails using the FluidSurveys email system.</p>
+<div class="section" id="contacts">
+<h2>Contacts<a class="headerlink" href="#contacts" title="Permalink to this headline">¶</a></h2>
+<p>Each user in FluidSurveys has his/her own address book, containing a number of contacts.
+Contacts can be arranged into contact lists, which are displayed in the invite tool and
+make it easier to send invitations to pre-specified groups of contacts. Contacts have a
+name, email address, and any number of custom fields.</p>
+<p>Any method that returns contacts also accepts two optional query parameters: <cite>survey</cite> and
+<cite>collector</cite>. Only one of the two parameters can be used, and must be the identifier of a
+survey (resp. collector) owned by the user. Including the parameter will add an additional
+<cite>status</cite> field to each contact.</p>
+<div class="section" id="getting-a-list-of-contacts">
+<h3>Getting a list of contacts<a class="headerlink" href="#getting-a-list-of-contacts" title="Permalink to this headline">¶</a></h3>
+<dl class="get">
+<dt id="get--api-v2-contacts-">
+<tt class="descname">GET </tt><tt class="descname">/api/v2/contacts/</tt><a class="headerlink" href="#get--api-v2-contacts-" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a list of contacts in the user&#8217;s address book. The response contains a
+key called <cite>custom</cite> which has a list of all custom fields in the user&#8217;s address book.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Query Parameters:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
+<li><strong>offset</strong> &#8211; response pagination offset (defaults to 0).</li>
+<li><strong>limit</strong> &#8211; maximum number of results to return (defaults to 10).</li>
+<li><strong>search</strong> &#8211; search terms to filter contacts.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Sample response:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+  <span class="s">&quot;custom&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s">&quot;field1&quot;</span><span class="p">],</span>
+  <span class="s">&quot;contacts&quot;</span><span class="p">:</span> <span class="p">[{</span>
+    <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s">&quot;uri&quot;</span><span class="p">:</span> <span class="s">&quot;http://app.fluidsurveys.com/api/v2/contacts/1/&quot;</span><span class="p">,</span>
+    <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;Peter Griffin&quot;</span><span class="p">,</span>
+    <span class="s">&quot;email&quot;</span><span class="p">:</span> <span class="s">&quot;peter.griffin@example.com&quot;</span><span class="p">,</span>
+    <span class="s">&quot;unsubscribed&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+    <span class="s">&quot;custom_field1&quot;</span><span class="p">:</span> <span class="s">&quot;field1&quot;</span>
+  <span class="p">},</span> <span class="p">{</span>
+    <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="s">&quot;uri&quot;</span><span class="p">:</span> <span class="s">&quot;http://app.fluidsurveys.com/api/v2/contacts/2/&quot;</span><span class="p">,</span>
+    <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;Joe Swanson&quot;</span><span class="p">,</span>
+    <span class="s">&quot;email&quot;</span><span class="p">:</span> <span class="s">&quot;joe.swanson@example.com&quot;</span><span class="p">,</span>
+    <span class="s">&quot;unsubscribed&quot;</span><span class="p">:</span> <span class="n">false</span>
+  <span class="p">}],</span>
+  <span class="s">&quot;start&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+  <span class="s">&quot;total&quot;</span><span class="p">:</span> <span class="mi">2</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="creating-a-contact">
+<h3>Creating a contact<a class="headerlink" href="#creating-a-contact" title="Permalink to this headline">¶</a></h3>
+<dl class="post">
+<dt id="post--api-v2-contacts-">
+<tt class="descname">POST </tt><tt class="descname">/api/v2/contacts/</tt><a class="headerlink" href="#post--api-v2-contacts-" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a new contact. Contact must be sent as an <em class="mimetype">application/json</em>-encoded
+dictionary with the required fields <tt class="docutils literal"><span class="pre">name</span></tt> and <tt class="docutils literal"><span class="pre">email</span></tt>. Custom fields may be specified
+as <tt class="docutils literal"><span class="pre">custom_[name]</span></tt>.</p>
+<p>Sample response:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+  <span class="s">&quot;contact&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="mi">15136498</span><span class="p">,</span>
+    <span class="s">&quot;uri&quot;</span><span class="p">:</span> <span class="s">&quot;http://app.fluidsurveys.com/api/v2/contacts/15136498/&quot;</span><span class="p">,</span>
+    <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;Dave Jones&quot;</span><span class="p">,</span>
+    <span class="s">&quot;email&quot;</span><span class="p">:</span> <span class="s">&quot;dave.jones@example.com&quot;</span><span class="p">,</span>
+    <span class="s">&quot;unsubscribed&quot;</span><span class="p">:</span> <span class="n">false</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="getting-contact-details">
+<h3>Getting contact details<a class="headerlink" href="#getting-contact-details" title="Permalink to this headline">¶</a></h3>
+<dl class="get">
+<dt id="get--api-v2-contacts--id-">
+<tt class="descname">GET </tt><tt class="descname">/api/v2/contacts/:id/</tt><a class="headerlink" href="#get--api-v2-contacts--id-" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns details for a contact.</p>
+<p>Sample response:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+  <span class="s">&quot;contact&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="mi">15136498</span><span class="p">,</span>
+    <span class="s">&quot;uri&quot;</span><span class="p">:</span> <span class="s">&quot;http://app.fluidsurveys.com/api/v2/contacts/15136498/&quot;</span><span class="p">,</span>
+    <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;Dave Jones&quot;</span><span class="p">,</span>
+    <span class="s">&quot;email&quot;</span><span class="p">:</span> <span class="s">&quot;dave.jones@example.com&quot;</span><span class="p">,</span>
+    <span class="s">&quot;unsubscribed&quot;</span><span class="p">:</span> <span class="n">false</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="deleting-a-contact">
+<h3>Deleting a contact<a class="headerlink" href="#deleting-a-contact" title="Permalink to this headline">¶</a></h3>
+<dl class="delete">
+<dt id="delete--api-v2-contacts--id-">
+<tt class="descname">DELETE </tt><tt class="descname">/api/v2/contacts/:id/</tt><a class="headerlink" href="#delete--api-v2-contacts--id-" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes the specified contact.</p>
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="contact-lists">
+<h2>Contact Lists<a class="headerlink" href="#contact-lists" title="Permalink to this headline">¶</a></h2>
+<p>Contact lists allow grouping contacts into manageable lists based on different criteria.
+Managing the contacts within a list is done using the list&#8217;s contact view.</p>
+<div class="section" id="getting-contact-lists">
+<h3>Getting contact lists<a class="headerlink" href="#getting-contact-lists" title="Permalink to this headline">¶</a></h3>
+<dl class="get">
+<dt id="get--api-v2-contact-lists-">
+<tt class="descname">GET </tt><tt class="descname">/api/v2/contact-lists/</tt><a class="headerlink" href="#get--api-v2-contact-lists-" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a list of the user&#8217;s contact lists.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Query Parameters:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
+<li><strong>offset</strong> &#8211; response pagination offset (defaults to 0).</li>
+<li><strong>limit</strong> &#8211; maximum number of results to return (defaults to 10).</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Sample response:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+  <span class="s">&quot;lists&quot;</span><span class="p">:</span> <span class="p">[{</span>
+    <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s">&quot;uri&quot;</span><span class="p">:</span> <span class="s">&quot;http://app.fluidsurveys.com/api/v2/contact-lists/1/&quot;</span><span class="p">,</span>
+    <span class="s">&quot;contacts_uri&quot;</span><span class="p">:</span> <span class="s">&quot;http://app.fluidsurveys.com/api/v2/contact-lists/1/contacts/&quot;</span><span class="p">,</span>
+    <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;People with Silly Walks&quot;</span><span class="p">,</span>
+    <span class="s">&quot;contacts&quot;</span><span class="p">:</span> <span class="mi">10</span>
+  <span class="p">}],</span>
+  <span class="s">&quot;total&quot;</span><span class="p">:</span> <span class="mi">1</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="creating-a-contact-list">
+<h3>Creating a contact list<a class="headerlink" href="#creating-a-contact-list" title="Permalink to this headline">¶</a></h3>
+<dl class="post">
+<dt id="post--api-v2-contact-lists-">
+<tt class="descname">POST </tt><tt class="descname">/api/v2/contact-lists/</tt><a class="headerlink" href="#post--api-v2-contact-lists-" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a new contact list. Data must be sent as an <em class="mimetype">application/json</em>-encoded
+dictionary with the required field <tt class="docutils literal"><span class="pre">name</span></tt>.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="getting-contact-list-details">
+<h3>Getting contact list details<a class="headerlink" href="#getting-contact-list-details" title="Permalink to this headline">¶</a></h3>
+<dl class="get">
+<dt id="get--api-v2-contact-lists--id-">
+<tt class="descname">GET </tt><tt class="descname">/api/v2/contact-lists/:id/</tt><a class="headerlink" href="#get--api-v2-contact-lists--id-" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns details for a contact list.</p>
+<p>Sample response:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+  <span class="s">&quot;list&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s">&quot;uri&quot;</span><span class="p">:</span> <span class="s">&quot;http://app.fluidsurveys.com/api/v2/contact-lists/1/&quot;</span><span class="p">,</span>
+    <span class="s">&quot;contacts_uri&quot;</span><span class="p">:</span> <span class="s">&quot;http://app.fluidsurveys.com/api/v2/contact-lists/1/contacts/&quot;</span><span class="p">,</span>
+    <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;People with Silly Walks&quot;</span><span class="p">,</span>
+    <span class="s">&quot;contacts&quot;</span><span class="p">:</span> <span class="mi">10</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="getting-contacts">
+<h3>Getting contacts<a class="headerlink" href="#getting-contacts" title="Permalink to this headline">¶</a></h3>
+<dl class="get">
+<dt id="get--api-v2-contact-lists--id-contacts-">
+<tt class="descname">GET </tt><tt class="descname">/api/v2/contact-lists/:id/contacts/</tt><a class="headerlink" href="#get--api-v2-contact-lists--id-contacts-" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the contacts that are part of the given contact list. This method takes the
+same arguments as <a class="reference internal" href="#get--api-v2-contacts-" title="GET /api/v2/contacts/"><tt class="xref http http-get docutils literal"><span class="pre">/api/v2/contacts/</span></tt></a>.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="adding-contacts">
+<h3>Adding contacts<a class="headerlink" href="#adding-contacts" title="Permalink to this headline">¶</a></h3>
+<dl class="post">
+<dt id="post--api-v2-contact-lists--id-contacts-">
+<tt class="descname">POST </tt><tt class="descname">/api/v2/contact-lists/:id/contacts/</tt><a class="headerlink" href="#post--api-v2-contact-lists--id-contacts-" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds contacts to a contact list. There are three ways to add contacts:</p>
+<ol class="arabic simple">
+<li>A POST parameter <tt class="docutils literal"><span class="pre">contact_list</span></tt> containing the identifier of a contact list to
+add.</li>
+<li><em class="mimetype">multipart/form-data</em>-encoded data containing the key <tt class="docutils literal"><span class="pre">contacts</span></tt> with
+a list of identifiers of contacts to add.</li>
+<li>Use the same parameters as for <tt class="xref http http-post docutils literal"><span class="pre">/api/v2/contacts/</span></tt>,
+which will create the contact and add it directly to the list.</li>
+</ol>
+</dd></dl>
+
+</div>
+<div class="section" id="removing-contacts">
+<h3>Removing contacts<a class="headerlink" href="#removing-contacts" title="Permalink to this headline">¶</a></h3>
+<dl class="delete">
+<dt id="delete--api-v2-contact-lists--id-contacts-">
+<tt class="descname">DELETE </tt><tt class="descname">/api/v2/contact-lists/:id/contacts/</tt><a class="headerlink" href="#delete--api-v2-contact-lists--id-contacts-" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes contacts from the specified contact list.</p>
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="emails">
+<h2>Emails<a class="headerlink" href="#emails" title="Permalink to this headline">¶</a></h2>
+<p>FluidSurveys allows sending scheduled emails to contacts through the API. Once an email
+is created, its recipients can be changed using the recipients API endpoint. Each contact
+will only receive a single unique invite code per survey. To allow contacts to give
+multiple responses to the same survey, you must use different collectors.</p>
+<div class="section" id="creating-a-new-email">
+<h3>Creating a new email<a class="headerlink" href="#creating-a-new-email" title="Permalink to this headline">¶</a></h3>
+<dl class="post">
+<dt id="post--api-v2-emails-">
+<tt class="descname">POST </tt><tt class="descname">/api/v2/emails/</tt><a class="headerlink" href="#post--api-v2-emails-" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a new email. Data must be sent as an <em class="mimetype">application/json</em>-encoded
+dictionary.  Which must included the fields <tt class="docutils literal"><span class="pre">subject</span></tt>, <tt class="docutils literal"><span class="pre">sender</span></tt>, and <tt class="docutils literal"><span class="pre">message</span></tt>.</p>
+<p><tt class="docutils literal"><span class="pre">Sender</span></tt> must be in the form <tt class="docutils literal"><span class="pre">&quot;Name</span> <span class="pre">&lt;email&#64;example.com&gt;&quot;</span></tt> and <tt class="docutils literal"><span class="pre">message</span></tt> must include the string &#8220;<tt class="docutils literal"><span class="pre">[Invite</span> <span class="pre">Link]</span></tt>&#8221; in it.  This token is replaced with the URL at which the recipient may take the survey.</p>
+<p>Sample request:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+  <span class="s">&quot;subject&quot;</span><span class="p">:</span> <span class="s">&quot;Email subject&quot;</span><span class="p">,</span>
+  <span class="s">&quot;sender&quot;</span><span class="p">:</span> <span class="s">&quot;John Doe &lt;john@google.com&gt;&quot;</span><span class="p">,</span>
+  <span class="s">&quot;message&quot;</span><span class="p">:</span> <span class="s">&quot;Dear [Full Name],</span><span class="se">\n\n</span><span class="s">Message body: [Invite Link]&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="getting-email-details">
+<h3>Getting email details<a class="headerlink" href="#getting-email-details" title="Permalink to this headline">¶</a></h3>
+<dl class="get">
+<dt id="get--api-v2-emails--id-">
+<tt class="descname">GET </tt><tt class="descname">/api/v2/emails/:id/</tt><a class="headerlink" href="#get--api-v2-emails--id-" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets details for an email.</p>
+<p>Sample response:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+  <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="s">&quot;status&quot;</span><span class="p">:</span> <span class="s">&quot;sent&quot;</span><span class="p">,</span>
+  <span class="s">&quot;sender&quot;</span><span class="p">:</span> <span class="s">&quot;&quot;</span><span class="p">,</span>
+  <span class="s">&quot;subject&quot;</span><span class="p">:</span> <span class="s">&quot;Email subject&quot;</span><span class="p">,</span>
+  <span class="s">&quot;message&quot;</span><span class="p">:</span> <span class="s">&quot;Dear [Full Name],</span><span class="se">\n\n</span><span class="s">Message body: [Invite Link]&quot;</span><span class="p">,</span>
+  <span class="s">&quot;uri&quot;</span><span class="p">:</span> <span class="s">&quot;http://app.fluidsurveys.com/api/v2/emails/1/&quot;</span><span class="p">,</span>
+  <span class="s">&quot;send_uri&quot;</span><span class="p">:</span> <span class="s">&quot;http://app.fluidsurveys.com/api/v2/emails/1/send/&quot;</span><span class="p">,</span>
+  <span class="s">&quot;recipients_uri&quot;</span><span class="p">:</span> <span class="s">&quot;http://app.fluidsurveys.com/api/v2/emails/1/recipients/&quot;</span><span class="p">,</span>
+  <span class="s">&quot;num_recipients&quot;</span><span class="p">:</span> <span class="mi">5</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="deleting-an-email">
+<h3>Deleting an email<a class="headerlink" href="#deleting-an-email" title="Permalink to this headline">¶</a></h3>
+<dl class="delete">
+<dt id="delete--api-v2-emails--id-">
+<tt class="descname">DELETE </tt><tt class="descname">/api/v2/emails/:id/</tt><a class="headerlink" href="#delete--api-v2-emails--id-" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes a scheduled email.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="getting-recipients">
+<h3>Getting recipients<a class="headerlink" href="#getting-recipients" title="Permalink to this headline">¶</a></h3>
+<dl class="get">
+<dt id="get--api-v2-emails--id-recipients-">
+<tt class="descname">GET </tt><tt class="descname">/api/v2/emails/:id/recipients/</tt><a class="headerlink" href="#get--api-v2-emails--id-recipients-" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the contacts that are recipients for the specified email. This method takes
+the same arguments as <a class="reference internal" href="#get--api-v2-contacts-" title="GET /api/v2/contacts/"><tt class="xref http http-get docutils literal"><span class="pre">/api/v2/contacts/</span></tt></a>.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="adding-recipients">
+<h3>Adding recipients<a class="headerlink" href="#adding-recipients" title="Permalink to this headline">¶</a></h3>
+<dl class="post">
+<dt id="post--api-v2-emails--id-recipients-">
+<tt class="descname">POST </tt><tt class="descname">/api/v2/emails/:id/recipients/</tt><a class="headerlink" href="#post--api-v2-emails--id-recipients-" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds recipients to an email. This method takes the same arguments as
+<a class="reference internal" href="#post--api-v2-contact-lists--id-contacts-" title="POST /api/v2/contact-lists/:id/contacts/"><tt class="xref http http-post docutils literal"><span class="pre">/api/v2/contact-lists/:id/contacts/</span></tt></a>.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="removing-recipients">
+<h3>Removing recipients<a class="headerlink" href="#removing-recipients" title="Permalink to this headline">¶</a></h3>
+<dl class="delete">
+<dt id="delete--api-v2-emails--id-recipients-">
+<tt class="descname">DELETE </tt><tt class="descname">/api/v2/emails/:id/recipients/</tt><a class="headerlink" href="#delete--api-v2-emails--id-recipients-" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes recipients from an email.</p>
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div>Let&#8217;s write a quick python script to create a contact and add them to an email:</div></blockquote>
+<div class="section" id="set-up">
+<h3>Set up<a class="headerlink" href="#set-up" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>We will be using the <strong>requests</strong> module to easily handle the details of HTTP requests. You can find out more about it at <a class="reference external" href="http://docs.python-requests.org">http://docs.python-requests.org</a>.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">requests</span><span class="o">,</span> <span class="nn">json</span>
+</pre></div>
+</div>
+<p>We are also using the built in <strong>json</strong> module to send and receive all the json data we will be working with.  We will also need your API key (which you can find on your FluidSurveys settings page) and your password.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">API_KEY</span> <span class="o">=</span> <span class="s">&#39;ABCDEFGHIJKLMNOPQRSTUVWXYZ&#39;</span>
+<span class="n">PASSWORD</span> <span class="o">=</span> <span class="s">&#39;password&#39;</span>
+</pre></div>
+</div>
+<p>We&#8217;ll also save the base URI and Headers in some variables:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;Content-Type&quot;</span><span class="p">:</span> <span class="s">&quot;application/json&quot;</span><span class="p">}</span>
+<span class="n">URI</span> <span class="o">=</span> <span class="s">&#39;https://app.fluidsurveys.com/api/v2/&#39;</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="create-a-contact">
+<h3>Create a Contact<a class="headerlink" href="#create-a-contact" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>To create a contact all we need is a <em>name</em> and <em>e-mail</em>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">payload</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;name&quot;</span><span class="p">:</span><span class="s">&quot;John Doe&quot;</span><span class="p">,</span> <span class="s">&quot;email&quot;</span><span class="p">:</span><span class="s">&quot;johndoe@gmail.com&quot;</span><span class="p">}</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">URI</span><span class="o">+</span><span class="s">&#39;contacts/&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">payload</span><span class="p">),</span>
+        <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="p">(</span><span class="n">api_key</span><span class="p">,</span> <span class="n">password</span><span class="p">))</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+<span class="n">contact_id</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="s">&#39;contact&#39;</span><span class="p">][</span><span class="s">&#39;id&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Here we set the data we are going to attach to our POST request in the variable <em>payload</em>.  We use the <strong>requests</strong> module&#8217;s <em>post</em> method with our headers, authentication details and our payload formatted as json.</p>
+<p>Note that you will get an error message if you try and add a contact that already exists.  We are <strong>not</strong> doing any error checking for the purposes of this example but of course, you always <strong>should</strong>.</p>
+</div></blockquote>
+</div>
+<div class="section" id="get-our-surveys">
+<h3>Get our Surveys<a class="headerlink" href="#get-our-surveys" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>A quick <tt class="docutils literal"><span class="pre">GET</span></tt> to <tt class="docutils literal"><span class="pre">/surveys/</span></tt> will return all our surveys.  We are just taking the first one here, but you can filter them however you would like:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">URI</span><span class="o">+</span><span class="s">&#39;surveys/&#39;</span><span class="p">,</span><span class="n">auth</span><span class="o">=</span><span class="p">(</span><span class="n">api_key</span><span class="p">,</span><span class="n">password</span><span class="p">))</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+<span class="n">survey_id</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="s">&#39;surveys&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s">&#39;id&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="create-an-email">
+<h3>Create an Email<a class="headerlink" href="#create-an-email" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>Your email request must include a <em>subject</em>, <em>sender</em>, and <em>message</em>.  The <em>message</em> must include the string <em>[Invite Link]</em> and the sender must be formatted as <tt class="docutils literal"><span class="pre">'Name</span> <span class="pre">&lt;email&#64;domain.com&gt;'</span></tt>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">payload</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;subject&quot;</span><span class="p">:</span><span class="s">&quot;Hello&quot;</span><span class="p">,</span>
+        <span class="s">&quot;message&quot;</span><span class="p">:</span><span class="s">&quot;Hi, [Full Name], check out our survey: [Invite Link]!&quot;</span><span class="p">,</span>
+        <span class="s">&quot;sender&quot;</span><span class="p">:</span><span class="s">&quot;Me &lt;me@example.com&gt;&quot;</span>
+        <span class="p">}</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">URL</span><span class="o">+</span><span class="s">&#39;emails/?survey=</span><span class="si">%d</span><span class="s">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">survey_id</span><span class="p">,),</span>
+        <span class="n">data</span><span class="o">=</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">payload</span><span class="p">),</span>
+        <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="p">(</span><span class="n">api_key</span><span class="p">,</span><span class="n">password</span><span class="p">))</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+<span class="n">send_uri</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="s">&#39;send_uri&#39;</span><span class="p">]</span>
+<span class="n">email_id</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="s">&#39;id&#39;</span><span class="p">]</span>
+<span class="n">recipients_uri</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="s">&#39;recipients_uri&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>The response returns uris for adding recipients and sending the email which we will use to finish our script.</p>
+</div></blockquote>
+</div>
+<div class="section" id="add-contact-to-email">
+<h3>Add Contact to Email<a class="headerlink" href="#add-contact-to-email" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>We do not need to send a single contact as json, we can simply <tt class="docutils literal"><span class="pre">POST</span></tt>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">recipients_uri</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="s">&#39;contacts=</span><span class="si">%d</span><span class="s">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">contact_id</span><span class="p">,),</span>
+        <span class="n">auth</span><span class="o">=</span><span class="p">(</span><span class="n">api_key</span><span class="p">,</span><span class="n">password</span><span class="p">))</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="send-email">
+<h3>Send Email<a class="headerlink" href="#send-email" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>Sending the email is just as easy, just <em>POST</em> to the send_uri we got when we created the email:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">send_uri</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">&quot;Content-Length&quot;</span><span class="p">:</span> <span class="s">&#39;0&#39;</span><span class="p">},</span>
+        <span class="n">auth</span><span class="o">=</span><span class="p">(</span><span class="n">api_key</span><span class="p">,</span><span class="n">password</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Note we have to specifiy <tt class="docutils literal"><span class="pre">Content-Length</span> <span class="pre">=</span> <span class="pre">0</span></tt> in the headers when were are POSTing no data.  If everything went as planned you should get a response similar to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+        <span class="s">u&#39;status&#39;</span><span class="p">:</span> <span class="s">u&#39;scheduled&#39;</span><span class="p">,</span>
+        <span class="s">u&#39;scheduled&#39;</span><span class="p">:</span> <span class="s">u&#39;2012-01-26T22:51:29Z&#39;</span><span class="p">,</span>
+        <span class="s">u&#39;sender&#39;</span><span class="p">:</span> <span class="s">u&#39;Me &lt;me@example.com&gt;&#39;</span><span class="p">,</span>
+        <span class="s">u&#39;footer&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">,</span>
+        <span class="s">u&#39;created_at&#39;</span><span class="p">:</span> <span class="s">u&#39;2012-01-26T22:46:28Z&#39;</span><span class="p">,</span>
+        <span class="s">u&#39;num_recipients&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s">u&#39;updated_at&#39;</span><span class="p">:</span> <span class="s">u&#39;2012-01-26T22:46:28Z&#39;</span><span class="p">,</span>
+        <span class="s">u&#39;message&#39;</span><span class="p">:</span> <span class="s">u&#39;Hi, [Full Name], check out our survey: [Invite Link]!&#39;</span><span class="p">,</span>
+        <span class="s">u&#39;id&#39;</span><span class="p">:</span> <span class="mi">25206</span><span class="p">,</span>
+        <span class="s">u&#39;subject&#39;</span><span class="p">:</span> <span class="s">u&#39;Hello&#39;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="source">
+<h3>Source<a class="headerlink" href="#source" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>Download the source file:</p>
+<p><a class="reference external" href="https://raw.github.com/chideit/fluidsurveys-docs/master/samples/email_contact/email_contact.py">Python</a>  <a class="reference external" href="https://raw.github.com/chideit/fluidsurveys-docs/master/samples/email_contact/email_contact.php">PHP</a></p>
+</div></blockquote>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Invites and Email API</a><ul>
+<li><a class="reference internal" href="#contacts">Contacts</a><ul>
+<li><a class="reference internal" href="#getting-a-list-of-contacts">Getting a list of contacts</a></li>
+<li><a class="reference internal" href="#creating-a-contact">Creating a contact</a></li>
+<li><a class="reference internal" href="#getting-contact-details">Getting contact details</a></li>
+<li><a class="reference internal" href="#deleting-a-contact">Deleting a contact</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#contact-lists">Contact Lists</a><ul>
+<li><a class="reference internal" href="#getting-contact-lists">Getting contact lists</a></li>
+<li><a class="reference internal" href="#creating-a-contact-list">Creating a contact list</a></li>
+<li><a class="reference internal" href="#getting-contact-list-details">Getting contact list details</a></li>
+<li><a class="reference internal" href="#getting-contacts">Getting contacts</a></li>
+<li><a class="reference internal" href="#adding-contacts">Adding contacts</a></li>
+<li><a class="reference internal" href="#removing-contacts">Removing contacts</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#emails">Emails</a><ul>
+<li><a class="reference internal" href="#creating-a-new-email">Creating a new email</a></li>
+<li><a class="reference internal" href="#getting-email-details">Getting email details</a></li>
+<li><a class="reference internal" href="#deleting-an-email">Deleting an email</a></li>
+<li><a class="reference internal" href="#getting-recipients">Getting recipients</a></li>
+<li><a class="reference internal" href="#adding-recipients">Adding recipients</a></li>
+<li><a class="reference internal" href="#removing-recipients">Removing recipients</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#example">Example</a><ul>
+<li><a class="reference internal" href="#set-up">Set up</a></li>
+<li><a class="reference internal" href="#create-a-contact">Create a Contact</a></li>
+<li><a class="reference internal" href="#get-our-surveys">Get our Surveys</a></li>
+<li><a class="reference internal" href="#create-an-email">Create an Email</a></li>
+<li><a class="reference internal" href="#add-contact-to-email">Add Contact to Email</a></li>
+<li><a class="reference internal" href="#send-email">Send Email</a></li>
+<li><a class="reference internal" href="#source">Source</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../http-routingtable.html" title="HTTP Routing Table"
+             >routing table</a> |</li>
+        <li class="right" >
+          <a href="tutorial.html" title="Tutorial"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="surveys.html" title="Surveys API"
+             >previous</a> |</li>
+        <li><a href="../index.html">FluidSurveys 4.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012, FluidSurveys.
+    </div>
+  </body>
+</html>

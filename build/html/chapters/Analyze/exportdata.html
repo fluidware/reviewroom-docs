@@ -1,0 +1,345 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Export Data &mdash; FluidSurveys 4.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="FluidSurveys 4.0 documentation" href="../../index.html" />
+    <link rel="up" title="Analyze" href="index.html" />
+    <link rel="next" title="&lt;no title&gt;" href="../Tutorials/index.html" />
+    <link rel="prev" title="Responses" href="responsetable.html" />
+	 
+	<script type="text/javascript" src="http://use.typekit.com/hfr5qlq.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+  </head>
+  <body>
+	<div class="top-bar">
+		<div class="center">
+			<span class="logo"><a href="/">FluidSurveys Documentation</a></span>
+		</div>
+	</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../http-routingtable.html" title="HTTP Routing Table"
+             >routing table</a> |</li>
+        <li class="right" >
+          <a href="../Tutorials/index.html" title="&lt;no title&gt;"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="responsetable.html" title="Responses"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">FluidSurveys 4.0 documentation</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">Analyze</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="export-data">
+<h1>Export Data<a class="headerlink" href="#export-data" title="Permalink to this headline">¶</a></h1>
+<p>For all the data buffs out there, the final piece in the mosaic is the exporting of data which allows for further manipulation external to FluidSurveys.</p>
+<div class="section" id="export-survey-questions">
+<h2>Export Survey Questions<a class="headerlink" href="#export-survey-questions" title="Permalink to this headline">¶</a></h2>
+<p>Exporting Survey Questions to an editable format, such as Microsoft Word (.Doc) or Adobe Reader (.PDF) files is an available option as it allows for a survey to be taken Offline at a conference hall.</p>
+<p>You’ll then have the option of exporting the survey questions into a .DOC or .PDF file. With .DOC files, the questions will remain editable and you will be able to modify the titles/formatting in a word editor.</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/export_survey_questions.png"><img alt="" class="screenshot" src="../../_images/export_survey_questions.png" style="width: 660.8px; height: 140.0px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Report Dashboard</p>
+</div>
+<p>Furthermore,</p>
+<p>You can specify advanced options for the PDF export (show branching conditions, looping information, etc) by clicking on “Show Advanced Options” and checking off the desired options</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="35%" />
+<col width="65%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">General Options</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><ol class="first last arabic simple">
+<li>Display title and description at the top of the document</li>
+</ol>
+</td>
+<td>Show the Survey Title and Description at the top of the exported questions document. By default, this option is enabled</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="2">
+<li>Create a new page in the document for every page</li>
+</ol>
+</td>
+<td>When a page contains more questions than can fit onto a page, it will bleed over onto additional pages. While this option does not prevent that, it will create a new page for every page in the survey. By default, this option is enabled.</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils">
+<colgroup>
+<col width="35%" />
+<col width="65%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Page Options</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><ol class="first last arabic simple">
+<li>Show page numbers</li>
+</ol>
+</td>
+<td>Display the survey page number on the bottom right. By default, this option is enabled</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="2">
+<li>Show looping information on pages that are looped</li>
+</ol>
+</td>
+<td>A survey online can contain looping and branching logic, which can be translated onto paper. While it may make little to no sense, this option can be disabled. By default, this option is enabled</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="3">
+<li>Show branching information on apges that have branching logic</li>
+</ol>
+</td>
+<td>This has the same affect has as item 2. By default, this option is enabled</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils">
+<colgroup>
+<col width="35%" />
+<col width="65%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Question Options</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><ol class="first last arabic simple">
+<li>Show question ID&#8217;s</li>
+</ol>
+</td>
+<td>A question that has a unique identifier, ie., &#8220;q1&#8221;, can be shown on a printed survey. By default, this option is enabled</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="2">
+<li>Show a looping icon beside questions that contain looping</li>
+</ol>
+</td>
+<td>If a question has looping, it will have a looping icon beside it if this option is enabled. By default, this option is disabled</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="3">
+<li>Show select box choices as radio buttons instead of bullets</li>
+</ol>
+</td>
+<td>In order to maintain a consistency between online and offline, the ability to have checkboxes look like actual boxes as opposed to a bullet, is a possibility by enabling said option. By default, this option is disabled</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="export-language">
+<h3>Export Language<a class="headerlink" href="#export-language" title="Permalink to this headline">¶</a></h3>
+<a class="screenshot reference internal image-reference" href="../../_images/export_language.png"><img alt="Change Language" class="screenshot align-right" src="../../_images/export_language.png" style="width: 117.6px; height: 54.6px;" /></a>
+<p>If your survey contains multiple languages, then exporting the data into the right language would alternatively make sense. Before exporting the data, select the desired language from the dropdown located to the right of &#8220;Export Responses&#8221; and then &#8220;Export to CSV&#8221; which will export that languages data.</p>
+</div>
+</div>
+<div class="section" id="export-responses">
+<h2>Export Responses<a class="headerlink" href="#export-responses" title="Permalink to this headline">¶</a></h2>
+<p>Exporting survey responses is a perfect opportunity for a surveyor to begin creating large scale informative graphs within a 3rd party application such as Microsoft Excel.
+The results can be exported to either Microsoft Excel (.CSV) or IBM (.SPSS)</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/export_responses.png"><img alt="Export Responses" class="screenshot" src="../../_images/export_responses.png" style="width: 661.5px; height: 141.4px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Export Responses section in the Analyze section</p>
+</div>
+<table border="1" class="docutils">
+<colgroup>
+<col width="35%" />
+<col width="65%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Question Options</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><ol class="first last arabic simple">
+<li>Separate values with commas (defaults to tab-separated for Excel compatibility)</li>
+</ol>
+</td>
+<td>Checking this option will put each question type in a separate column</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="2">
+<li>Split into multiple files (if exporting more than 255 columns into Excel 2003 and earlier)</li>
+</ol>
+</td>
+<td>Surveys with more than 255 questions may break early versions of Excel. Check this option to prevent that. The responses will be exported in multiple files.</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="3">
+<li>Use scores as labels (show score instead of text for multiple choice questions)</li>
+</ol>
+</td>
+<td>Questions with custom score values are shown instead of the word, eg., 0 instead of No.</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="4">
+<li>Include identifiers in headers (for response import)</li>
+</ol>
+</td>
+<td>Questions with identifiers will be added as titles in the csv file. (Ex: [q1] A question?).</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="5">
+<li>Include unique identifiers for each row (per response)</li>
+</ol>
+</td>
+<td>Questions with identifiers will show along with the questions.</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="6">
+<li>Export questions on separate rows (for database import)</li>
+</ol>
+</td>
+<td>Instead of putting questions in columns, the questions will be on rows.</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="7">
+<li>Replace newline characters with n (Resolve compatibility issues with certain software)</li>
+</ol>
+</td>
+<td>By default, [Enter] is a newline. However, some spreadsheet applications have an issue with the button, and therefore n is used instead</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="8">
+<li>Replace newline characters with spaces</li>
+</ol>
+</td>
+<td>Some spreadsheet applications require that a space is used to separate data as opposed to a newline. Enabling this option will allow for the exported data to play nicely with said application</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="9">
+<li>Include a link to view/edit this response</li>
+</ol>
+</td>
+<td>Instead of sifting through online responses via the Response Table, enabling this option will provide the online version of said individuals responses</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">By default, there are no selected Advanced Export Options.</p>
+</div>
+<div class="section" id="filter">
+<h3>Filter<a class="headerlink" href="#filter" title="Permalink to this headline">¶</a></h3>
+<p>Exported data will adhere to any currently selected Filters. Therefore, setting the Filter beforehand, and then exporting the information, allows for a tight-nit group of specifically requested information, as opposed to all response data. The Filter in Export Data works exactly as the filter found everywhere else in FluidSurveys.</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/filter.png"><img alt="Filter" class="screenshot" src="../../_images/filter.png" style="width: 595.7px; height: 351.4px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Report Dashboard</p>
+</div>
+</div>
+<div class="section" id="export-to-spss-sav">
+<h3>Export to SPSS (SAV)<a class="headerlink" href="#export-to-spss-sav" title="Permalink to this headline">¶</a></h3>
+<p>One of the numerous export options available in FluidSurveys is Export to SPSS. SPSS is an advanced statistical analytics program that can be used to perform further analysis on your collected data.</p>
+<p>First and foremost, before exporting results into SPSS, you’ll want to make sure that your questions have the appropriate labels and that your choices have the appropriate scores associated with them.</p>
+<p>You can easily add labels to any question in your survey. By default, there is a green link that says “No Identifier” right next to the question title. If you click on this, you’ll be able to change the label of the question.</p>
+<p>Choice options are by default scored with increasing values, beginning at 1. The first choice in a set will have a score of 1, the second a score of 2, and so on. You can modify the score of each choice by selecting the “Score” links underneath the “Choice” text field, and then assigning a custom score to each variable.</p>
+<p>Once you have defined your labels and scores (i.e. coded your survey), you can proceed to the export.</p>
+<p>Head over into the Analytics section of your survey, select “Export” from the top right menu, and click on “Export to SPSS”. A .zip file containing a .sps script and a response.txt file will download.</p>
+<p>Once the file has downloaded, you’ll need to make a slight modification to the “script.sps” file. Open it in an HTML compatible text editor (Notepad, for example), and locate the string that says /File=’responses.txt’. Change the ‘responses.txt” portion to reflect the actual location of the file. For example, if the file was downloaded to your Downloads folder, you’d change it to: /FILE=’C:UsersDownloadsresponses.txt’. Save the file once and the change will be made.</p>
+<p>You’ll now be able to run your script.sps file by double-clicking on it. When you do, SPSS will open and you’ll see your script. Just click on the Run menu then click on “Run all”, and all of your response data will appear in SPSS.</p>
+</div>
+</div>
+<div class="section" id="export-survey-invites">
+<h2>Export Survey Invites<a class="headerlink" href="#export-survey-invites" title="Permalink to this headline">¶</a></h2>
+<p>As an survey matures, and the Invite tool is utilized, dissecting who received an invite or not may be golden opportunity to figure out who&#8217;s left.</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/export_invites.png"><img alt="Export Survey Invites" class="screenshot" src="../../_images/export_invites.png" style="width: 660.8px; height: 98.0px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Export Survey Invites</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Exporting Survey Invites will export all individuals within the Address Book, including those that may not have been sent a survey invite. It is simple to distingiush between those that have, or have not received an invite, by verifying that the Invite URL contains /?code=None, but also their Status is blank.</p>
+</div>
+<div class="section" id="collector">
+<h3>Collector<a class="headerlink" href="#collector" title="Permalink to this headline">¶</a></h3>
+<a class="screenshot reference internal image-reference" href="../../_images/export_collector.png"><img alt="Change Collector" class="screenshot align-right" src="../../_images/export_collector.png" style="width: 189.7px; height: 112.7px;" /></a>
+<p>Invites can be sent using a different Collector, eg., Teachers, Students, etc., and therefore sifting through all Survey Invites, it is advantageous to simply select the appropriate Collector group, eg., Students, which will only export Survey Invites for survey invites sent for that collector.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Export Data</a><ul>
+<li><a class="reference internal" href="#export-survey-questions">Export Survey Questions</a><ul>
+<li><a class="reference internal" href="#export-language">Export Language</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#export-responses">Export Responses</a><ul>
+<li><a class="reference internal" href="#filter">Filter</a></li>
+<li><a class="reference internal" href="#export-to-spss-sav">Export to SPSS (SAV)</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#export-survey-invites">Export Survey Invites</a><ul>
+<li><a class="reference internal" href="#collector">Collector</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../http-routingtable.html" title="HTTP Routing Table"
+             >routing table</a> |</li>
+        <li class="right" >
+          <a href="../Tutorials/index.html" title="&lt;no title&gt;"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="responsetable.html" title="Responses"
+             >previous</a> |</li>
+        <li><a href="../../index.html">FluidSurveys 4.0 documentation</a> &raquo;</li>
+          <li><a href="index.html" >Analyze</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012, FluidSurveys.
+    </div>
+  </body>
+</html>

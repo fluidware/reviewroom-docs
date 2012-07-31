@@ -1,0 +1,1136 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Question Options &mdash; FluidSurveys 4.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="FluidSurveys 4.0 documentation" href="../../index.html" />
+    <link rel="up" title="Editor" href="index.html" />
+    <link rel="next" title="Advanced Survey Features" href="advancedfeatures.html" />
+    <link rel="prev" title="Advanced Questions" href="advancedquestions.html" />
+	 
+	<script type="text/javascript" src="http://use.typekit.com/hfr5qlq.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+  </head>
+  <body>
+	<div class="top-bar">
+		<div class="center">
+			<span class="logo"><a href="/">FluidSurveys Documentation</a></span>
+		</div>
+	</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../http-routingtable.html" title="HTTP Routing Table"
+             >routing table</a> |</li>
+        <li class="right" >
+          <a href="advancedfeatures.html" title="Advanced Survey Features"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="advancedquestions.html" title="Advanced Questions"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">FluidSurveys 4.0 documentation</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">Editor</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="question-options">
+<span id="id1"></span><h1>Question Options<a class="headerlink" href="#question-options" title="Permalink to this headline">¶</a></h1>
+<p>This chapter will teach you how to:</p>
+<ul class="simple">
+<li>Randomize questions on a page</li>
+<li>Set the border of a question</li>
+<li>Change the default Scores for Choices and Variables</li>
+<li>Enable text Validation input</li>
+<li>Learn the specifics of the Editors question types options</li>
+</ul>
+<div class="section" id="randomize">
+<h2>Randomize<a class="headerlink" href="#randomize" title="Permalink to this headline">¶</a></h2>
+<p>By default, questions on a survey page are held in the same place on each and every page load. However, there is an option that can do the opposite. You can randomize the questions on a survey page so that every respondent sees them in a different, and random, order.</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/randomize_choices.png"><img alt="Randomize questions on the page" class="screenshot" src="../../_images/randomize_choices.png" style="width: 229.6px; height: 345.8px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Randomize choices on the page</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">By default, &#8220;Randomize questions on this page&#8221; is disabled</p>
+</div>
+<table border="1" class="docutils">
+<colgroup>
+<col width="30%" />
+<col width="70%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Option</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><ol class="first last arabic simple">
+<li>Randomize questions</li>
+</ol>
+</td>
+<td>Check this option if you would like the questions on this page to be shown in a random order every time this survey is taken.</td>
+</tr>
+</tbody>
+</table>
+<p>Coincidentally enough, loading the survey for the first time presented the questions in their appropriate outline.</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/pre_random.png"><img alt="Before randomizing questions on the page" class="screenshot" src="../../_images/pre_random.png" style="width: 623.0px; height: 395.5px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Questions not yet randomized</p>
+</div>
+<p>However, after loading the survey a second time, the questions &#8220;What are your favorite styles of Jazz? (select all that apply)&#8221; and &#8220;Who&#8217;s your favorite Jazz artist?&#8221; are flipped</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/post_random.png"><img alt="After randomizing questions on the page" class="screenshot" src="../../_images/post_random.png" style="width: 623.0px; height: 395.5px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Questions randomized on the page</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The Section Header will never randomize as it allows for an Administrator to outline specific containers on the page</p>
+</div>
+</div>
+<div class="section" id="alphabetize">
+<h2>Alphabetize<a class="headerlink" href="#alphabetize" title="Permalink to this headline">¶</a></h2>
+<p>By default, choices/variables appear in the order they were entered. Therefore, if B is put before A, the system will not auto-correct it. &#8220;Alphabetize&#8221; will automagically sort the choices/variables for you, without losing your data.</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/alphabetize_text_response.png"><img alt="Alphabetize option for a Text Response" class="screenshot" src="../../_images/alphabetize_text_response.png" style="width: 228.2px; height: 133.0px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Alphabetize option in the Editor for a Text Response</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">By default, &#8220;Alphabetize&#8221; is disabled</p>
+</div>
+<p><strong>Alphabetize is available to the following question types:</strong></p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Checkbox</li>
+<li>Multiple Choice</li>
+<li>Dropdown</li>
+<li>Text Response Grid</li>
+<li>Multiple Choice Grid</li>
+<li>Dropdown Grid</li>
+<li>Checkbox Grid</li>
+<li>Dropdown within a N-atrix</li>
+<li>Radio Buttons within a N-atrix</li>
+<li>Dropdown within a 3D Matrix</li>
+<li>Radio Buttons within a 3D Matrix</li>
+<li>Semantic Differential</li>
+</ol>
+</div></blockquote>
+<p>The option is available under &#8220;Options&#8221; found in the floating editor box on the left-hand side.</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/notalpha_toalpha.png"><img alt="Not-Alphabetized to Alphabetized" class="screenshot" src="../../_images/notalpha_toalpha.png" style="width: 588.0px; height: 154.0px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Non-alphabetized to alphabetized questions</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">When a survey is live, and has already received numerous responses, but you realize there is a choice missing, ie., &#8220;District of Columbia&#8221;, do not add the choice in its appropriate spot. Instead, enable the option, &#8220;Alphabetize&#8221;. The respondent will see the &#8220;District of Columbia&#8221; in its appropriate slot, without causing any harm to your sensitive, and needed data.</p>
+</div>
+</div>
+<div class="section" id="side-by-side">
+<h2>Side-By-Side<a class="headerlink" href="#side-by-side" title="Permalink to this headline">¶</a></h2>
+<p>Side-by-side allows you to place 2 questions beside each other in separate columns. Only 2 questions can be added side-by-side, even if the survey width was altered through CSS to be 100%. There can instances when the display side-by-side will not work, such as the case when the question being condensed has a fixed width, eg., 70, which would break the outline</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/side-by-side_option.png"><img alt="Side-by-side" class="screenshot" src="../../_images/side-by-side_option.png" style="width: 227.5px; height: 135.1px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Side-by-side option in the Editor</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">By default, &#8220;Display side-by-side&#8221; is disabled</p>
+</div>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/side_by_side.png"><img alt="Not-Alphabetized to Alphabetized" class="screenshot" src="../../_images/side_by_side.png" style="width: 590.8px; height: 109.2px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Example of side-by-side</p>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">A common use of using &#8220;Side-by-Side&#8221; is to ask the respondent their level of satisfaction to a specific brand or product.</p>
+</div>
+</div>
+<div class="section" id="append-to-previous">
+<h2>Append to Previous<a class="headerlink" href="#append-to-previous" title="Permalink to this headline">¶</a></h2>
+<p>The song <em>&#8220;One is The Loneliest Number&#8221;</em> by <strong>Three Dog Night</strong> is no longer relevant with the Append to Previous option. In some cases, you would like to ask a respondent a sub-question that relates to the previous question. But, you would like to use a separate question type. Append to Previous allows for you to fulfill those desires, and still maintain a cognitive styling pattern across your survey, by making it look as though 3 questions are really 1.</p>
+<p>When the option, &#8220;Append to Previous&#8221; has been selected, the question will</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/text_response_append_to_previous.png"><img alt="Append to Previous for Text Response" class="screenshot" src="../../_images/text_response_append_to_previous.png" style="width: 227.5px; height: 136.5px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Example of 3 questions being appended to previous</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">By default, &#8220;Append to Previous&#8221; is disabled</p>
+</div>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/append_to_previous.png"><img alt="Append to Previous" class="screenshot" src="../../_images/append_to_previous.png" style="width: 567.0px; height: 287.0px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Example of 3 questions being appended to previous</p>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">You can chain together a series of questions to make them look like one. Simply select &#8220;Append to Previous&#8221; for all the questions that you&#8217;d like to stick to its predecessor.</p>
+</div>
+</div>
+<div class="section" id="width">
+<h2>Width<a class="headerlink" href="#width" title="Permalink to this headline">¶</a></h2>
+<p>There are 2 areas where the width plays a role in determining the overall aesthetic of a question.</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/column_width.png"><img alt="Column and width for Text Response" class="screenshot" src="../../_images/column_width.png" style="width: 231.0px; height: 474.6px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Width and Column width options for a Text Response</p>
+</div>
+<table border="1" class="docutils">
+<colgroup>
+<col width="30%" />
+<col width="70%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Option</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><ol class="first last arabic simple">
+<li>Column Width</li>
+</ol>
+</td>
+<td>You can control the amount of space reserve for the text area (column). The size is determined by the &#8220;Columns&#8221; number within the Editor for a question. The default value is 20 columns</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="2">
+<li>Width</li>
+</ol>
+</td>
+<td>If you want to cover less or more space on the web page, then edit the Percent width. This will either spread or condense the space it covers. Width percentage of the survey width that this         question will take up. If you&#8217;ve ever wanted to cover less, or more space on your survey, then editing the Percent width of a question will either spread, or condense the space it covers.
+The default value is 100%</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Column Width</strong></p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/column_normal_vs_width.png"><img alt="Column width" class="screenshot" src="../../_images/column_normal_vs_width.png" style="width: 596.4px; height: 116.9px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Text area with 75 column width, and one with the default column size of 20.</p>
+</div>
+<p><strong>Question Width</strong></p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/question_normal_vs_width.png"><img alt="Question width" class="screenshot" src="../../_images/question_normal_vs_width.png" style="width: 602.7px; height: 130.2px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Example of a question without width, and one 80% (survey size) with.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The background colour was changed for both question types to accurately represent the question width being altered within a default template.</p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">The width value for both a question, and the column will not be accurately reflected in the editor.</p>
+</div>
+</div>
+<div class="section" id="choices-variables">
+<h2>Choices/Variables<a class="headerlink" href="#choices-variables" title="Permalink to this headline">¶</a></h2>
+<p>Choices and Variables are the answers themselves to close and open-ended question.</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/choices_and_variables.png"><img alt="Choices and Variables" class="screenshot" src="../../_images/choices_and_variables.png" style="width: 216.3px; height: 221.9px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Choices and Variables for a Mulitple Choice Grid</p>
+</div>
+<table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Option</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><ol class="first last arabic simple">
+<li>Choices</li>
+</ol>
+</td>
+<td>Adding additional choices will increase the X-axis. Choice 1 and Choice 2, shown here, will appear on the X-axis (along the top of the question). Choices are commonly used as a means of better determining a respondents affinity toward a product, ie., &#8220;Like&#8221;, &#8220;Hate&#8221;, &#8220;N/A&#8221;, etc.</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="2">
+<li>Variables</li>
+</ol>
+</td>
+<td>Adding additional variables will increase the X-axis. Variable 1 and Variable 2, shown here, will appear on the Y-axis (along the side of the question). Variables are commonly used as a means conveying a certain product, ie., Apple, McDonalds, Telus, etc.</td>
+</tr>
+</tbody>
+</table>
+<p>Certain question types have specific options within the choices/variables that allow for a deeper integration of your desired goal and effect.</p>
+<p><strong>Checkbox Question Type Choices</strong></p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/cv_checkbox.png"><img alt="Chocies for a Checkbox" class="screenshot" src="../../_images/cv_checkbox.png" style="width: 216.3px; height: 211.4px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Choices for a Checkbox</p>
+</div>
+<table border="1" class="docutils">
+<colgroup>
+<col width="30%" />
+<col width="70%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Option</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><ol class="first last arabic simple">
+<li>Exclusive Choice</li>
+</ol>
+</td>
+<td>Enabling this option will force the choice to become the only selected option. When the respondent selects the choice, any previously selected choices will be automatically deselected in favour of this choice. By default, this option is disabled.</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="2">
+<li>Select All</li>
+</ol>
+</td>
+<td>Enabling this option will automatically select all choices in the question. By default, this option is disabled.</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="3">
+<li>Add Text Response</li>
+</ol>
+</td>
+<td>Enabling this option will put a text response beside the choice. The text response can have Validation applied. However, the width cannot be adjusted.</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="4">
+<li>Score</li>
+</ol>
+</td>
+<td>A score is what determines the weight for a Choice/Variable that can later be used during the Analytics phase. By default, this value is the value of the choices position, eg., Choice 1 is in the first slot, therefore the Score will be &#8220;1&#8221;. To learn more about &#8220;Scores&#8221;, refer to the &#8220;Scores&#8221; section of the manual.</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="5">
+<li>Add Other Choice</li>
+</ol>
+</td>
+<td>Clicking this button will create a choice that is, &#8220;Other, please specify&#8221; (which can be customized) along with a text response box. This is comparable to adding a text response to a choice.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Multiple Choice Question Type Choices</strong></p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/cv_multiplechoice.png"><img alt="Choices for Multiple Choice" class="screenshot" src="../../_images/cv_multiplechoice.png" style="width: 217.0px; height: 189.0px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Choices for a Mulitple Choice</p>
+</div>
+<table border="1" class="docutils">
+<colgroup>
+<col width="30%" />
+<col width="70%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Option</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><ol class="first last arabic simple">
+<li>Add Text Response</li>
+</ol>
+</td>
+<td>Enabling this option will put a text response beside the choice. The text response can have Validation applied. However, the width cannot be adjusted.</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="2">
+<li>Score</li>
+</ol>
+</td>
+<td>A score is what determines the weight for a Choice/Variable that can later be used during the Analytics phase. By default, this value is the value of the choices position, eg., Choice 1 is in the first slot, therefore the Score will be &#8220;1&#8221;. To learn more about &#8220;Scores&#8221;, refer to the &#8220;Scores&#8221; section of the manual.</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="3">
+<li>Branch To</li>
+</ol>
+</td>
+<td>If the user selects the Choice, then you can notify the software to branch the respondent down a different path. By default, all choices will lead to the next page.</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="4">
+<li>Add Other Choice</li>
+</ol>
+</td>
+<td>Clicking this button will create a choice that is, &#8220;Other, please specify&#8221; (which can be customized) along with a text response box. This is comparable to adding a text response to a choice.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Dropdown Question Type Choices</strong></p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/cv_dropdown.png"><img alt="Choices for a Dropdown" class="screenshot" src="../../_images/cv_dropdown.png" style="width: 216.3px; height: 147.0px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Choices for a Dropdown</p>
+</div>
+<table border="1" class="docutils">
+<colgroup>
+<col width="30%" />
+<col width="70%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Option</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><ol class="first last arabic simple">
+<li>Score</li>
+</ol>
+</td>
+<td>A score is what determines the weight for a Choice/Variable that can later be used during the Analytics phase. By default, this value is the value of the choices position, eg., Choice 1 is in the first slot, therefore the Score will be &#8220;1&#8221;. To learn more about &#8220;Scores&#8221;, refer to the &#8220;Scores&#8221; section of the manual.</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="2">
+<li>Branch to</li>
+</ol>
+</td>
+<td>If the user selects the Choice, then you can notify the software to branch the respondent down a different path. By default, all choices will lead to the next page.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Text Response Grid Question Type Choices</strong></p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/cv_textresponsegrid.png"><img alt="Choices and Variables" class="screenshot" src="../../_images/cv_textresponsegrid.png" style="width: 216.3px; height: 241.5px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Variables for a Text Response Grid</p>
+</div>
+<table border="1" class="docutils">
+<colgroup>
+<col width="30%" />
+<col width="70%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Option</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><ol class="first last arabic simple">
+<li>Optional</li>
+</ol>
+</td>
+<td>Determines whether the question is required in order to proceed through the survey, or not. By default, this option is enabled.</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="2">
+<li>Multiline</li>
+</ol>
+</td>
+<td>Commonly referred to as the &#8220;width&#8221; of a text area. If a large amount of text is required, then altering this value may be advantageous.. By default, the value is set to 20 columns.</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="3">
+<li>Validation</li>
+</ol>
+</td>
+<td>Determins the type of text that can be entered, eg., Currency will only allow &#8220;$19.99&#8221;. To learn more about &#8220;Validation&#8221;, refer to the &#8220;Validation&#8221; section of the manual.</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="4">
+<li>Initial Value</li>
+</ol>
+</td>
+<td>By default, the initial value is blank.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Dropdown Grid Question Type Choices and Variables</strong></p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/cv_dropdowngrid.png"><img alt="Chocies and Variables" class="screenshot" src="../../_images/cv_dropdowngrid.png" style="width: 219.8px; height: 248.5px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Choices and Variables for a Dropdown Grid</p>
+</div>
+<table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Option</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><ol class="first last arabic simple">
+<li>Score</li>
+</ol>
+</td>
+<td>A score is what determines the weight for a Choice/Variable that can later be used during the Analytics phase. By default, this value is the value of the choices position, eg., Choice 1 is in the first slot, therefore the Score will be &#8220;1&#8221;. To learn more about &#8220;Scores&#8221;, refer to the &#8220;Scores&#8221; section of the manual.</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="2">
+<li>Optional</li>
+</ol>
+</td>
+<td>Determines whether the question is required in order to proceed through the survey, or not. By default, this option is enabled.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Checkbox Grid Question Type Choices and Variables</strong></p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/cv_checkboxgrid.png"><img alt="Choices and Variables" class="screenshot" src="../../_images/cv_checkboxgrid.png" style="width: 217.7px; height: 250.6px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Choices and Variables for a Checkbox Grid</p>
+</div>
+<table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Option</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><ol class="first last arabic simple">
+<li>Score</li>
+</ol>
+</td>
+<td>A score is what determines the weight for a Choice/Variable that can later be used during the Analytics phase. By default, this value is the value of the choices position, eg., Choice 1 is in the first slot, therefore the Score will be &#8220;1&#8221;. To learn more about &#8220;Scores&#8221;, refer to the &#8220;Scores&#8221; section of the manual.</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="2">
+<li>Optional</li>
+</ol>
+</td>
+<td>Detemrins whether the question is required in order to proceed through the survey, or not. By default, this option is enabled.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>N-atrix Question Type Variables</strong></p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/cv_natrix.png"><img alt="Choices and Variables" class="screenshot" src="../../_images/cv_natrix.png" style="width: 215.6px; height: 281.4px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Choices and Variables for a N-atrix</p>
+</div>
+<table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Option</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Switch to type</td>
+<td><dl class="first last docutils">
+<dt>Since a N-atrix question type allows for it to contain more than 1 question type, you can alter which question type is available as a Variable. Available question types are</dt>
+<dd><ol class="first last arabic simple">
+<li>Dropdown</li>
+<li>Text Response</li>
+<li>Checkbox</li>
+<li>Radio Buttons</li>
+</ol>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>3D Matrix Question Type Choices</strong></p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/cv_3dmatrix.png"><img alt="Choices and Variables for a 3D Matrix" class="screenshot" src="../../_images/cv_3dmatrix.png" style="width: 215.6px; height: 555.8px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Choices and Variables for a 3D Matrix</p>
+</div>
+<table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Option</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Switch to type</td>
+<td><dl class="first last docutils">
+<dt>Since a N-atrix question type allows for it to contain more than 1 question type, you can alter which question type is available as a Variable. Available question types are</dt>
+<dd><ol class="first last arabic simple">
+<li>Dropdown</li>
+<li>Text Response</li>
+<li>Checkbox</li>
+<li>Radio Buttons</li>
+</ol>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="row-odd"><td>Dynamic Options</td>
+<td>When these are enabled for a specific choice, if the respondent clicks it, then the row can be disabled. By default, these choices are disabled.</td>
+</tr>
+<tr class="row-even"><td>Optional</td>
+<td>Detemrins whether the question is required in order to proceed through the survey, or not. By default, this option is enabled.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Drilldown Grid Question Type Choices</strong></p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/cv_drilldown.png"><img alt="Choices and Variables" class="screenshot" src="../../_images/cv_drilldown.png" style="width: 217.0px; height: 215.6px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Choices and Variables for a Drilldown Grid</p>
+</div>
+<table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Option</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Score</td>
+<td>A score is what determines the weight for a Choice/Variable that can later be used during the Analytics phase. By default, this value is the value of the choices position, eg., Choice 1 is in the first slot, therefore the Score will be &#8220;1&#8221;. To learn more about &#8220;Scores&#8221;, refer to the &#8220;Scores&#8221; section of the manual.</td>
+</tr>
+<tr class="row-odd"><td>Branch to</td>
+<td>If the user selects the Choice, then you can notify the software to branch the respondent down a different path. By default, all choices will lead to the next page.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Semantic Differential Question Type Choices and Variables</strong></p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/cv_semantic.png"><img alt="Choices and Variables" class="screenshot" src="../../_images/cv_semantic.png" style="width: 219.8px; height: 175.0px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Choices and Variables for a Semantic</p>
+</div>
+<table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Option</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Optional</td>
+<td>Determines whether the question is required in order to proceed through the survey, or not. By default, this option is enabled.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Removing a Choice/Variable on a Live survey WILL delete the information associated with that option. Do not delete any information on a Live survey without first consulting with on one of our experienced Technical Support Representatives.</p>
+</div>
+</div>
+<div class="section" id="add-other-choice">
+<h2>Add Other Choice<a class="headerlink" href="#add-other-choice" title="Permalink to this headline">¶</a></h2>
+<p>Clicking this button will create a choice, &#8220;Other, please specify&#8221; (which can be customized) along with a text response box. This is comparable to adding a text response to a choice.</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/add_other_choice_before.png"><img alt="Add Choice Before" class="screenshot" src="../../_images/add_other_choice_before.png" style="width: 676.2px; height: 336.0px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Before clicking [Add Other Choice]</p>
+</div>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/add_other_choice_after.png"><img alt="Add Choice Before" class="screenshot" src="../../_images/add_other_choice_after.png" style="width: 678.3px; height: 508.9px;" /></a>
+<p class="caption"><em>Figure 9.1</em> After clicking [Add Other Choice]</p>
+</div>
+<p>Other question types, such as multiple choice grids, N-atrix, 3D Matrix, etc don’t have the option of including an “Other, please specify” choice. However, it is still possible to include a text box asking for more information.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p>To give the illusion that a question has an &#8220;Other Choice&#8221;, first create a question containing your variables and choices and add a text response, or text response grid, question directly beneath it.</p>
+<p class="last">When you preview your survey, these would appear as two different questions. However, if you check off the “append to previous question” check box under display settings (for the text response question), they’ll be combined into one. Refer to the manuals section on &#8220;Append to Previous&#8221; to learn more about this nifty feature.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Add Other Choice is only available to certain question types, such as:</p>
+<blockquote class="last">
+<div><ol class="arabic simple">
+<li>Checkbox</li>
+<li>Multiple Choice</li>
+</ol>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="scores">
+<h2>Scores<a class="headerlink" href="#scores" title="Permalink to this headline">¶</a></h2>
+<p>If you are setting up your survey as a quiz, you can show the respondent their score either after each question in the survey or at the end of the survey (Figure 6-9). The respondent can also be shown whether or not they got the answer correct. When you download the data, additional columns are provided to show the Sum, Weighted Average, and the Weighted Standard Deviation scores for each respondent</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/right_score_value.png"><img alt="Score for a correct answer" class="screenshot" src="../../_images/right_score_value.png" style="width: 230.3px; height: 476.7px;" /></a>
+<p class="caption"><em>Figure 9.1</em> The correct answer has a numeric score of &#8220;1&#8221;</p>
+</div>
+<p>Adding score values to an individual choice or variable allows for them to be tallied up to give the respondent a numerical score. This feature can be used to make a survey into a quiz, and allow for you to promote complex logical functions. You can attach a numerical score to all closed question types, except for the &#8220;Yes/No&#8221; question type which by default is a static numerical score of either 1 (Yes) or 2 (No)</p>
+<p>Choices and Variables that contain a custom &#8220;Score&#8221; are predominately used in a quiz build specifically within FluidSurveys. Doing so would allow for you to quickly adminster scored tests to respondents. Assign individual point values to different answer choices, and then display those very same scores back to the respondent while they are still in the process of taking the survey.</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/current_score.png"><img alt="Current Score" class="screenshot" src="../../_images/current_score.png" style="width: 627.9px; height: 168.0px;" /></a>
+<p class="caption"><em>Figure 9.1</em> The [Current Score] question type with a respondent score of 10</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">By default, choices within a question will have scores assigned to them. The first choice in a question would have a score of 1, the second a score of 2, and so on. These scores are customizable, however. Additionally, while Scores will say &#8220;None&#8221; by default, the value does not represent a 0, but rather that a custom value has not been provided, and therefore it will adhere to the default order, eg., 1, 2, 3, 4, etc.</p>
+</div>
+</div>
+<div class="section" id="simple-branching">
+<h2>Simple Branching<a class="headerlink" href="#simple-branching" title="Permalink to this headline">¶</a></h2>
+<p>Simple branching directs respondents through different paths in a survey based on a previous responses to a question. In essence, skipping allows you to branch respondents from one page to another based on their answers to a single question. For example, if a respondent answered “Yes” to a question, they could be sent to Page 3, if they answered No, they could be skipped straight to Page 4. Basic skipping works based on the respondents answers to single-answer questions such as the dropdown, multiple-choice and yes/no question types.</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/branch_to.png"><img alt="Branch to a page" class="screenshot" src="../../_images/branch_to.png" style="width: 228.2px; height: 468.3px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Branch to [Page 4]</p>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">If you’ll be using advanced branching, you shouldn’t use simple skipping and vice-versa. While the two can be used together, generally speaking, they shouldn’t be because this could lead to clashing conditions that could produce unexpected results.</p>
+</div>
+<p>When the respondents selects, &#8220;Go to page 4 for the Princess to escape&#8221; as a choice, they will be transported to [Page 4]</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">All branching logic happens when the respondent causes a page change, eg., click [Next], [Back], [Submit]</p>
+</div>
+<p>Advanced skipping allows you to branch a respondent from one page to another based on their answers to one, or multiple, questions. The questions that trigger the branching can be on one, or several, pages. For example, one branching condition could be created based on questions on Page 1, 4, and 5. Furthermore, you can use advanced skipping to branch based on most question types (including checkbox questions and grid-type questions).</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Simple Branching is available to:</p>
+<blockquote class="last">
+<div><ol class="arabic simple">
+<li>Yes/No</li>
+<li>Multiple Choice</li>
+<li>Dropdown</li>
+<li>Drill Down</li>
+</ol>
+</div></blockquote>
+</div>
+<p>To learn how to set up a page with simple branching, refer to the Tutorial section</p>
+</div>
+<div class="section" id="question-title">
+<h2>Question Title<a class="headerlink" href="#question-title" title="Permalink to this headline">¶</a></h2>
+<p>The question title is the over-arching explanation of the question itself. It is what the respondent will see at the top of a question.</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/editor_question_title.png"><img alt="Question Title in the Editor" class="screenshot" src="../../_images/editor_question_title.png" style="width: 227.5px; height: 208.6px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Question title in the Editor</p>
+</div>
+<p>The question title in the Editor is not a final depiction of how it will appear to the respondent.</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/survey_question_title.png"><img alt="Question Title in the Survey" class="screenshot" src="../../_images/survey_question_title.png" style="width: 627.2px; height: 214.9px;" /></a>
+<p class="caption"><em>Figure 9.1</em> The default look and feel of the question title in the Survey.</p>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">While the question title by default is generic, you can customize it to include any number of HTML, CSS and even JavaScript functions to further expand those horizons of customization</p>
+</div>
+</div>
+<div class="section" id="question-description">
+<h2>Question Description<a class="headerlink" href="#question-description" title="Permalink to this headline">¶</a></h2>
+<p>If you wish to provide more information about a specific section, then you can do so within the Extra Description text area.</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/editor_extra_description.png"><img alt="Question Description in the Editor" class="screenshot" src="../../_images/editor_extra_description.png" style="width: 229.6px; height: 212.1px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Question Description in the Editor</p>
+</div>
+<p>The question description in the Editor is not a final depiction of how it will appear to the respondent.</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/survey_extra_description.png"><img alt="Question Description in the Survey" class="screenshot" src="../../_images/survey_extra_description.png" style="width: 629.3px; height: 226.1px;" /></a>
+<p class="caption"><em>Figure 9.1</em> The default look and feel of the question description in the Survey.</p>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">While the question description by default is generic, you can customize it to include any number of HTML, CSS and even JavaScript functions to further expand those horizons of customization</p>
+</div>
+</div>
+<div class="section" id="appearance">
+<h2>Appearance<a class="headerlink" href="#appearance" title="Permalink to this headline">¶</a></h2>
+<p>Certain question types allow for the choices/variables to be morphed and appear as though they are an entirely different question type.</p>
+<p>Altering the appearance can be achieved by clicking on the Multiple Choice question type, and selecting the desired layout under &#8220;Appearance&#8221; found beneath &#8220;Display&#8221;</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/appearance.png"><img alt="Appearance Choices" class="screenshot" src="../../_images/appearance.png" style="width: 228.9px; height: 140.0px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Available appearance choices</p>
+</div>
+<p>The available morph styles are</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/default_appearance.png"><img alt="Default Appearance" class="screenshot" src="../../_images/default_appearance.png" style="width: 627.9px; height: 245.7px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Default Appearance of a Multiple Choice</p>
+</div>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/horizontal_appearance.png"><img alt="Question Description in the Survey" class="screenshot" src="../../_images/horizontal_appearance.png" style="width: 627.9px; height: 180.6px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Horizontal Appearance of a Multiple Choice</p>
+</div>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/star_rating.png"><img alt="Question Description in the Survey" class="screenshot" src="../../_images/star_rating.png" style="width: 628.6px; height: 182.0px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Star Rating Appearance of a Multiple Choice</p>
+</div>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/combo_box.png"><img alt="Question Description in the Survey" class="screenshot" src="../../_images/combo_box.png" style="width: 628.6px; height: 233.8px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Combo Box Appearance of a Multiple Choice</p>
+</div>
+<p>Question Types that blend other questions into themselves, ie., 3D Matrix, N-atrix, can also have their choices altered to match the aforementioned appearances.</p>
+</div>
+<div class="section" id="columns">
+<h2>Columns<a class="headerlink" href="#columns" title="Permalink to this headline">¶</a></h2>
+<p>Columns can refer to a lot of things within FluidSurveys, but generally it is ascribed to the amount of columns a text response area has.</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/columns_for_tr.png"><img alt="Columns for Text Response Grid" class="screenshot" src="../../_images/columns_for_tr.png" style="width: 228.9px; height: 190.4px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Columns for a Text Response Grid in the Editor</p>
+</div>
+<p>By default, a text area has 20 columns. The value can be altered at any time. Changing the column value will increase the text areas width. Whenever making alterations to the text area, even putting a value of 75 may bleed off the Editor page, always be saving and [Preview] the survey in order to assure a maximum success rate</p>
+<p>However, columns can also be associated with the Choices of a Grid, eg., Multiple Choice Grid, Checkbox Grid, 3D Matrix question type.</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/columns_and_rows.png"><img alt="Columns and Rows in a Survey" class="screenshot" src="../../_images/columns_and_rows.png" style="width: 628.6px; height: 245.7px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Columns in a survey</p>
+</div>
+</div>
+<div class="section" id="optional">
+<h2>Optional<a class="headerlink" href="#optional" title="Permalink to this headline">¶</a></h2>
+<p>Unchecking this option forces the question to be answered when the user is filling out your survey.</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/optional_option.png"><img alt="Optional Option in Editor" class="screenshot" src="../../_images/optional_option.png" style="width: 229.6px; height: 53.2px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Optional option for a Multiple Choice question</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">By default, Choices/Variables are &#8220;Optional&#8221;</p>
+</div>
+<p>While you can force a question to be either optional or required under the &#8220;Options&#8221; menu of the Editor, there are a few question types where the entirety of the question may not be optional or required, but each individual choice is the deciding factor. The following question types require that you click on the Choices/Variables portion in order to alter it state</p>
+<p><strong>Text Response Grid</strong></p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/tr_optional.png"><img alt="Text Response Grid Optional" class="screenshot" src="../../_images/tr_optional.png" style="width: 228.2px; height: 192.5px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Optional option for a Text Response Grid</p>
+</div>
+<p><strong>Multiple Choice Grid</strong></p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/mcg_optional.png"><img alt="Multiple Choice Grid Optional" class="screenshot" src="../../_images/mcg_optional.png" style="width: 229.6px; height: 223.3px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Optional option for a Multiple Choice Grid</p>
+</div>
+<p><strong>Dropdown Grid</strong></p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/ddg_optional.png"><img alt="Dropdown Grid Optional" class="screenshot" src="../../_images/ddg_optional.png" style="width: 229.6px; height: 221.2px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Optional option for a Multiple Choice question</p>
+</div>
+<p><strong>Checkbox Grid</strong></p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/cg_optional.png"><img alt="Optional Option in Editor" class="screenshot" src="../../_images/cg_optional.png" style="width: 227.5px; height: 224.0px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Optional option for a Multiple Choice question</p>
+</div>
+<p><strong>3D Matrix</strong></p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/3d_optional.png"><img alt="Optional Option in Editor" class="screenshot" src="../../_images/3d_optional.png" style="width: 228.2px; height: 221.2px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Optional option for a Multiple Choice question</p>
+</div>
+<p><strong>N-atrix</strong></p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/n_optional.png"><img alt="Optional Option in Editor" class="screenshot" src="../../_images/n_optional.png" style="width: 229.6px; height: 233.1px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Optional option for a Multiple Choice question</p>
+</div>
+<p><strong>Semantic Differential</strong></p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/sd_optional.png"><img alt="Optional Option in Editor" class="screenshot" src="../../_images/sd_optional.png" style="width: 229.6px; height: 149.1px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Optional option for a Multiple Choice question</p>
+</div>
+<p>Additionally, if you do not wish to deselect &#8220;Optional&#8221; for all choices and variables, you can select all questions you&#8217;d like to make &#8220;Optional&#8221; or &#8220;Required&#8221;, right-click and select &#8220;Mark all as optional&#8221; or &#8220;Mark all as required&#8221;</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/right_click_menu_optional.png"><img alt="Optional Option in Editor" class="screenshot" src="../../_images/right_click_menu_optional.png" style="width: 518.7px; height: 303.1px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Optional option for a Multiple Choice question</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Despite the menu stating, &#8220;Mark all as required or optional&#8221;, if you have n choices selected (Where n = a positive number) then only those questions will receive the altered state</p>
+</div>
+<p>To learn more about the right-click menu, refer to the Right-click Menu section of the manual</p>
+</div>
+<div class="section" id="validation">
+<h2>Validation<a class="headerlink" href="#validation" title="Permalink to this headline">¶</a></h2>
+<p>FluidSurveys allows validation to be added for text response questions. With validation, a response must adhere to the format specifications set up, otherwise it won’t be accepted.
+Validation can be set up for phone numbers, emails, postal codes, integers, letters, etc.</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/validation_options.png"><img alt="Character Limit" class="screenshot" src="../../_images/validation_options.png" style="width: 197.4px; height: 254.1px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Character limit validation</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">By default, &#8220;Validation&#8221; is disabled</p>
+</div>
+<p>With validation, you can specify a character limit/range for the question. So, for example, you could require the response to have between 10 and 100 characters, or 5 to 25 integers, etc.
+To do so, select validation for letters, integers, letters &amp; numbers or all characters. You will then be able to enter a limit length.</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/character_limit_validation.png"><img alt="Character Limit" class="screenshot" src="../../_images/character_limit_validation.png" style="width: 228.9px; height: 165.2px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Character limit validation</p>
+</div>
+<p>When validation is set for integers (positive or negative), you can set up a range within which the value must reside. So, for example, if the limit value is set to between 5 and 9, a response of 3 would not be accepted while a response of 6 would be.</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/limit_values_validation.png"><img alt="Limit Values Validation" class="screenshot" src="../../_images/limit_values_validation.png" style="width: 228.2px; height: 182.7px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Limit values validation</p>
+</div>
+<p>When a respondent attempts to enter an answer that does not adhere to the validation settings, they are shown a default message. It’s possible to change this message for each question, or text field.</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/error_messages_validation.png"><img alt="Validation Error Messages" class="screenshot" src="../../_images/error_messages_validation.png" style="width: 228.9px; height: 168.0px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Error message when validation is not met</p>
+</div>
+<p>Depending on the error message entered, the user will see a message that alerts them about any malformed text input.</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/error_validation_for_text_response.png"><img alt="Validation for Text Response" class="screenshot" src="../../_images/error_validation_for_text_response.png" style="width: 627.2px; height: 497.0px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Error validation for a text response</p>
+</div>
+</div>
+<div class="section" id="identifiers">
+<h2>Identifiers<a class="headerlink" href="#identifiers" title="Permalink to this headline">¶</a></h2>
+<p>Any time you want to do anything advanced with a question, make sure to give it an identifier. These identifiers are used to easily refer to them when programming advanced logic conditions.</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/identifier_option.png"><img alt="Question Description in the Survey" class="screenshot" src="../../_images/identifier_option.png" style="width: 228.2px; height: 163.8px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Force Unique Option for a Dropdown Grid question type in the Editor</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">By default, the Identifier is &#8220;None&#8221;, ie., blank</p>
+</div>
+<p>When a question has been given an Identifier, it will appear in the Advanced Branching Logic window.</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/advanced_branching_logic_identifiers.png"><img alt="Question Description in the Survey" class="screenshot" src="../../_images/advanced_branching_logic_identifiers.png" style="width: 490.7px; height: 297.5px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Force Unique Option for a Dropdown Grid question type in the Editor</p>
+</div>
+<p>To learn more about Advanced Branching Logic, refer to the Branching Logic section of the manual.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">The identifiers are also used for the purpose of exporting your data into Excel/CSV and SPSS. It may be wise to use an Identifier, even if advancing branching logic is not going to be applied.</p>
+</div>
+</div>
+<div class="section" id="force-unique">
+<h2>Force Unique<a class="headerlink" href="#force-unique" title="Permalink to this headline">¶</a></h2>
+<p>When using a rating scale question type, enabling &#8220;Force Unique&#8221; requires that a choice in a column remain unique. No two options in a column can be identical. This is perfect when you want to receive a wider range of answers from a respondents.</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/force_unique_option.png"><img alt="Question Description in the Survey" class="screenshot" src="../../_images/force_unique_option.png" style="width: 228.2px; height: 111.3px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Force Unique Option for a Dropdown Grid question type in the Editor</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">By default, this option is disabled.</p>
+</div>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/force_unique_error.png"><img alt="Force Unique Error Message" class="screenshot" src="../../_images/force_unique_error.png" style="width: 627.9px; height: 331.8px;" /></a>
+<p class="caption"><em>Figure 9.1</em> If a row contains the same answer as previous column, then the respondent is presented with an error message</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Force Unique is available for the following question types:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Dropdown Grid</li>
+<li>Checkbox Grid</li>
+<li>Multiple Choice Grid</li>
+<li>Text Response Grid</li>
+<li>Semantic Differential</li>
+</ul>
+</div></blockquote>
+<p class="last">Any question that has the ability to be used as a rating scale will have the &#8220;Force Unique&#8221; option</p>
+</div>
+</div>
+<div class="section" id="background-color">
+<h2>Background Color<a class="headerlink" href="#background-color" title="Permalink to this headline">¶</a></h2>
+<p>If a close-ended question grows in size, then it may become cumbersome and confusing to some respondents when viewing multiple columns of information. Enabling [Alternate Background Color] option will paint each odd column a different color.</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/alternating_background_color_option.png"><img alt="Alternate Background Color option in the Editor" class="screenshot" src="../../_images/alternating_background_color_option.png" style="width: 227.5px; height: 220.5px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Alternate Background Color option for a 3D Matrix in the Editor</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">By default, this option is enabled.</p>
+</div>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/alternating_background_color.png"><img alt="Question Description in the Survey" class="screenshot" src="../../_images/alternating_background_color.png" style="width: 627.2px; height: 346.5px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Combo Box Appearance of a Multiple Choice</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>An alternating background color is only available to:</p>
+<blockquote class="last">
+<div><ul class="simple">
+<li>Multiple Choice Grid</li>
+<li>Checkbox Grid</li>
+<li>Semantic Differential</li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="borders">
+<h2>Borders<a class="headerlink" href="#borders" title="Permalink to this headline">¶</a></h2>
+<p>This option show borders separating the rows and columns of a question. It makes complex 3D Matrices much easier to understand.</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/borders_option.png"><img alt="Question Description in the Survey" class="screenshot" src="../../_images/borders_option.png" style="width: 228.9px; height: 180.6px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Show Borders option for a 3D Matrix in the Editor</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">By default, this option is disabled.</p>
+</div>
+<p>A 3D Matrix without a border will appear as</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/no_borders_survey.png"><img alt="Question Description in the Survey" class="screenshot" src="../../_images/no_borders_survey.png" style="width: 630.0px; height: 314.3px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Show Borders for a 3D Matrix</p>
+</div>
+<p>Whereas, if the option is enabled</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/borders_survey.png"><img alt="Question Description in the Survey" class="screenshot" src="../../_images/borders_survey.png" style="width: 630.0px; height: 322.0px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Show Borders for a 3D Matrix</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Show Borders is only available on the 3D Matrix question type</p>
+</div>
+</div>
+<div class="section" id="st-column-size">
+<h2>1st Column Size<a class="headerlink" href="#st-column-size" title="Permalink to this headline">¶</a></h2>
+<p>Allows you to change the size of the first column which contains the variable labels. Setting a higher percentage value will increase the size, while setting a lower percentage value will decrease the size.</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/1st_column_size_option.png"><img alt="1st Column Size Options" class="screenshot" src="../../_images/1st_column_size_option.png" style="width: 227.5px; height: 219.1px;" /></a>
+<p class="caption"><em>Figure 9.1</em> 1st Column Size Options for a 3D Matrix in the Editor</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">By default, this option is disabled. Altering the value will affect the 1st column size</p>
+</div>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/1st_column_size_survey.png"><img alt="1st Column Size in the survey" class="screenshot" src="../../_images/1st_column_size_survey.png" style="width: 629.3px; height: 315.0px;" /></a>
+<p class="caption"><em>Figure 9.1</em> 1st Column Size set to 50% in the survey</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Setting the Column Size will not accurately reflect itself in the Editor. To see the best results, always save your survey and Preview it.</p>
+</div>
+</div>
+<div class="section" id="st-column-static">
+<h2>1st Column Static<a class="headerlink" href="#st-column-static" title="Permalink to this headline">¶</a></h2>
+<p>When enabled, the first column containing the variable will not scroll; it will always be visible to respondents. This setting is useful if your question contains numerous columns and requires a scroll bar.</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/1st_column_static_option.png"><img alt="Question Description in the Survey" class="screenshot" src="../../_images/1st_column_static_option.png" style="width: 228.2px; height: 217.7px;" /></a>
+<p class="caption"><em>Figure 9.1</em> 1st Column Static for a 3D Matrix in the Editor</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">By default, this option is disabled.</p>
+</div>
+<p>When enabled, the first column will always remain a constant. Notice the scrollbar on the bottom</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/1st_column_static_survey.png"><img alt="1st Column Static Survey" class="screenshot" src="../../_images/1st_column_static_survey.png" style="width: 626.5px; height: 334.6px;" /></a>
+<p class="caption"><em>Figure 9.1</em> 1st Column Static on a 3D Matrix question.</p>
+</div>
+</div>
+<div class="section" id="initial-value">
+<h2>Initial Value<a class="headerlink" href="#initial-value" title="Permalink to this headline">¶</a></h2>
+<p>Under validation, the option to pre-populate responses is available. Whatever is entered into the “Initial Value dropdown, it will be displayed to respondents when they view the survey. They will be able to change this response, or leave it in tact.</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/initial_value_option.png"><img alt="Initial Value" class="screenshot" src="../../_images/initial_value_option.png" style="width: 228.2px; height: 123.9px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Initial Value option found under &#8220;Options&#8221; in the Editor</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">By default, the &#8220;Inital Value&#8221; is blank.</p>
+</div>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/initial_value_survey.png"><img alt="Question Description in the Survey" class="screenshot" src="../../_images/initial_value_survey.png" style="width: 629.3px; height: 183.4px;" /></a>
+<p class="caption"><em>Figure 9.1</em> A Text Response question with an Initial Value of &#8220;Greatly&#8221;</p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">While an Initial Value is a perfect representation of how the respondent should answer the question, and while the question may be required, the &#8220;Initial Value&#8221; is seen as a response, and therefore that answer will reign supreme.</p>
+</div>
+</div>
+<div class="section" id="multiline">
+<h2>Multiline<a class="headerlink" href="#multiline" title="Permalink to this headline">¶</a></h2>
+<p>Enabling this option allows for the text area to have multiple lines and columns. This option is perfect for when you require a large amount of text to be entered by the respondent.</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/multiline_option.png"><img alt="Initial Value" class="screenshot" src="../../_images/multiline_option.png" style="width: 228.9px; height: 154.0px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Multiline option found under &#8220;Options&#8221;</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">By default, &#8220;Multiline&#8221; is disabled.</p>
+</div>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/multiline_survey.png"><img alt="Question Description in the Survey" class="screenshot" src="../../_images/multiline_survey.png" style="width: 629.3px; height: 473.2px;" /></a>
+<p class="caption"><em>Figure 9.1</em> A Text Response question with 75 rows, and 100 columns.</p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">The survey width by default is 864px (Customizable through the <a class="reference internal" href="../Style/index.html#themer"><em>Style</em></a>) and putting a number greater than 100 for &#8220;Columns&#8221; will cause the text box to bleed off the survey page. Always keep design decisions in mind when creating a survey</p>
+</div>
+</div>
+<div class="section" id="sum">
+<h2>Sum<a class="headerlink" href="#sum" title="Permalink to this headline">¶</a></h2>
+<p>A constant sum question will require the answers given for a set of variables to add up to a specified value. For example, if you create a text response question with 5 variables, you can assure that the values entered for those 5 variables add up to 100.</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/constant_sum_editor.png"><img alt="Constant Sum Editor Options" class="screenshot" src="../../_images/constant_sum_editor.png" style="width: 228.2px; height: 153.3px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Setting the constant sum value to be 100</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">By default, the &#8220;Sum&#8221; is 0, ie., blank</p>
+</div>
+<p>This will ensure that the entered values add up to 100. To alter the value, click on &#8220;Options&#8221; in the left hand-side editor, and beside where it states, &#8220;Sum&#8221;, enter the desired value. A respondent&#8217;s answers for this question will now have to add up to the entered value. If the total is more or less, they’ll be presented with an error message.</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/constant_sum_error.png"><img alt="Constant Sum Invalid Entered Sum" class="screenshot" src="../../_images/constant_sum_error.png" style="width: 628.6px; height: 330.4px;" /></a>
+<p class="caption"><em>Figure 9.1</em> The error message the respondent sees for an invalid sum value</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Question Options</a><ul>
+<li><a class="reference internal" href="#randomize">Randomize</a></li>
+<li><a class="reference internal" href="#alphabetize">Alphabetize</a></li>
+<li><a class="reference internal" href="#side-by-side">Side-By-Side</a></li>
+<li><a class="reference internal" href="#append-to-previous">Append to Previous</a></li>
+<li><a class="reference internal" href="#width">Width</a></li>
+<li><a class="reference internal" href="#choices-variables">Choices/Variables</a></li>
+<li><a class="reference internal" href="#add-other-choice">Add Other Choice</a></li>
+<li><a class="reference internal" href="#scores">Scores</a></li>
+<li><a class="reference internal" href="#simple-branching">Simple Branching</a></li>
+<li><a class="reference internal" href="#question-title">Question Title</a></li>
+<li><a class="reference internal" href="#question-description">Question Description</a></li>
+<li><a class="reference internal" href="#appearance">Appearance</a></li>
+<li><a class="reference internal" href="#columns">Columns</a></li>
+<li><a class="reference internal" href="#optional">Optional</a></li>
+<li><a class="reference internal" href="#validation">Validation</a></li>
+<li><a class="reference internal" href="#identifiers">Identifiers</a></li>
+<li><a class="reference internal" href="#force-unique">Force Unique</a></li>
+<li><a class="reference internal" href="#background-color">Background Color</a></li>
+<li><a class="reference internal" href="#borders">Borders</a></li>
+<li><a class="reference internal" href="#st-column-size">1st Column Size</a></li>
+<li><a class="reference internal" href="#st-column-static">1st Column Static</a></li>
+<li><a class="reference internal" href="#initial-value">Initial Value</a></li>
+<li><a class="reference internal" href="#multiline">Multiline</a></li>
+<li><a class="reference internal" href="#sum">Sum</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../http-routingtable.html" title="HTTP Routing Table"
+             >routing table</a> |</li>
+        <li class="right" >
+          <a href="advancedfeatures.html" title="Advanced Survey Features"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="advancedquestions.html" title="Advanced Questions"
+             >previous</a> |</li>
+        <li><a href="../../index.html">FluidSurveys 4.0 documentation</a> &raquo;</li>
+          <li><a href="index.html" >Editor</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012, FluidSurveys.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,142 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Tutorial &mdash; FluidSurveys 4.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="FluidSurveys 4.0 documentation" href="../index.html" />
+    <link rel="prev" title="Invites and Email API" href="invites.html" />
+	 
+	<script type="text/javascript" src="http://use.typekit.com/hfr5qlq.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+  </head>
+  <body>
+	<div class="top-bar">
+		<div class="center">
+			<span class="logo"><a href="/">FluidSurveys Documentation</a></span>
+		</div>
+	</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../http-routingtable.html" title="HTTP Routing Table"
+             >routing table</a> |</li>
+        <li class="right" >
+          <a href="invites.html" title="Invites and Email API"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FluidSurveys 4.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="tutorial">
+<h1>Tutorial<a class="headerlink" href="#tutorial" title="Permalink to this headline">¶</a></h1>
+<p>This tutorial will be broken into a series of smaller, digestible, mini-pieces which will help guide you step by step through integrating the FluidSurveys API into your application or website.</p>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>Over the course of this tutorial we will be building a very simple web app to manage our surveys.  It should be able to:</p>
+<ul class="simple">
+<li>view a list of your surveys</li>
+<li>view responses to a survey</li>
+<li>take you to the survey to fill out</li>
+<li>create an invite to a survey</li>
+<li>add contacts to the invitation and send it</li>
+</ul>
+<p>The app will be hosted on our own domain.  Because of security concerns and limitations in the browser we cannot easily query the FluidSurveys API from a web app.  Instead, we will create a proxy on our own domain that our web app will be able talk to.  This proxy will relay all requests to and from the API to our web app.  We will be writing the proxy in PHP but you can choose whichever language you are most familiar with.  Let us know what you create and we can showcase it in our demo section.</p>
+</div>
+<div class="section" id="before-you-start">
+<h2>Before You Start<a class="headerlink" href="#before-you-start" title="Permalink to this headline">¶</a></h2>
+<p>You should be comfortable with the following before you begin:</p>
+<ul class="simple">
+<li>having your own hosting solution (that can run PHP or your language of choice)</li>
+<li>knowledge of HTML5/CSS</li>
+<li>strong knowledge of Javascript and jQuery</li>
+<li>A FluidSurveys account and API key</li>
+</ul>
+<p>It would be nice if we could use our web app while we are mobile, so in Part III we will also be using jQueryMobile to enhance our web app.  Make sure you keep the <a class="reference external" href="http://jquerymobile.com/demos/1.0.1/">jQuery Mobile Docs</a> handy for reference too.</p>
+<dl class="docutils">
+<dt><strong>DISCLAIMER:</strong></dt>
+<dd>This tutorial is only meant to be a simple example to show you how to send and retrieve data from the FluidSurveys API.  We sacrifice everything but the bare essentials to show how to interact with the API in the simplest form.  If you are using the API in a production app please be sure to secure, validate, and follow best practices.</dd>
+</dl>
+</div>
+<div class="section" id="part-i-get-the-basics">
+<h2>Part I: GET the Basics<a class="headerlink" href="#part-i-get-the-basics" title="Permalink to this headline">¶</a></h2>
+<p>In <a class="reference internal" href="tut_p1.html#tutorial-one"><em>Tutorial Part I: &#8216;GET&#8217; the Basics</em></a> - we set up a proxy to GET surveys and responses from the FluidSurveys API.</p>
+</div>
+<div class="section" id="part-ii-post-it">
+<h2>Part II: POST-IT<a class="headerlink" href="#part-ii-post-it" title="Permalink to this headline">¶</a></h2>
+<p>In <a class="reference internal" href="tut_p2.html#tutorial-two"><em>Tutorial Part II: POST-IT</em></a> - we get our contact lists, create an email and send it to a contact list!</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Tutorial</a><ul>
+<li><a class="reference internal" href="#introduction">Introduction</a></li>
+<li><a class="reference internal" href="#before-you-start">Before You Start</a></li>
+<li><a class="reference internal" href="#part-i-get-the-basics">Part I: GET the Basics</a></li>
+<li><a class="reference internal" href="#part-ii-post-it">Part II: POST-IT</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../http-routingtable.html" title="HTTP Routing Table"
+             >routing table</a> |</li>
+        <li class="right" >
+          <a href="invites.html" title="Invites and Email API"
+             >previous</a> |</li>
+        <li><a href="../index.html">FluidSurveys 4.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012, FluidSurveys.
+    </div>
+  </body>
+</html>

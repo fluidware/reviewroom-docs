@@ -1,0 +1,525 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Reports &mdash; FluidSurveys 4.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="FluidSurveys 4.0 documentation" href="../../index.html" />
+    <link rel="up" title="Analyze" href="index.html" />
+    <link rel="next" title="&lt;no title&gt;" href="../Tutorials/index.html" />
+    <link rel="prev" title="&lt;no title&gt;" href="response.html" />
+	 
+	<script type="text/javascript" src="http://use.typekit.com/hfr5qlq.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+  </head>
+  <body>
+	<div class="top-bar">
+		<div class="center">
+			<span class="logo"><a href="/">FluidSurveys Documentation</a></span>
+		</div>
+	</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../http-routingtable.html" title="HTTP Routing Table"
+             >routing table</a> |</li>
+        <li class="right" >
+          <a href="../Tutorials/index.html" title="&lt;no title&gt;"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="response.html" title="&lt;no title&gt;"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">FluidSurveys 4.0 documentation</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">Analyze</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="reports">
+<h1>Reports<a class="headerlink" href="#reports" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="report-dashboard">
+<h2>Report Dashboard<a class="headerlink" href="#report-dashboard" title="Permalink to this headline">¶</a></h2>
+<p>To begin the process, click on the [Analyze] icon in either the Editor, or on the Survey Dashboard page to the right of the survey you wish to build custom reports. The first time you go to the &#8220;Analyze&#8221; section, you will see the Report Dashboard. This is where you see a list of existing reports. By default, there are zero reports in a newly created survey.</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/report_dashboard.png"><img alt="Report Dashboard" class="screenshot" src="../../_images/report_dashboard.png" style="width: 687.4px; height: 527.8px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Report Dashboard</p>
+</div>
+</div>
+<div class="section" id="survey-statistics">
+<h2>Survey Statistics<a class="headerlink" href="#survey-statistics" title="Permalink to this headline">¶</a></h2>
+<p>Survey Statistics provide quick and effective information about a particular survey. To view statistics for your survey, click on “Statistics”, which is found under “Analyze” (Pie shaped icon)</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/survey_statistics.png"><img alt="Survey Statistics" class="screenshot" src="../../_images/survey_statistics.png" style="width: 679.0px; height: 154.0px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Survey Statistics</p>
+</div>
+<p>Under Survey Statistics, you’ll see the survey length, the number of individuals who’ve completed the survey, the completion rate (number of completions/number of starts), the average completion time, the estimated completion time and the average number of responses per day.</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/responses_per_day.png"><img alt="Responses Per Day" class="screenshot" src="../../_images/responses_per_day.png" style="width: 677.6px; height: 128.1px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Responses Per Day</p>
+</div>
+<p>The Responses per Day chart outlines the amount of responses received on a particular date. Using the image above as an example, you can see that on June 10, 2011, roughly 30
+respondents completed the survey in question. Likewise, on June 05, 2011, the completion rate was closer to 60.</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/geographical_map.png"><img alt="Geographical Map" class="screenshot" src="../../_images/geographical_map.png" style="width: 679.0px; height: 276.5px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Geographical Map</p>
+</div>
+<p>In addition, the Statistics section contains a geographical map which indicates where the majority of the responses came from. In the image above, the primary source of responses
+originated in Canada.</p>
+</div>
+</div>
+<div class="section" id="new-report">
+<h1>New Report<a class="headerlink" href="#new-report" title="Permalink to this headline">¶</a></h1>
+<p>When you are ready to create a Report, click on the [+New Report] button located on the right side of the page</p>
+<p>In the pop-up, you can:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Provide the Report Name. The default name is &#8220;Summary Report&#8221;</li>
+<li>The base language for the Report</li>
+<li>Advanced Options, ie., build a blank Report, etc.</li>
+</ul>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/create_new_report.png"><img alt="New Report" class="screenshot" src="../../_images/create_new_report.png" style="width: 417.9px; height: 398.3px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Create a new report screen</p>
+</div>
+</div></blockquote>
+<table border="1" class="docutils">
+<colgroup>
+<col width="26%" />
+<col width="74%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Section</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><ol class="first last arabic simple">
+<li>Checkbox Questions</li>
+</ol>
+</td>
+<td>Closed-ended questions can only have certain chart items. Otherwise, &#8220;Invalid Data Source Selected&#8221; will appear if something other than, <em>&#8220;Bar Charts&#8221;</em>, <em>&#8220;Chart Tables&#8221;</em>, <em>&#8220;Tables&#8221;</em> is used. The default choice is <em>&#8220;Chart Tables&#8221;</em></td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="2">
+<li>Multiple Choice Questions</li>
+</ol>
+</td>
+<td>A Multiple Choice question, being close-ended, can only have certain char items, such as, <em>&#8220;Pie Charts&#8221;</em>, <em>&#8220;Bar Charts&#8221;</em>, <em>&#8220;Chart Tables&#8221;</em>, <em>&#8220;Tables&#8221;</em>. The default choice is <em>&#8220;Chart Tables&#8221;</em></td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="3">
+<li>Grid (matrix) Questions</li>
+</ol>
+</td>
+<td>N-Atrix and 3D Matrix questions adhere to a Grid format. Therefore, only <em>&#8220;Bar Charts&#8221;</em> and <em>&#8220;Tables&#8221;</em> are available as a charting item. The default choice is &#8220;Tables&#8221;</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="4">
+<li>Open-ended Questions</li>
+</ol>
+</td>
+<td>Since a response from an open-ended question can range from precise, to vague, there are only specific charting types available; <em>&#8220;Include Inline&#8221;</em>, ie., Include the responses with the chart item, and <em>&#8220;Include Appendices&#8221;</em>, ie., Include at the end of the Report in the Appendix. The default choice is &#8220;Include Appendices&#8221;</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="5">
+<li>Table Statistics</li>
+</ol>
+</td>
+<td><dl class="first last docutils">
+<dt>IF the &#8220;Tables&#8221; chart item was included, by default both counts (choices) and percentages (scores) are included.</dt>
+<dd><ul class="first last simple">
+<li>[Include both counts and percentages] will show both selected choices, and percentage of selected choices compared to the rest</li>
+<li>[Include percentages only] will only show the &#8220;Percentage&#8221;</li>
+<li>[Include counts only] will only show the &#8220;Count&#8221;</li>
+</ul>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="6">
+<li>Include Section Separators</li>
+</ol>
+</td>
+<td>If a survey contains various Section Separaters as question resources that is crucial to understanding either the response, or the gathered data, then a Report can include those separators. By default, this option is unchecked.</td>
+</tr>
+</tbody>
+</table>
+<a class="screenshot reference internal image-reference" href="../../_images/reports_over_time.png"><img alt="Reports Over Time" class="screenshot align-right" src="../../_images/reports_over_time.png" style="width: 331.8px; height: 151.9px;" /></a>
+<p>Over time, all Reports tied to a survey will always be a click away (until deleted) on the right-hand side.</p>
+<p>A report will have various options available which are a click away. The Actions button contains actions unique to that Report, such as:</p>
+<ul class="simple">
+<li>Share Report</li>
+<li>Duplicate Report</li>
+<li>Delete</li>
+<li>Export to PDF</li>
+<li>Export to Word</li>
+<li>Export to PowerPoint</li>
+<li>Export to Excel</li>
+</ul>
+<div class="section" id="multi-lingual-reports">
+<h2>Multi-Lingual Reports<a class="headerlink" href="#multi-lingual-reports" title="Permalink to this headline">¶</a></h2>
+<p>If a survey contains 1 of 72 languages, a Report can be created to strictly represent said language. You can add French, German, Bulgarian, or even Bengali, to your survey. There’s no limit on the number of languages a survey can have, and when you create a multi-lingual survey, the subsequent report will also have multi-lingual functionality.</p>
+<a class="screenshot reference internal image-reference" href="../../_images/french_report_choice.png"><img alt="Create a French Report" class="screenshot align-left" src="../../_images/french_report_choice.png" style="width: 420.7px; height: 119.0px;" /></a>
+<p>If for instance, your survey has both French and English language support, you’ll be able to view and create reports in English and French. To do so, go into the “Reports” section under “Analyze” and select “French” from the dropdown, as seen below.</p>
+<p>After clicking “Create Report”, a newly created French report will be at your disposal. Subsequently, any new items added into the Report will be in the selected Report language.
+The same process can be followed for any other languages that have been added to the survey.</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/french_report.png"><img alt="French Report" class="screenshot" src="../../_images/french_report.png" style="width: 566.3px; height: 338.1px;" /></a>
+<p class="caption"><em>Figure 9.1</em> French Report</p>
+</div>
+</div>
+</div>
+<div class="section" id="chart-types">
+<h1>Chart Types<a class="headerlink" href="#chart-types" title="Permalink to this headline">¶</a></h1>
+<p>When creating a Report, by default, every question type wil have its appropriate chart item which allows for an immediate level of satisfaction when viewing large sets of data. But, selecting the appropriate chart item is required when dealing with specific question types. Below are:</p>
+<ol class="arabic simple">
+<li>An example of how the Chart Item looks like</li>
+<li>The only question types available to certain items</li>
+</ol>
+<div class="section" id="text">
+<h2>Text<a class="headerlink" href="#text" title="Permalink to this headline">¶</a></h2>
+<p>Text chart is used primarily as a Report Separator to indicate what either the Report is supposed to represent, or what the following items signify.</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/text_chart_type.png"><img alt="Text Chart Type" class="screenshot" src="../../_images/text_chart_type.png" style="width: 509.6px; height: 64.4px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Text Chart Item</p>
+</div>
+<p>A Text chart item is not specific to a question type</p>
+</div>
+<div class="section" id="table">
+<h2>Table<a class="headerlink" href="#table" title="Permalink to this headline">¶</a></h2>
+<p>Table is the most common chart item when information is required to be quickly displayed in a Report, as it allows for the data source to be formated for a text item, such as a axis, legends, items and labels</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/table_chart_type.png"><img alt="Text Chart Type" class="screenshot" src="../../_images/table_chart_type.png" style="width: 525.0px; height: 299.6px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Text Chart Item</p>
+</div>
+<p>A Text chart item is available to:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Yes/No</li>
+<li>Checkbox</li>
+<li>Multiple Choice</li>
+<li>Dropdown</li>
+<li>Multiple Choice Grid</li>
+<li>Dropdown Grid</li>
+<li>Checkbox Grid</li>
+<li>Natrix</li>
+<li>3D Matrix</li>
+<li>Semantic Differential</li>
+<li>Net Promoter</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="pie-chart">
+<h2>Pie Chart<a class="headerlink" href="#pie-chart" title="Permalink to this headline">¶</a></h2>
+<p>A familiar sight to any user of Reports, is that infamous circular chart divided into sectors, each whose length (consequently its central angle and area) is proportional to the quanity it represents, otherwise known as the Pie Chart. The Chart item is perfect for forcing 1 question, short in length, but powerful in information, to be displayed in a colourful pie format.</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/pie_chart_type.png"><img alt="Pie Chart Type" class="screenshot" src="../../_images/pie_chart_type.png" style="width: 516.6px; height: 252.0px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Pie Chart Item</p>
+</div>
+<p>A Pie chart item is available to:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Yes/No</li>
+<li>Multiple Choice</li>
+<li>Dropdown</li>
+<li>Multiple Choice Grid</li>
+<li>Dropdown Grid</li>
+<li>Natrix</li>
+<li>Drill Down</li>
+<li>3D Matrix</li>
+<li>Semantic Differential</li>
+<li>Net Promoter</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="column-chart">
+<h2>Column Chart<a class="headerlink" href="#column-chart" title="Permalink to this headline">¶</a></h2>
+<p>A column chart, like a bar chart, is a simple chart with rectangular bars of lengths usually proportional to the magnitues or frequencies of what they represent, ie., time, age, etc.</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/column_chart_type.png"><img alt="Column Chart Type" class="screenshot" src="../../_images/column_chart_type.png" style="width: 527.1px; height: 256.2px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Column Chart Item</p>
+</div>
+<p>A Column chart item is available to:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Yes/No</li>
+<li>Checkbox</li>
+<li>Multiple Choice</li>
+<li>Dropdown</li>
+<li>Multiple Choice Grid</li>
+<li>Dropdown Grid</li>
+<li>Checkbox Grid</li>
+<li>Natrix</li>
+<li>Drill Down</li>
+<li>3D Matrix</li>
+<li>Semantic Differential</li>
+<li>Net Promoter</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="bar-chart">
+<h2>Bar Chart<a class="headerlink" href="#bar-chart" title="Permalink to this headline">¶</a></h2>
+<p>A bar chart, like a column chart, is a simple chart with rectangular bars of lengths usually proportional to the magnitues or frequencies of what they represent, ie., time, age, etc.</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/bar_chart_item.png"><img alt="Bar Chart Type" class="screenshot" src="../../_images/bar_chart_item.png" style="width: 519.4px; height: 259.0px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Bar Chart Item</p>
+</div>
+<p>A Bar chart item is available to:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Yes/No</li>
+<li>Checkbox</li>
+<li>Multiple Choice</li>
+<li>Dropdown</li>
+<li>Multiple Choice Grid</li>
+<li>Dropdown Grid</li>
+<li>Checkbox Grid</li>
+<li>Natrix</li>
+<li>Drill Down</li>
+<li>3D Matrix</li>
+<li>Semantic Differential</li>
+<li>Net Promoter</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="line-chart">
+<h2>Line Chart<a class="headerlink" href="#line-chart" title="Permalink to this headline">¶</a></h2>
+<p>A line chart or line graph is a type of chart, which displays information as a series of data points connected by straight lines, thus becoming a perfect candidate for showing finaicial reports, sales over time, etc.</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/line_chart_type.png"><img alt="Line Chart Type" class="screenshot" src="../../_images/line_chart_type.png" style="width: 504.7px; height: 175.0px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Line Chart Type</p>
+</div>
+<p>A Line Chart item is available to:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Yes/No</li>
+<li>Checkbox</li>
+<li>Multiple Choice</li>
+<li>Dropdown</li>
+<li>Multiple Choice Grid</li>
+<li>Dropdown Grid</li>
+<li>Checkbox Grid</li>
+<li>Natrix</li>
+<li>Drill Down</li>
+<li>3D Matrix</li>
+<li>Semantic Differential</li>
+<li>Net Promoter</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="appendix">
+<h2>Appendix<a class="headerlink" href="#appendix" title="Permalink to this headline">¶</a></h2>
+<p>ALl text response data garnered will appear in the Appendix.</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/appendix_chart_type.png"><img alt="Appendix Chart Type" class="screenshot" src="../../_images/appendix_chart_type.png" style="width: 527.8px; height: 189.0px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Appendix Chart Item</p>
+</div>
+<p>An Appendix chart item is available to:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Text Response</li>
+<li>Date/Time</li>
+<li>Text Response Grid</li>
+<li>Natrix</li>
+<li>3D Matrix</li>
+<li>Hidden Value</li>
+<li>Timer</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="cross-tabulation">
+<h2>Cross-tabulation<a class="headerlink" href="#cross-tabulation" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/cross_tabulation_chart_type.png"><img alt="Cross Tabulation Chart Type" class="screenshot" src="../../_images/cross_tabulation_chart_type.png" style="width: 534.8px; height: 468.3px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Cross Tabulation Chart Item</p>
+</div>
+<p>A Cross Tabulation chart item is available to:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Yes/No</li>
+<li>Checkbox</li>
+<li>Multiple Choice</li>
+<li>Dropdown</li>
+<li>Multiple Choice Grid</li>
+<li>Dropdown Grid</li>
+<li>Checkbox Grid</li>
+<li>Natrix</li>
+<li>Drill Down</li>
+<li>3D Matrix</li>
+<li>Semantic Differential</li>
+<li>Net Promoter</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="aggregate-statistics">
+<h2>Aggregate Statistics<a class="headerlink" href="#aggregate-statistics" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/aggregate_chart_type.png"><img alt="../../_images/aggregate_chart_type.png" class="screenshot" src="../../_images/aggregate_chart_type.png" style="width: 507.5px; height: 93.8px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Aggregate Statistics Chart Item</p>
+</div>
+<p>An Aggregate Statistics chart item is available to:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Yes/No</li>
+<li>Checkbox</li>
+<li>Multiple Choice</li>
+<li>Dropdown</li>
+<li>Multiple Choice Grid</li>
+<li>Dropdown Grid</li>
+<li>Checkbox Grid</li>
+<li>Natrix</li>
+<li>Drill Down</li>
+<li>3D Matrix</li>
+<li>Semantic Differential</li>
+<li>Net Promoter</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="time-series-chart">
+<h2>Time-series Chart<a class="headerlink" href="#time-series-chart" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/time_chart_type.png"><img alt="Time Series Chart Type" class="screenshot" src="../../_images/time_chart_type.png" style="width: 506.1px; height: 256.2px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Time Series Chart Item</p>
+</div>
+<p>A Time Series chart item is available to:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Yes/No</li>
+<li>Checkbox</li>
+<li>Multiple Choice</li>
+<li>Dropdown</li>
+<li>Multiple Choice Grid</li>
+<li>Dropdown Grid</li>
+<li>Checkbox Grid</li>
+<li>Natrix</li>
+<li>Drill Down</li>
+<li>3D Matrix</li>
+<li>Semantic Differential</li>
+<li>Net Promoter</li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="edit">
+<h1>Edit<a class="headerlink" href="#edit" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="edit-this-item">
+<h2>Edit This Item<a class="headerlink" href="#edit-this-item" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="edit-report">
+<h2>Edit Report<a class="headerlink" href="#edit-report" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+<div class="section" id="filter">
+<h1>Filter<a class="headerlink" href="#filter" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="share">
+<h1>Share<a class="headerlink" href="#share" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="share-individual-reports">
+<h2>Share Individual Reports<a class="headerlink" href="#share-individual-reports" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="share-reports">
+<h2>Share Reports<a class="headerlink" href="#share-reports" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+<div class="section" id="export">
+<h1>Export<a class="headerlink" href="#export" title="Permalink to this headline">¶</a></h1>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Reports</a><ul>
+<li><a class="reference internal" href="#report-dashboard">Report Dashboard</a></li>
+<li><a class="reference internal" href="#survey-statistics">Survey Statistics</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#new-report">New Report</a><ul>
+<li><a class="reference internal" href="#multi-lingual-reports">Multi-Lingual Reports</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#chart-types">Chart Types</a><ul>
+<li><a class="reference internal" href="#text">Text</a></li>
+<li><a class="reference internal" href="#table">Table</a></li>
+<li><a class="reference internal" href="#pie-chart">Pie Chart</a></li>
+<li><a class="reference internal" href="#column-chart">Column Chart</a></li>
+<li><a class="reference internal" href="#bar-chart">Bar Chart</a></li>
+<li><a class="reference internal" href="#line-chart">Line Chart</a></li>
+<li><a class="reference internal" href="#appendix">Appendix</a></li>
+<li><a class="reference internal" href="#cross-tabulation">Cross-tabulation</a></li>
+<li><a class="reference internal" href="#aggregate-statistics">Aggregate Statistics</a></li>
+<li><a class="reference internal" href="#time-series-chart">Time-series Chart</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#edit">Edit</a><ul>
+<li><a class="reference internal" href="#edit-this-item">Edit This Item</a></li>
+<li><a class="reference internal" href="#edit-report">Edit Report</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#filter">Filter</a></li>
+<li><a class="reference internal" href="#share">Share</a><ul>
+<li><a class="reference internal" href="#share-individual-reports">Share Individual Reports</a></li>
+<li><a class="reference internal" href="#share-reports">Share Reports</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#export">Export</a></li>
+</ul>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../http-routingtable.html" title="HTTP Routing Table"
+             >routing table</a> |</li>
+        <li class="right" >
+          <a href="../Tutorials/index.html" title="&lt;no title&gt;"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="response.html" title="&lt;no title&gt;"
+             >previous</a> |</li>
+        <li><a href="../../index.html">FluidSurveys 4.0 documentation</a> &raquo;</li>
+          <li><a href="index.html" >Analyze</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012, FluidSurveys.
+    </div>
+  </body>
+</html>

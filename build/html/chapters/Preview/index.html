@@ -1,0 +1,149 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Preview &mdash; FluidSurveys 4.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="FluidSurveys 4.0 documentation" href="../../index.html" />
+    <link rel="next" title="Publish" href="../Publish/index.html" />
+    <link rel="prev" title="Style" href="../Style/index.html" />
+	 
+	<script type="text/javascript" src="http://use.typekit.com/hfr5qlq.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+  </head>
+  <body>
+	<div class="top-bar">
+		<div class="center">
+			<span class="logo"><a href="/">FluidSurveys Documentation</a></span>
+		</div>
+	</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../http-routingtable.html" title="HTTP Routing Table"
+             >routing table</a> |</li>
+        <li class="right" >
+          <a href="../Publish/index.html" title="Publish"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../Style/index.html" title="Style"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">FluidSurveys 4.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="preview">
+<span id="id1"></span><h1>Preview<a class="headerlink" href="#preview" title="Permalink to this headline">¶</a></h1>
+<p>Just like with every King, there is a powerful Queen behind him. Just like with every survey, there is a powerful Preview button available that allows for everything created thusfar, to be seen in its fully potential light. Clicking on the icon will open your survey in a new browser window for testing. The survey will appear identical to what a respondent will see, save the Administrator Toolbar.</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/survey_preview.png"><img alt="Survey in Preview Mode" class="screenshot" src="../../_images/survey_preview.png" style="width: 686.7px; height: 322.7px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Survey in Preview Mode</p>
+</div>
+<p>Previewing a survey allows for:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Jumping between pages via The Administrator Toolbar</li>
+<li>Export currently selected responses to Adobe Reader (.PDF) or Microsoft Word (.DOC)</li>
+<li>Adhere to the same validation, and logic as a respondent would be subjected to</li>
+</ol>
+</div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The administrator toolbar will only appear to you when you’re logged in, not to your respondents.</p>
+</div>
+<p>When previewing a page that has looping, or extraction based on a previous question, the question may appear blank or look odd due to not pulling the correct data. Therefore, in order to test Looping and Extraction, always refer to the initial pivot point.</p>
+<div class="section" id="test-data">
+<h2>Test Data<a class="headerlink" href="#test-data" title="Permalink to this headline">¶</a></h2>
+<p>As you go through the process of creating your survey, you&#8217;re likely to test it out by either sending it around to colleagues or completing it yourself. Through this process, you&#8217;ll accumulate data that you might not want included in the final results.</p>
+<p>Luckily, whenever the Preview button is pressed within the Editor, the /?TEST_DATA string is appended to the end of the link.</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/test_data_url.png"><img alt="Test Data in URL" class="screenshot" src="../../_images/test_data_url.png" style="width: 338.1px; height: 22.4px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Test Data indicator in URL</p>
+</div>
+<p>This process alerts the survey software to attach the string (Test Data) to the response generated for that one single instance. You can then quickly identify and delete the responses that were submitted as tests, preventing them from skewing your end results.</p>
+<p>If you were to visit your survey through the Publish link, or by removing the appended TEST_DATA string, then all data would be seen as “Complete”, rather than “Test”.</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/test_data.png"><img alt="Test Data in URL" class="screenshot" src="../../_images/test_data.png" style="width: 662.9px; height: 67.2px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Test Data indicator in URL</p>
+</div>
+<p>This data is not final, however, and can still be removed, either individually or in bulk. To delete all of the responses, go to the “Response” page under “Analyze”, and select “Delete All Responses” from the “Actions…” dropdown. The software will then ask for you to enter a verification string, “I agree” before deleting all the information.</p>
+</div>
+<div class="section" id="locations">
+<h2>Locations<a class="headerlink" href="#locations" title="Permalink to this headline">¶</a></h2>
+<p>Previewing the survey is possible through either clicking &#8220;Preview&#8221; on the Survey Dashboard page, or &#8220;Preview&#8221; within the Editor.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Preview</a><ul>
+<li><a class="reference internal" href="#test-data">Test Data</a></li>
+<li><a class="reference internal" href="#locations">Locations</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../http-routingtable.html" title="HTTP Routing Table"
+             >routing table</a> |</li>
+        <li class="right" >
+          <a href="../Publish/index.html" title="Publish"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../Style/index.html" title="Style"
+             >previous</a> |</li>
+        <li><a href="../../index.html">FluidSurveys 4.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012, FluidSurveys.
+    </div>
+  </body>
+</html>

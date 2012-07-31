@@ -1,0 +1,579 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Deployment &mdash; FluidSurveys 4.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="FluidSurveys 4.0 documentation" href="../../index.html" />
+    <link rel="up" title="Publish" href="index.html" />
+    <link rel="next" title="Settings" href="settings.html" />
+    <link rel="prev" title="Publish" href="index.html" />
+	 
+	<script type="text/javascript" src="http://use.typekit.com/hfr5qlq.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+  </head>
+  <body>
+	<div class="top-bar">
+		<div class="center">
+			<span class="logo"><a href="/">FluidSurveys Documentation</a></span>
+		</div>
+	</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../http-routingtable.html" title="HTTP Routing Table"
+             >routing table</a> |</li>
+        <li class="right" >
+          <a href="settings.html" title="Settings"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Publish"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">FluidSurveys 4.0 documentation</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">Publish</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="deployment">
+<h1>Deployment<a class="headerlink" href="#deployment" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="deployment-status">
+<h2>Deployment Status<a class="headerlink" href="#deployment-status" title="Permalink to this headline">¶</a></h2>
+<p>In order to make survey either accessible, or inaccessible to the public, it must be set to Live or Closed respectively. But, any survey created, by default will have its status set to &#8220;Live&#8221;. &#8220;Closed&#8221; allows the survey creator to build and test their questionnaire in a private environment. Since all surveys are &#8220;Live&#8221; by default, the surveys existence will be unknown to anyone, as the Administrator is in control of informing the rest of the world about its being.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p>You can also alter the deployment status on your survey by clicking &#8220;Live&#8221; or &#8220;Closed&#8221; on your survey in the Survey Dashboard</p>
+<a class="screenshot last reference internal image-reference" href="../../_images/deployment_status_indicator.png"><img alt="Section Heading" class="screenshot align-center" src="../../_images/deployment_status_indicator.png" style="width: 403.9px; height: 154.0px;" /></a>
+</div>
+<p>A Closed survey will present the following error message to anybody who tries to load the survey.</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/closed_survey_message.png"><img alt="Closed Survey Error Message" class="screenshot" src="../../_images/closed_survey_message.png" style="width: 631.4px; height: 133.7px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Closed Survey Error</p>
+</div>
+<p>When a survey is Live, it is a generally advised against changing anything. However, if a addition or subtraction must be made, please refer to the list below to see if your aim is Acceptable, or an Unacceptable Change</p>
+<p><strong>Acceptable Changes:</strong> These modifications can be made while responses are being, or have been, collected and will not affect the integrity of the data.</p>
+<ul class="simple">
+<li>Changing the order of questions (Moving questions around on the page, or between pages)</li>
+<li>Changing the wording of questions</li>
+<li>Add new questions</li>
+</ul>
+<p><strong>Unacceptable Changes</strong>: These modifications cannot be made while responses are being, or have been, collected as they will affect the integrity of the data.</p>
+<ul class="simple">
+<li>Deleting questions: Once you delete a question, all of the responses that have been collected for that question will be cleared from the results with no possibility of recovery</li>
+<li>Re-arranging choices in a question: If you change the order of choices in a question, the responses will no longer correctly match up, resulting in data integrity issues. Responses are stored based on the location of the choice, not the name of the choice</li>
+</ul>
+</div>
+<div class="section" id="online-deployment-url">
+<h2>Online Deployment URL<a class="headerlink" href="#online-deployment-url" title="Permalink to this headline">¶</a></h2>
+<p>Every survey created within an account is defined by its parts; Username and the name of the survey. The Online Deployment URL is what links the world up with your specific survey.</p>
+<p>As a result, a URL will always take the username and the name of the survey into consideration when defining itself. In some cases, this can cause a large link that may look off-setting to some potential respondents. It is possible to shorten the URL to a smaller and more manageable size.</p>
+<p>Click &#8220;Customize this URL&#8221; beside the Online Deployment URL, enter a desired name, and either &#8220;Valid, click Save to confirm...&#8221; will appear, or &#8220;Already taken, choose another...&#8221; if the URL has already been claimed.</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/customize_this_url.png"><img alt="Customized URL" class="screenshot" src="../../_images/customize_this_url.png" style="width: 583.1px; height: 113.4px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Customized URL</p>
+</div>
+<p>Additionally, a feature of FluidSurveys is the ability to present a survey in a number of languages (72 to be exact!) which allows for a survey to be deployed in those languages. If, for instance, your survey has English, French and Spanish as the survey languages, then you can send respondents either an English, French, Spanish Link, or the default Online Deployment URL that will use the default survey language. If your survey does not have multiple languages, then the language dropdown will not be visible.</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/multiple_language_dropdown.png"><img alt="Multiple Language Dropdown" class="screenshot" src="../../_images/multiple_language_dropdown.png" style="width: 634.2px; height: 74.9px;" /></a>
+<p class="caption"><em>Figure 9.1</em> French Online Deployment URL</p>
+</div>
+<p>As you&#8217;ll notice, French has been selected, and the &#8220;Online Deployment URL&#8221; immediately switches to langfra (Indicating French)</p>
+</div>
+<div class="section" id="embed-code">
+<h2>Embed Code<a class="headerlink" href="#embed-code" title="Permalink to this headline">¶</a></h2>
+<p>An alternative way to expanding your surveys horizons via the usual routine, eg., e-mails, QR codes, Social Networking, it is possible to embed the survey directly into your web site, so anyone who visits the site will be able to take the survey via an IFRAME.</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/embed_code.png"><img alt="Embed Survey Code" class="screenshot" src="../../_images/embed_code.png" style="width: 625.1px; height: 63.0px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Embed Code</p>
+</div>
+<p>You can manually add extra HTML code (to change the height and width, for example) directly into the code. When editing your web site to include your survey, you can refresh your website at any time to preview the changes in your survey.</p>
+<p>The survey will take on the default style that we provide and the themer will allow you to dynamically modify what your survey looks like.</p>
+<p>If you have <a class="reference external" href="http://www.wordpress.com">WordPress</a>, you can take the provided code and copy and paste it into a “Post” or “Page”.</p>
+</div>
+<div class="section" id="email-invitations">
+<h2>Email Invitations<a class="headerlink" href="#email-invitations" title="Permalink to this headline">¶</a></h2>
+<p>FluidSurveys’ comes equipped with an invitation module through which survey links can be sent to potential respondents via email. To learn more about Email Invitations, refer to the &#8220;Invites&#8221; section of the manual.</p>
+</div>
+<div class="section" id="custom-survey-panel">
+<h2>Custom Survey Panel<a class="headerlink" href="#custom-survey-panel" title="Permalink to this headline">¶</a></h2>
+<p>In the past, when you wanted to collect responses from a target audience, eg., Females ages 24-34 who live in Alaska, United States), you&#8217;d have to create your own survey in FluidSurveys, and then work with an external panel management company, or list provider to start collecting responses. But, collecting responses from your target audience is possible within the Custom Survey Panel via CINT.</p>
+<p>Custom Survey Panel is available on all plans, including Free, and the cost associated with each &#8220;Completed&#8221; response is based on the type of respondent segment that you are going after (Some segments will be more expensive than other segments &#8211; this is mainly determined by supply/demand in the response marketplace)</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/cint_create_an_order.png"><img alt="Place an order for CINT" class="screenshot" src="../../_images/cint_create_an_order.png" style="width: 646.8px; height: 182.0px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Create a CINT order</p>
+</div>
+<p><strong>Step 1: Basics</strong></p>
+<p>The new dialog that appears after &#8220;Create an order&#8221; was clicked is Step 1 of 3. Basics is where you begin outlining your high-level target audience, ie., Country, Region, the number of questions you will be asking, along with the age group. Using the aforementioned example, Females ages 24-34, who live in Alaska, United Stated, an order would look as follows.</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/cint_step1_basics.png"><img alt="Step 1 Basics" class="screenshot" src="../../_images/cint_step1_basics.png" style="width: 408.8px; height: 430.5px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Basic Target Demographic</p>
+</div>
+<table border="1" class="docutils">
+<colgroup>
+<col width="30%" />
+<col width="70%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Section</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><ol class="first last arabic simple">
+<li>Country</li>
+</ol>
+</td>
+<td>Choose where you wish to run your survey. If you would like to conduct your survey in more than one region, we suggest you create a different target group for each selection. The cost of running two separate selections is the same as running one larger selection</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="2">
+<li>Region</li>
+</ol>
+</td>
+<td>Select the region of your target group. If you would like to conduct your survey in more than one region, we suggest you create a different target group for each selection. The cost of running two separate selections is the same as running one larger selection</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="3">
+<li>Gender</li>
+</ol>
+</td>
+<td>Select the gender of your target group. If you would like to specify the exact distribution between genders, we suggest you create a different target group for each selection. For example, if you wish to get 200 answers from females and 300 answers from males, place two orders with 200 females and 300 males respectively. The cost of running two separate selections is the same as running one larger selection</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="4">
+<li>Age Range</li>
+</ol>
+</td>
+<td>Choose the age range for the target group. If you would like to specify the exact distribution between age groups, create a different target group for each selection. For example, if you wish to get 200 answers from people in age range 18-22 and 300 answers from people in the age range 23-27, place two orders with 200 and 300 answers respectively. The cost of running two separate selections is the same as running one larger selection</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="5">
+<li>Completed Surveys Needed</li>
+</ol>
+</td>
+<td>The amount of completed surveys required before a successful amount of data has been received</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="6">
+<li>Price</li>
+</ol>
+</td>
+<td>The price is instantly and automatically calculated when you define your target group. Since the process is automated from start-to-finish there are no project costs, set-up costs, minimum or hidden fees. More respondents, longer surveys and narrower target group yields a higher pricer. Why is that? Cint pays incentives to panelists and panel owners when participating in your survey. We pay more for a larger group, for a longer survey and for people harder to find.</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="7">
+<li>Delivery Time</li>
+</ol>
+</td>
+<td>Delivery time is calculated based upon your search criteria and our current available respondents</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="8">
+<li>Available Respondents</li>
+</ol>
+</td>
+<td>This is the current number of available <strong>respondents completing your survey (completes)</strong> for your selected target group within the delivery time shown above. To clarify, if you order 500 completed surveys, Cint will continue to send respondents to your survey until 500 respondents have fully completed your survey.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p>If your target audience is unavailable, a warning will appear at the bottom stating the base minimum available for your desired group.</p>
+<a class="screenshot last reference internal image-reference" href="../../_images/cint_basics_error.png"><img alt="Step 1 Basics" class="screenshot align-center" src="../../_images/cint_basics_error.png" style="width: 383.6px; height: 55.3px;" /></a>
+</div>
+<p>Once the Basics have been outlined, clicking [Continue] will allow for a deeper customization of finding that desired target group.</p>
+<p>** Step 2: Profiling**</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/cint_step2_profiling.png"><img alt="Step 2 Profiling" class="screenshot" src="../../_images/cint_step2_profiling.png" style="width: 406.7px; height: 350.0px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Profiling Target Audience</p>
+</div>
+<table border="1" class="docutils">
+<colgroup>
+<col width="30%" />
+<col width="70%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Section</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><ol class="first last arabic simple">
+<li>Standard Demographics and Occupation Status</li>
+</ol>
+</td>
+<td>Education level or</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="2">
+<li>Household</li>
+</ol>
+</td>
+<td>Martial Status, Houshold size, Number of children, Ages of children, Personal income, Household income.</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="3">
+<li>Profession</li>
+</ol>
+</td>
+<td>Company size, Field of expertise, Professional position in company</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="4">
+<li>Transportation</li>
+</ol>
+</td>
+<td>Car access, Access to motorcycle, Purpose of travelling by plane</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="5">
+<li>Other</li>
+</ol>
+</td>
+<td>Glasses/Contact lenses, Smoking habits, Use of mobile phone features</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Overview</strong></p>
+<p>Once your target demographic has been fully finalized, clicking [Continue] brings you to the Overview screen which allows for you to double-check that your survey is indeed tailored for the desired target group.</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/cint_step3_overview.png"><img alt="Step 3 Overview" class="screenshot" src="../../_images/cint_step3_overview.png" style="width: 407.4px; height: 493.5px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Overview before purchasing</p>
+</div>
+<p><strong>Buy</strong></p>
+<p>The last step is providing payment options. Available payment plans are:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Master card</li>
+<li>Visa</li>
+<li>PayPal</li>
+</ul>
+</div></blockquote>
+<p>Clicking [Process my order] will return you to the first screen, only this time you will see your order. Depending on the defined time, ie., 8 days, you will start to see responses trickle into your survey.</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/cint_overview_payment.png"><img alt="Step 4 Payment Overview" class="screenshot" src="../../_images/cint_overview_payment.png" style="width: 644.0px; height: 134.4px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Overview of purchased order</p>
+</div>
+</div>
+<div class="section" id="website-popups">
+<h2>Website Popups<a class="headerlink" href="#website-popups" title="Permalink to this headline">¶</a></h2>
+<p>Popups can be the fastest, and easiest and most effective way for site visitors to come back. Track visitor opinions, gauge trend popularity, and find out what your web site visitors are thinking with a FluidSurveys survey and a Popup. One way to distribute a survey is via a pop-up window on your website. A common use of popups is to ask the user why they are viewing a certain item in the &#8220;Store&#8221; page, or what the visitor would like to see on your web site to guarantee that they will/would return.</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/pop_up.png"><img alt="Popup example" class="screenshot" src="../../_images/pop_up.png" style="width: 352.1px; height: 242.9px;" /></a>
+<p class="caption"><em>Figure 9.1</em> How a popup looks like</p>
+</div>
+<p>Click &#8220;Add new popup&#8221; to get started. A new screen will slowly fade into view, which contains all necessary control options as defined below.</p>
+<p><strong>Settings</strong></p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/popup_settings.png"><img alt="Settings popup" class="screenshot" src="../../_images/popup_settings.png" style="width: 603.4px; height: 385.7px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Available settings for a popup</p>
+</div>
+<table border="1" class="docutils">
+<colgroup>
+<col width="30%" />
+<col width="70%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Section</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><ol class="first last arabic simple">
+<li>Name</li>
+</ol>
+</td>
+<td>The name is simply a label for identification purposes when viewing your list of popups. The user who views the popup will not see this label.</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="2">
+<li>Identifier</li>
+</ol>
+</td>
+<td>This value will be used to set the cookie preventing the popup from being shown twice. You may leave this blank to use a unique identifier, or set it to a custom value. If you use a custom value, all popups sharing this value will check for this value before being displayed. This allows you to have multiple popups on multiple pages but only present the user with one.</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="3">
+<li>Enabled</li>
+</ol>
+</td>
+<td>Allows you to quickly enable or disable this popup. This way you can leave the code for the popup on your website, but if you disable the popup here, it will not appear to any visitors.</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="4">
+<li>Pop Over</li>
+</ol>
+</td>
+<td>Force this popup to stay in the foreground. By default (disabled) the script will attempt to put the displayed survey in the background if the browser allows it. Checking this will attempt to show the window the survey appears in above the current window</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="5">
+<li>Use Standby Page</li>
+</ol>
+</td>
+<td>If this option is enabled, when the user accepts the survey offer, the window popping up in the background will show the standby page first. The standby page will display the message set on the messages tab and contain a link to the survey, but encourages the user to finish browsing. When the user leaves the domain, the standby page automatically redirects to the survey.</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="6">
+<li>Display Effect</li>
+</ol>
+</td>
+<td>Select an effect to use when displaying t he popup.</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="7">
+<li>Language</li>
+</ol>
+</td>
+<td>Determines which language the survey will be displayed in if your survey uses multiple languages. Since we are unable to detect which language your user would prefer, you will need to create multiple popups, or duplicate an existing one and place the code for the correct language on the corresponding page of your site. The user may still change the survey language once they visit the survey, regardless of which language it was started in.</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="8">
+<li>Percentage</li>
+</ol>
+</td>
+<td>Percentage value between 0 and 100%. Your popups will only be shown to this percentage of people. If you set this value to 10%, abolut 1 in 10 people will see your popups. You may use floating point values such as 0.5% for 1 in 200. For frequency, every X visitor will be shown your popup, while with percentage, each visitor has an X% chance of being shown your popup.</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="9">
+<li>Frequency</li>
+</ol>
+</td>
+<td>Display your popup to every x vistior. If this value is set to 5, every 5th visitor will see your popup. 5, 10, 20, etc. This is checked before the percentage value, so if you have frequency set to 5, and percentage set to 25%, every 5th visitor has a 25% chance of seeing your popup. For percentage, every visitor has X% chance of being shown your popup, where with frequency every X visitor is guaranteed to see the popup.</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="10">
+<li>Delay</li>
+</ol>
+</td>
+<td>Delay (in seconds) before the popup will appear to a visitor on your page</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="11">
+<li>Postpone Length</li>
+</ol>
+</td>
+<td>The length of time (in hours) before a user will be eligible to see the popup again after they were not shown it based on either frequency or percentage limitations. Set this to -1 and the user will not see the popup a second time, unless they clear htier cookies.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Messages</strong></p>
+<p>Once the functionality, settings, and your desired outcome has been tailored and tweaked, the message can be modified by clicking on the Messages tab at the top. Messages allows for the overall message to be tweaked, which allows for the target audience to instnatly become connected with wording provided on the initial popup.</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/popup_messages.png"><img alt="Messages popup" class="screenshot" src="../../_images/popup_messages.png" style="width: 595.0px; height: 444.5px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Available message settings for a popup</p>
+</div>
+<table border="1" class="docutils">
+<colgroup>
+<col width="30%" />
+<col width="70%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Section</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><ol class="first last arabic simple">
+<li>Header</li>
+</ol>
+</td>
+<td>The text in the header of the popup, usually one line which will draw the user&#8217;s attention and cause them to read the rest of htem message below</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="2">
+<li>Message</li>
+</ol>
+</td>
+<td>THe text in the main content of the popup. This is the greeting you will give your user and ask them to take their survey, possibly providing some information about the survey, and why it is being taken.</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="3">
+<li>Yes Button</li>
+</ol>
+</td>
+<td>The text displayed on the button that the user will click to take the survey</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="4">
+<li>No Button</li>
+</ol>
+</td>
+<td>The text displayed on the button that the user will click to opt out of taking the survey</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="5">
+<li>Standby Mesage</li>
+</ol>
+</td>
+<td>This text will be displayed in the window that sits in the background while the user finishes browsing the site. It should contain a word or phrase surrounded by [[ ]]. This text will be linked to the survey URL, allowing the user to being the survey immediately instead of waiting until they leave the site. <strong>Example:</strong> &#8220;Click [[ here ]] to begin your survey&#8221;</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Style</strong></p>
+<p>Styling your popup can ensure that the maximum amount of visitors take your survey. While the width and height can be altered on the &#8220;Settings&#8221; tab, the ability to affect the Overall colour, height, border is possible.</p>
+<p><strong>Code</strong></p>
+<p>The final step before publishing your popup survey on your web site, is to link your web site up, with your popup, using the provided &#8220;Code&#8221;</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/popup_code.png"><img alt="Popup code" class="screenshot" src="../../_images/popup_code.png" style="width: 594.3px; height: 419.3px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Popup Code</p>
+</div>
+<table border="1" class="docutils">
+<colgroup>
+<col width="30%" />
+<col width="70%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Section</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><ol class="first last arabic simple">
+<li>HTML Code</li>
+</ol>
+</td>
+<td>This is the code you will need to paste in your website to trigger the popup</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="2">
+<li>Prevent Popup Code</li>
+</ol>
+</td>
+<td>Place this code at the top of a page which you would like to disable the popup for that user. For example, if you have a user who lands on your pricing page, and you do not want this person to see the popup now, put this code on your pricing page.</td>
+</tr>
+</tbody>
+</table>
+<p>At any point during the process of creating, adjusting and tweaking your popup, it is always encouraged to save any work completed thus far. At the bottom of the &#8220;New Popup&#8221; screen, is a &#8220;Options&#8221; dial, that contains <em>Save Changes</em>, <em>Preview</em>, <em>Undo Changes</em>, <em>Duplicate</em>, <em>Delete</em></p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/popup_save.png"><img alt="Save your popup settings" class="screenshot" src="../../_images/popup_save.png" style="width: 593.6px; height: 42.7px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Save your popup</p>
+</div>
+</div>
+<div class="section" id="create-a-2d-bar-code">
+<h2>Create a 2D Bar Code<a class="headerlink" href="#create-a-2d-bar-code" title="Permalink to this headline">¶</a></h2>
+<p>Smart phones are becoming more and more common, and a popular way of getting a survey onto a phone is via QR Codes. Like a barcode, the QR code contains all necessary information for your survey to be loaded when scanned via the phones barcode reader. The phone can scan the QR code and be instantly transported to your survey. Each and every survey you create will produce an entirely unique QR code.</p>
+<p>You can include this image on your website or on printed material to enable mobile device users to quickly and easily access your survey. To download a QR code for a survey, right click the image and click &#8216;Save Image As&#8217;, or click the &#8216;Save Image&#8217; button at the bottom of this dialog.</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/qr_code.png"><img alt="QR Code" class="screenshot" src="../../_images/qr_code.png" style="width: 185.5px; height: 184.8px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Sample QR Code. Try it out.</p>
+</div>
+</div>
+<div class="section" id="offline-mode">
+<h2>Offline Mode<a class="headerlink" href="#offline-mode" title="Permalink to this headline">¶</a></h2>
+<p>No matter where we go, it seems as if we can always access the Internet, be it on our laptops, phones or tablets. Whether we’re in a coffee shop or on a bus, our favourite websites are just a click away.</p>
+<p>It’s something thats often taken for granted. There are numerous situations, after all, in which obtaining Internet access isn&#8217;t so easy. Perhaps we’re working in the field in a remote area, or we’re at a trade show where the connection is unreliable. Collecting data in such situations is often necessary, but difficult.</p>
+<p>Through the use of Offline Mode, it is easy and economical to gather survey response data offline on any PC or tablet, and have it uploaded to a centralized database (FluidSurveys.com) once a connection has been re-established.</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/offline_survey_mode.png"><img alt="Offline Survey" class="screenshot" src="../../_images/offline_survey_mode.png" style="width: 710.5px; height: 86.8px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Offline survey</p>
+</div>
+<table border="1" class="docutils">
+<colgroup>
+<col width="30%" />
+<col width="70%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Section</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><ol class="first last arabic simple">
+<li>Options</li>
+</ol>
+</td>
+<td>When an Internet connection is established on a devise, <strong>[Upload]</strong> will upload all your responses to its online counter-part. Conversely, if an Internet connection can never be instituted, then <strong>[Export to CSV]</strong> will export all current response data to a Microsoft Excel (.csv) wherein the &#8220;Import Responses&#8221; can be used. When a new response is to be entered, when <strong>[New Response]</strong> is clicked, a respondent will go through the survey, while remaining Offline</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="2">
+<li>Response Row(s)</li>
+</ol>
+</td>
+<td>A row constains 1 response.</td>
+</tr>
+</tbody>
+</table>
+<p>Designed to run in locations where offline data collection is required (limited or no internet access), FluidSurveys’ Mobile Surveys offer a much more convenient and powerful method than traditional pen &amp; paper.</p>
+<p>Sales personnel can now gather feedback as they meet with new clients, researchers can collect data in the field where wireless connections are unavailable, and organizations can set up survey stations at trade shows, kiosks, malls, etc without relying on an internet connection.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>When a survey is in Kiosk Mode on a tablet, there is no &#8220;Shift&#8221; key to exit the fullscreen mode. Therefore, the following code will need to be entered anywhere on the survey, which will force the survey out of Kiosk Mode.</p>
+<p class="last">HTML Code: &lt;a rel=&#8221;nofollow&#8221; href=&#8221;#&#8221; onclick=&#8221;application.surveyView.unlock()&#8221;&gt;EXIT KIOSK MODE&lt;/a&gt;</p>
+</div>
+</div>
+<div class="section" id="share-with-networks">
+<h2>Share With Networks<a class="headerlink" href="#share-with-networks" title="Permalink to this headline">¶</a></h2>
+<p>Any survey you create can keep itself close to the pulse of Internet society with the click of a button. You can easily deploy your survey directly on any of your social networks:</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/share_with_networks.png"><img alt="Share with Networks" class="screenshot" src="../../_images/share_with_networks.png" style="width: 131.6px; height: 32.2px;" /></a>
+<p class="caption"><strong>Left to right:</strong> <a class="reference external" href="http://www.twitter.com">Twitter</a>, <a class="reference external" href="http://www.facebook.com">Facebook</a>, <a class="reference external" href="http://www.digg.com">Digg</a>, <a class="reference external" href="http://www.reddit.com">Reddit</a>, <a class="reference external" href="http://www.delicious.com">Delicious</a></p>
+</div>
+<p>To perform a social network release, click on “Publish” and then select which web site you wish to post on. A popup window will appear asking for your login credentials, and once the information has been entered, you’re done. It’s as easy as 1 – 2 – 3</p>
+</div>
+<div class="section" id="kiosk-mode">
+<h2>Kiosk Mode<a class="headerlink" href="#kiosk-mode" title="Permalink to this headline">¶</a></h2>
+<p>Deploying your survey in kiosk mode allows you to assign a short survey as an &#8220;entrance&#8221; survey. The entrance survey runs only &#8220;one time&#8221; when you first run your survey and then the torch is passed to your main survey. Your main survey will then run in a loop. The responses to the entrance survey will be pre-pended to all responses gathered in that session.</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/kiosk_mode.png"><img alt="Kiosk Mode" class="screenshot" src="../../_images/kiosk_mode.png" style="width: 461.3px; height: 139.3px;" /></a>
+<p class="caption"><em>Figure 9.1</em> Kiosk Mode with &#8220;Survey #1&#8221; perpended</p>
+</div>
+<p>The path a respondent will take is that &#8220;Survey #1&#8221; will be taken once, while the actual survey will constantly loop with a 5 minute timeout timer attached. The first survey is generally a &#8220;Location Survey&#8221;, ie., &#8220;Where is this Kiosk located?&#8221;. Therefore, all responses will have the location perpended. Kiosk mode is perfect for running your survey at a central terminal/computer, whether it’s at a trade show, conference, store, etc.</p>
+<p>When kiosk mode is enabled, your survey runs in a loop. Every time a survey response is completed, it automatically refreshes so the next respondent can begin. This allows multiple people to take the survey from one location with ease!</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Deployment</a><ul>
+<li><a class="reference internal" href="#deployment-status">Deployment Status</a></li>
+<li><a class="reference internal" href="#online-deployment-url">Online Deployment URL</a></li>
+<li><a class="reference internal" href="#embed-code">Embed Code</a></li>
+<li><a class="reference internal" href="#email-invitations">Email Invitations</a></li>
+<li><a class="reference internal" href="#custom-survey-panel">Custom Survey Panel</a></li>
+<li><a class="reference internal" href="#website-popups">Website Popups</a></li>
+<li><a class="reference internal" href="#create-a-2d-bar-code">Create a 2D Bar Code</a></li>
+<li><a class="reference internal" href="#offline-mode">Offline Mode</a></li>
+<li><a class="reference internal" href="#share-with-networks">Share With Networks</a></li>
+<li><a class="reference internal" href="#kiosk-mode">Kiosk Mode</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../http-routingtable.html" title="HTTP Routing Table"
+             >routing table</a> |</li>
+        <li class="right" >
+          <a href="settings.html" title="Settings"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Publish"
+             >previous</a> |</li>
+        <li><a href="../../index.html">FluidSurveys 4.0 documentation</a> &raquo;</li>
+          <li><a href="index.html" >Publish</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012, FluidSurveys.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,1020 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Basic Questions &mdash; FluidSurveys 4.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="FluidSurveys 4.0 documentation" href="../../index.html" />
+    <link rel="up" title="Editor" href="index.html" />
+    <link rel="next" title="Advanced Questions" href="advancedquestions.html" />
+    <link rel="prev" title="Editor Features" href="editorfeatures.html" />
+	 
+	<script type="text/javascript" src="http://use.typekit.com/hfr5qlq.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+  </head>
+  <body>
+	<div class="top-bar">
+		<div class="center">
+			<span class="logo"><a href="/">FluidSurveys Documentation</a></span>
+		</div>
+	</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../http-routingtable.html" title="HTTP Routing Table"
+             >routing table</a> |</li>
+        <li class="right" >
+          <a href="advancedquestions.html" title="Advanced Questions"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="editorfeatures.html" title="Editor Features"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">FluidSurveys 4.0 documentation</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">Editor</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="basic-questions">
+<h1>Basic Questions<a class="headerlink" href="#basic-questions" title="Permalink to this headline">¶</a></h1>
+<p>The complete set of question types are available to Enterprise customers.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">To learn more about each question types available Options, please refer to the <a class="reference internal" href="questionoptions.html#question-options"><em>Question Options</em></a> section of the manual.</p>
+</div>
+<div class="section" id="section-heading">
+<h2>Section Heading<a class="headerlink" href="#section-heading" title="Permalink to this headline">¶</a></h2>
+<p>Section Heading allow survey creators to include text within their survey without actually asking a question. It can be used to include an introduction or some explanatory text in your survey, pictures, endnotes, etc. If ever you simply need to convey a message without explicitly asking a question, then a Section Heading can satisfy such a role.</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/section_heading.png"><img alt="Section Heading" class="screenshot" src="../../_images/section_heading.png" style="width: 416.5px; height: 47.6px;" /></a>
+<p class="caption"><em>Figure 6.1</em> Section Heading Question Type</p>
+</div>
+<table border="1" class="docutils">
+<caption>Display Options</caption>
+<colgroup>
+<col width="35%" />
+<col width="65%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Display Option</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><ol class="first last arabic simple">
+<li>Display side-by-side</li>
+</ol>
+</td>
+<td>This option allows for you to display the question type beside another question as seen in the image to the left. By default, this option is disabled.</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="2">
+<li>Append to previous question</li>
+</ol>
+</td>
+<td>This question type will be appended to the question directly before it. By default, this option is disabled.</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="3">
+<li>Width</li>
+</ol>
+</td>
+<td>You can adjust the width based on a percentage. By default, the value is 100%.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Despite being able to provide a Section Heading with a unique identifier, you cannot attach advanced logic branching rules to the question type.</p>
+</div>
+</div>
+<div class="section" id="yes-no">
+<h2>Yes/No<a class="headerlink" href="#yes-no" title="Permalink to this headline">¶</a></h2>
+<p>A Yes/No question type is the simplest question type that we have. It has a default scoring mechanism of 1 (Yes) and 2 (No), and the choices are translated to their appropriate language when multiple languages resides on a survey. Yes/No questions are perfect when you need quick and easy page skipping based on the response.</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/yes_no.png"><img alt="Yes No" class="screenshot" src="../../_images/yes_no.png" style="width: 596.4px; height: 77.7px;" /></a>
+<p class="caption"><em>Figure 6.1</em> Yes/No Question Type</p>
+</div>
+<p>Including multiple languages on your survey will automatically include the appropriate translation for “Yes/No”. Therefore, Yes/No questions by default become perfect tools as “Do you agree?” pivot questions.</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/yes_no_french.png"><img alt="Yes No French" class="screenshot" src="../../_images/yes_no_french.png" style="width: 595.0px; height: 72.8px;" /></a>
+<p class="caption"><em>Figure 6.1</em> Yes/No Question Type in French</p>
+</div>
+<table border="1" class="docutils">
+<caption>Display Options</caption>
+<colgroup>
+<col width="35%" />
+<col width="65%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Display Option</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><ol class="first last arabic simple">
+<li>Display side-by-side</li>
+</ol>
+</td>
+<td>This option allows for you to display the question type beside another question as seen in the image to the left. By default, this option is disabled.</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="2">
+<li>Append to previous question</li>
+</ol>
+</td>
+<td>This question type will be appended to the question directly before it. By default, this option is disabled.</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="3">
+<li>Width</li>
+</ol>
+</td>
+<td>You can adjust the width based on a percentage. By default, the value is 100%.</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils">
+<caption>Options</caption>
+<colgroup>
+<col width="35%" />
+<col width="65%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Options</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><ol class="first last arabic simple">
+<li>Optional</li>
+</ol>
+</td>
+<td>Unchecking this option forces the question to be answered when the user is filling out your survey. By default, this option is enabled</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="2">
+<li>“Yes” skips to page</li>
+</ol>
+</td>
+<td>If the user selects, &#8220;Yes&#8221; as an answer, then they can jump to a defined page. By default, this option is disabled.</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="3">
+<li>“No” skips to page</li>
+</ol>
+</td>
+<td>Conversely, if the user selects “No” as an answer, then you can jump to a defined page. By default, this option is disabled</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The &#8220;Question Title&#8221; and &#8220;Extra Description&#8221; are not automatically translated by FluidSurveys. They will need to be translated separately.</p>
+</div>
+</div>
+<div class="section" id="text-response">
+<h2>Text Response<a class="headerlink" href="#text-response" title="Permalink to this headline">¶</a></h2>
+<p>A Text Response question type allows for surveyors to ask a user to type either the answer out, or provide specific textual information (phone number, address, etc…). Text Response questions come with text validation ranging from Email addresses, Currency, all the way to Percentages.</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/text_response.png"><img alt="Text Response" class="screenshot" src="../../_images/text_response.png" style="width: 594.3px; height: 60.9px;" /></a>
+<p class="caption"><em>Figure 6.1</em> Text Response Question Type</p>
+</div>
+<p>Enabling the Multiline option and indicating the number of columns can create the perfect opportunity for allowing users to fill in text, which can also be restricted to a certain amount of words. The example below has a Text Response question type with multiline enabled, 50 columns, and All Characters validation of 2000 (roughly 200 words) which will cease to accept words after that point.</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/text_response_customized.png"><img alt="Customized Text Response" class="screenshot" src="../../_images/text_response_customized.png" style="width: 596.4px; height: 171.5px;" /></a>
+<p class="caption"><em>Figure 6.1</em> Text Response with 100 columns and 10 rows</p>
+</div>
+<table border="1" class="docutils">
+<caption>Display Options</caption>
+<colgroup>
+<col width="35%" />
+<col width="65%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Display Option</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><ol class="first last arabic simple">
+<li>Multiline</li>
+</ol>
+</td>
+<td>Allows for the text area to have multiple lines and columns. By default this option is disabled</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="2">
+<li>Display side-by-side</li>
+</ol>
+</td>
+<td>This option allows for you to display the question type beside another question as seen in the image to the left. By default, this option is disabled</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="3">
+<li>Append to previous question</li>
+</ol>
+</td>
+<td>This question type will be appended to the question directly before it. By default, this option is disabled</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="4">
+<li>Width</li>
+</ol>
+</td>
+<td>You can adjust the width based on a percentage. By default, the value is 100%.</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils">
+<caption>Options</caption>
+<colgroup>
+<col width="35%" />
+<col width="65%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Options</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><ol class="first last arabic simple">
+<li>Optional</li>
+</ol>
+</td>
+<td>Unchecking this option forces the question to be answered when the user is filling out your survey. By default, this option is enabled</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="2">
+<li>Validation</li>
+</ol>
+</td>
+<td>Specific to the question. If you wish for the user to input an e-mail address, then selecting the appropriate form of validation will get those desired results. By default, this option is None</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="3">
+<li>Initial Value</li>
+</ol>
+</td>
+<td>Presents a default choice to the user. By default, this area is blank</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="checkbox">
+<h2>Checkbox<a class="headerlink" href="#checkbox" title="Permalink to this headline">¶</a></h2>
+<p>The checkbox question type is a multi-answer question, as in you can select more than one answer. Checkbox choice can contain a text response (which can have Validation) beside each choice, as well as an “Other, Please Specify” option which is an exclusive choice (Selecting it, or typing into the text area, will automatically deselect all options and select the other).</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/check_box.png"><img alt="Checkbox Question Type" class="screenshot" src="../../_images/check_box.png" style="width: 596.4px; height: 76.3px;" /></a>
+<p class="caption"><em>Figure 6.1</em> Checkbox Question Type</p>
+</div>
+<table border="1" class="docutils">
+<caption>Display Options</caption>
+<colgroup>
+<col width="35%" />
+<col width="65%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Display Option</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><ol class="first last arabic simple">
+<li>Appearance</li>
+</ol>
+</td>
+<td>By default, Default (Vertical) is selected.</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="2">
+<li>Columns</li>
+</ol>
+</td>
+<td>Adjusting the amount of columns allows for By default, One column is selected.</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="3">
+<li>Display side-by-side</li>
+</ol>
+</td>
+<td>Display side-by-side: This option allows for you to display the question type beside another question. By default, this option is disabled</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="4">
+<li>Append to previous question</li>
+</ol>
+</td>
+<td>This question type will be appended to the question directly before it. By default, this option is disabled.</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="5">
+<li>Width</li>
+</ol>
+</td>
+<td>You can adjust the width based on a percentage. By default, the value is 100%.</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils">
+<caption>Options</caption>
+<colgroup>
+<col width="35%" />
+<col width="65%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Display Option</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><ol class="first last arabic simple">
+<li>Optional</li>
+</ol>
+</td>
+<td>Unchecking this option forces the question to be answered when the user is filling out your survey. By default, this option is enabled</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="2">
+<li>Randomize choices</li>
+</ol>
+</td>
+<td>Selecting this option will randomize the choices within the Checkbox question type on each survey refresh. By default, this option is disabled.</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="3">
+<li>Alphabetize choices</li>
+</ol>
+</td>
+<td>Choices within your Checkbox will follow alphabetization (A-Z). By default, this option is disabled</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="4">
+<li>Restrict number of selected choices</li>
+</ol>
+</td>
+<td>Restrict the number of choices a user can select before the question is disabled. By default, this option is disabled</td>
+</tr>
+</tbody>
+</table>
+<p>A checkbox has the following Question Choices avaialble</p>
+<blockquote>
+<div><ul class="simple">
+<li>Exclusive Choice</li>
+<li>Select All</li>
+<li>Add text response</li>
+<li>Static Choice</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="multiple-choice">
+<h2>Multiple Choice<a class="headerlink" href="#multiple-choice" title="Permalink to this headline">¶</a></h2>
+<p>The Multiple choice question type, commonly referred to as the single choice question type, allows for a user to provide one answer per question, whereas a checkbox question type allows for the user to specify more than one answer. Each choice has branching, skipping, and validation capabilities available. The display options are slightly different, in that you can change the views (Horizontal, Vertical, Combo box, Star Rating – see blow –). Star Ratings, generally used for a rating between 1 and an end value, allow for the rating to exist on a horizontal star level.</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/multiple_choice.png"><img alt="Multiple Choice Question Type" class="screenshot" src="../../_images/multiple_choice.png" style="width: 597.1px; height: 75.6px;" /></a>
+<p class="caption"><em>Figure 6.1</em> Multiple Choice Question Type</p>
+</div>
+<table border="1" class="docutils">
+<caption>Display Options</caption>
+<colgroup>
+<col width="35%" />
+<col width="65%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Display Option</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><ol class="first last arabic simple">
+<li>Appearance</li>
+</ol>
+</td>
+<td>By default, Default (Vertical) is selected.</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="2">
+<li>Columns</li>
+</ol>
+</td>
+<td>Adjusting the amount of columns allows for By default, One column is selected.</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="3">
+<li>Display side-by-side</li>
+</ol>
+</td>
+<td>Display side-by-side: This option allows for you to display the question type beside another question. By default, this option is disabled</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="4">
+<li>Append to previous question</li>
+</ol>
+</td>
+<td>This question type will be appended to the question directly before it. By default, this option is disabled.</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="5">
+<li>Width</li>
+</ol>
+</td>
+<td>You can adjust the width based on a percentage. By default, the value is 100%.</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils">
+<caption>Options</caption>
+<colgroup>
+<col width="35%" />
+<col width="65%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Options</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><ol class="first last arabic simple">
+<li>Optional</li>
+</ol>
+</td>
+<td>Unchecking this option forces the question to be answered when the user is filling out your survey. By default, this option is enabled</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="2">
+<li>Randomize choices</li>
+</ol>
+</td>
+<td>Selecting this option will randomize the choices within the Checkbox question type on each survey refresh. By default, this option is disabled.</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="3">
+<li>Alphabetize choices</li>
+</ol>
+</td>
+<td>Choices within your Checkbox will follow alphabetization (A-Z). By default, this option is disabled</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="4">
+<li>Initial Value</li>
+</ol>
+</td>
+<td>Allows you to specificy pre-populated answers to questions in your survey. By default, this option is blank &#8220;&#8212;&#8221;</td>
+</tr>
+</tbody>
+</table>
+<p>A multiple choice question type as the following Question Choices Available</p>
+<blockquote>
+<div><ul class="simple">
+<li>Add text response</li>
+<li>Static Choice</li>
+<li>Score</li>
+<li>Branch to</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="dropdown">
+<h2>Dropdown<a class="headerlink" href="#dropdown" title="Permalink to this headline">¶</a></h2>
+<p>The dropdown question type is exactly what the name entails; an answer found and selected in a dropdown fashion. Also, similarly to a multiple choice question, the dropdown question type allows for only one answer.</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/drop_down.png"><img alt="Dropdown Question Type" class="screenshot" src="../../_images/drop_down.png" style="width: 599.2px; height: 95.9px;" /></a>
+<p class="caption"><em>Figure 6.1</em> Dropdown Question Type</p>
+</div>
+<table border="1" class="docutils">
+<caption>Display Options</caption>
+<colgroup>
+<col width="35%" />
+<col width="65%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Display Option</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><ol class="first last arabic simple">
+<li>Display side-by-side</li>
+</ol>
+</td>
+<td>Display side-by-side: This option allows for you to display the question type beside another question. By default, this option is disabled</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="2">
+<li>Append to previous question</li>
+</ol>
+</td>
+<td>This question type will be appended to the question directly before it. By default, this option is disabled.</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="3">
+<li>Width</li>
+</ol>
+</td>
+<td>You can adjust the width based on a percentage. By default, the value is 100%.</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils">
+<caption>Options</caption>
+<colgroup>
+<col width="35%" />
+<col width="65%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Option</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><ol class="first last arabic simple">
+<li>Optional</li>
+</ol>
+</td>
+<td>Unchecking this option forces the question to be answered when the user is filling out your survey. By default, this option is enabled</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="2">
+<li>Randomize choices</li>
+</ol>
+</td>
+<td>Selecting this option will randomize the choices within the Checkbox question type on each survey refresh. By default, this option is disabled.</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="3">
+<li>Alphabetize choices</li>
+</ol>
+</td>
+<td>Choices within your Checkbox will follow alphabetization (A-Z). By default, this option is disabled</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="4">
+<li>Initial Value</li>
+</ol>
+</td>
+<td>Specifies if the question will load with a choice. By default, this option is disabled</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="5">
+<li>Blank Choice</li>
+</ol>
+</td>
+<td>The initial value is displayed, indicating that a selection has not been made. Note, this will not count towards a response if selected</td>
+</tr>
+</tbody>
+</table>
+<p>A dropdown question type has the following Question Choices Available</p>
+<blockquote>
+<div><ul class="simple">
+<li>Static Choice</li>
+<li>Score</li>
+<li>Branc to</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="date-time">
+<h2>Date/Time<a class="headerlink" href="#date-time" title="Permalink to this headline">¶</a></h2>
+<p>A Date/Time question allows for the user to select a specific year, month, day as seen below. Date/Time questions are perfect when either trying to determine when an incident happened, or even when finding the perfect time to have a meeting. The question type essentially allows for a user to record the date and time with five types of configurations; Date/Time, Date Only, Time Only, Date/Month, and Month/Year.</p>
+<p>The default display format is Date/Time.</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/date_time.png"><img alt="Date/Time Question Type" class="screenshot" src="../../_images/date_time.png" style="width: 595.0px; height: 72.8px;" /></a>
+<p class="caption"><em>Figure 6.1</em> Date/Time Question Type</p>
+</div>
+<p>The Date/Time can be customized to accepted either only:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Date/Time</li>
+<li>Date only</li>
+<li>Time only</li>
+<li>Day/Month</li>
+<li>Month/Year</li>
+</ul>
+</div></blockquote>
+<table border="1" class="docutils">
+<caption>Display Options</caption>
+<colgroup>
+<col width="35%" />
+<col width="65%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Display Option</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><ol class="first last arabic simple">
+<li>Display side-by-side</li>
+</ol>
+</td>
+<td>Display side-by-side: This option allows for you to display the question type beside another question. By default, this option is disabled</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="2">
+<li>Append to previous question</li>
+</ol>
+</td>
+<td>This question type will be appended to the question directly before it. By default, this option is disabled.</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="3">
+<li>Width</li>
+</ol>
+</td>
+<td>You can adjust the width based on a percentage. By default, the value is 100%.</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="4">
+<li>Show Record Now Button</li>
+</ol>
+</td>
+<td>This option is useful for recording timestamps in surveys. Selecting this option adds a button which, when pressed, records the current time. Note that this disables manually changing the date/time value.</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils">
+<caption>Options</caption>
+<colgroup>
+<col width="35%" />
+<col width="65%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Options</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><ol class="first last arabic simple">
+<li>Optional</li>
+</ol>
+</td>
+<td>Unchecking this option forces the question to be answered when the user is filling out your survey. By default, this option is enabled</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="2">
+<li>Display Format</li>
+</ol>
+</td>
+<td>The question type can be altered to ask Date/Time, Date Only, Time Only, Date/Month or Month/Year. Date/Time is the default question</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="3">
+<li>Timezone</li>
+</ol>
+</td>
+<td>Enabling this feature will create a dropdown for the user to select their appropriate timezone. By default, this option is disabled.</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="4">
+<li>Set to now by default</li>
+</ol>
+</td>
+<td>When the survey is loaded, the time will be populated into the date field</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="5">
+<li>Show &#8220;Record Now&#8221; button</li>
+</ol>
+</td>
+<td>As opposed to forcing the individual to type in the time, eg., 14:58, it is possible to allow for them to click &#8220;Record Now&#8221; which will input the correct current time</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="6">
+<li>Initial Date</li>
+</ol>
+</td>
+<td>Chose an initial value for the date. The format is YYYY/MM/DD</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="7">
+<li>Initial Time</li>
+</ol>
+</td>
+<td>Chose an initial value for the time</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Despite not accepting military standard time, if the user enters 21:00, the question type will convert it to 9:00 pm</p>
+</div>
+</div>
+<div class="section" id="text-response-grid">
+<h2>Text Response Grid<a class="headerlink" href="#text-response-grid" title="Permalink to this headline">¶</a></h2>
+<p>In short, a Text Response Grid allows for the surveyor to ask a series of question with a set of validation types applied (Numerical, Text only, All Characters, etc…) which will present an error to the user if the validation was not adhered to.</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/text_response_grid.png"><img alt="Text Response Grid Question Type" class="screenshot" src="../../_images/text_response_grid.png" style="width: 595.7px; height: 96.6px;" /></a>
+<p class="caption"><em>Figure 6.1</em> Text Response Grid Question Type</p>
+</div>
+<table border="1" class="docutils">
+<caption>Display Options</caption>
+<colgroup>
+<col width="35%" />
+<col width="65%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Display Option</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><ol class="first last arabic simple">
+<li>1st Column Size</li>
+</ol>
+</td>
+<td>Adjusts the first columns width. By default, this option is 30%</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="2">
+<li>Display side-by-side</li>
+</ol>
+</td>
+<td>Display side-by-side: This option allows for you to display the question type beside another question. By default, this option is disabled</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="3">
+<li>Append to previous question</li>
+</ol>
+</td>
+<td>This question type will be appended to the question directly before it. By default, this option is disabled.</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="4">
+<li>Width</li>
+</ol>
+</td>
+<td>You can adjust the width based on a percentage. By default, the value is 100%.</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils">
+<caption>Options</caption>
+<colgroup>
+<col width="35%" />
+<col width="65%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Options</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><ol class="first last arabic simple">
+<li>Randomize Variables</li>
+</ol>
+</td>
+<td>Selecting this option will randomize the choices within the Checkbox question type on each survey refresh. By default, this option is disabled</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="2">
+<li>Alphabetize Variables</li>
+</ol>
+</td>
+<td>Choices within your Checkbox will follow alphabetization (A-Z). By default, this option is disabled</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="3">
+<li>Force Unique</li>
+</ol>
+</td>
+<td>Force a choice in a column to remain unique. No two options in a column can be identical. By default, this option is disabled.</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="4">
+<li>Sum</li>
+</ol>
+</td>
+<td>If a value is provided, 20 for instance, then all numerical values within the Text Response Grid must add up to that ceiling. This option is blank by default.</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="5">
+<li>Sum Label</li>
+</ol>
+</td>
+<td>By default, this option is “The values should add up to {x}. Currently: {y}”, where x represents the required value, eg., 100, while y indicates the values presently entered, eg., 98</td>
+</tr>
+</tbody>
+</table>
+<p>A text response grid question type has the following Question Choice available</p>
+<blockquote>
+<div><ul class="simple">
+<li>Optional</li>
+<li>Multiline</li>
+<li>Columns</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="multiple-choice-grid">
+<h2>Multiple Choice Grid<a class="headerlink" href="#multiple-choice-grid" title="Permalink to this headline">¶</a></h2>
+<p>The Multiple Choice Grid question type is in essence a Likert question. This question type heralds in a new option, make column static, which will keep the most left column (with all the variables in question) static as you drag the scrollbar to the right.</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/multiple_choice_grid.png"><img alt="Multiple Choice Grid Question Type" class="screenshot" src="../../_images/multiple_choice_grid.png" style="width: 595.0px; height: 117.6px;" /></a>
+<p class="caption"><em>Figure 6.1</em> Multiple Choice Grid Question Type</p>
+</div>
+<table border="1" class="docutils">
+<caption>Display Options</caption>
+<colgroup>
+<col width="35%" />
+<col width="65%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Display Option</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><ol class="first last arabic simple">
+<li>Make First Column Static</li>
+</ol>
+</td>
+<td>Forces the first column to always be present. By default, this option is disabled.</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="2">
+<li>1st Column Size.</li>
+</ol>
+</td>
+<td>Adjusts the first columns width. By default, this option is 30%</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="3">
+<li>Display side-by-side.</li>
+</ol>
+</td>
+<td>This option allows for you to display the question type beside another question as seen in the image to the left. By default, this option is disabled.</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="4">
+<li>Append to previous question</li>
+</ol>
+</td>
+<td>The question is attached to the question which precedes it in the survey. By default, this option is disabled</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="5">
+<li>Width</li>
+</ol>
+</td>
+<td>You can adjust the width based on a percentage. By default, the value is 100%.</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="6">
+<li>Show Borders</li>
+</ol>
+</td>
+<td>Show borders around the question type. By default, this option is disabled.</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="7">
+<li>Alternate Background Color</li>
+</ol>
+</td>
+<td>Each row will be an alternate color. By default, this option is disabled.</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils">
+<caption>Options</caption>
+<colgroup>
+<col width="35%" />
+<col width="65%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Options</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><ol class="first last arabic simple">
+<li>Randomize Variables</li>
+</ol>
+</td>
+<td>Selecting this option will randomize the choices within the Checkbox question type on each survey refresh. By default, this option is disabled</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="2">
+<li>Alphabetize Variables</li>
+</ol>
+</td>
+<td>Choices within your Checkbox will follow alphabetization (A-Z). By default, this option is disabled</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="3">
+<li>Force Unique</li>
+</ol>
+</td>
+<td>Force a choice in a column to remain unique. No two options in a column can be identical. By default, this option is disabled.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="dropdown-grid">
+<h2>Dropdown Grid<a class="headerlink" href="#dropdown-grid" title="Permalink to this headline">¶</a></h2>
+<p>Dropdown Grid is similar to its sibling, the dropdown question, in that it is still similar to a multiple choice question, with a single answer only. This  is the direct opposite of a checkbox question, which can have many answers.</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/drop_down_grid.png"><img alt="Dropdown Grid Question Type" class="screenshot" src="../../_images/drop_down_grid.png" style="width: 595.7px; height: 130.2px;" /></a>
+<p class="caption"><em>Figure 6.1</em> Dropdown Grid Question Type</p>
+</div>
+<table border="1" class="docutils">
+<caption>Display Options</caption>
+<colgroup>
+<col width="35%" />
+<col width="65%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Display Option</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><ol class="first last arabic simple">
+<li>1st Column Size.</li>
+</ol>
+</td>
+<td>Adjusts the first columns width. By default, this option is 30%</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="2">
+<li>Display side-by-side.</li>
+</ol>
+</td>
+<td>This option allows for you to display the question type beside another question as seen in the image to the left. By default, this option is disabled.</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="3">
+<li>Append to previous question</li>
+</ol>
+</td>
+<td>The question is attached to the question which precedes it in the survey. By default, this option is disabled</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="4">
+<li>Width</li>
+</ol>
+</td>
+<td>You can adjust the width based on a percentage. By default, the value is 100%.</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils">
+<caption>Options</caption>
+<colgroup>
+<col width="35%" />
+<col width="65%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Display Option</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><ol class="first last arabic simple">
+<li>Randomize Variables</li>
+</ol>
+</td>
+<td>Selecting this option will randomize the choices within the Checkbox question type on each survey refresh. By default, this option is disabled</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="2">
+<li>Alphabetize Variables</li>
+</ol>
+</td>
+<td>Choices within your Checkbox will follow alphabetization (A-Z). By default, this option is disabled</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="3">
+<li>Force Unique</li>
+</ol>
+</td>
+<td>Force a choice in a column to remain unique. No two options in a column can be identical. By default, this option is disabled.</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="4">
+<li>Blank choice</li>
+</ol>
+</td>
+<td>The initial value displayed, indicating that a selection has not been made. Note, this will not count towards a response if selected</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Basic Questions</a><ul>
+<li><a class="reference internal" href="#section-heading">Section Heading</a></li>
+<li><a class="reference internal" href="#yes-no">Yes/No</a></li>
+<li><a class="reference internal" href="#text-response">Text Response</a></li>
+<li><a class="reference internal" href="#checkbox">Checkbox</a></li>
+<li><a class="reference internal" href="#multiple-choice">Multiple Choice</a></li>
+<li><a class="reference internal" href="#dropdown">Dropdown</a></li>
+<li><a class="reference internal" href="#date-time">Date/Time</a></li>
+<li><a class="reference internal" href="#text-response-grid">Text Response Grid</a></li>
+<li><a class="reference internal" href="#multiple-choice-grid">Multiple Choice Grid</a></li>
+<li><a class="reference internal" href="#dropdown-grid">Dropdown Grid</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../http-routingtable.html" title="HTTP Routing Table"
+             >routing table</a> |</li>
+        <li class="right" >
+          <a href="advancedquestions.html" title="Advanced Questions"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="editorfeatures.html" title="Editor Features"
+             >previous</a> |</li>
+        <li><a href="../../index.html">FluidSurveys 4.0 documentation</a> &raquo;</li>
+          <li><a href="index.html" >Editor</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012, FluidSurveys.
+    </div>
+  </body>
+</html>

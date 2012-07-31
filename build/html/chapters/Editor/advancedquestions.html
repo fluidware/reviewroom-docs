@@ -1,0 +1,745 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Advanced Questions &mdash; FluidSurveys 4.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="FluidSurveys 4.0 documentation" href="../../index.html" />
+    <link rel="up" title="Editor" href="index.html" />
+    <link rel="next" title="Question Options" href="questionoptions.html" />
+    <link rel="prev" title="Basic Questions" href="basicquestions.html" />
+	 
+	<script type="text/javascript" src="http://use.typekit.com/hfr5qlq.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+  </head>
+  <body>
+	<div class="top-bar">
+		<div class="center">
+			<span class="logo"><a href="/">FluidSurveys Documentation</a></span>
+		</div>
+	</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../http-routingtable.html" title="HTTP Routing Table"
+             >routing table</a> |</li>
+        <li class="right" >
+          <a href="questionoptions.html" title="Question Options"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="basicquestions.html" title="Basic Questions"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">FluidSurveys 4.0 documentation</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">Editor</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="advanced-questions">
+<h1>Advanced Questions<a class="headerlink" href="#advanced-questions" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="score-display">
+<h2>Score Display<a class="headerlink" href="#score-display" title="Permalink to this headline">¶</a></h2>
+<p>In brief, the Score Display question type is essentially what it says, a score display. The question type can be used primarily for either tallying a score in an online quiz, or for calculating of financial. A Score Display comes into good use when the Score for each variable or choice in, say, a Multiple Choice question has a value.</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/score_display.png"><img alt="Score Display Question Type" class="screenshot" src="../../_images/score_display.png" style="width: 592.9px; height: 32.9px;" /></a>
+<p class="caption"><em>Figure 5.1</em> Score Display Question Type</p>
+</div>
+<table border="1" class="docutils">
+<caption>Display Options</caption>
+<colgroup>
+<col width="35%" />
+<col width="65%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Display Options</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><ol class="first last arabic simple">
+<li>Display side-by-side</li>
+</ol>
+</td>
+<td>Display side-by-side: This option allows for you to display the question type beside another question. By default, this option is disabled</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="2">
+<li>Append to previous question</li>
+</ol>
+</td>
+<td>This question type will be appended to the question directly before it. By default, this option is disabled.</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="3">
+<li>Width</li>
+</ol>
+</td>
+<td>You can adjust the width based on a percentage. By default, the value is 100%.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="checkbox-grid">
+<h2>Checkbox Grid<a class="headerlink" href="#checkbox-grid" title="Permalink to this headline">¶</a></h2>
+<p>Similar to other grids, you have the same types of options available, such as specifying scores for answers, and forcing variables to be unique. The display options are similar to other grids in FluidSurveys.. Similar to other grids, you have the same types of options available, such as specifying scores for answers, and forcing variables to be unique. The display options are similar to other grids in FluidSurveys.</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/checkbox_grid.png"><img alt="Survey Title" class="screenshot" src="../../_images/checkbox_grid.png" style="width: 597.1px; height: 127.4px;" /></a>
+<p class="caption"><em>Figure 5.1</em> Checkbox Grid Question Type</p>
+</div>
+<table border="1" class="docutils">
+<caption>Display Options</caption>
+<colgroup>
+<col width="35%" />
+<col width="65%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Display Option</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><ol class="first last arabic simple">
+<li>Make First Column Static</li>
+</ol>
+</td>
+<td>Forces the first column to always be present. By default, this option is disabled.</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="2">
+<li>1st Column Size.</li>
+</ol>
+</td>
+<td>Adjusts the first columns width. By default, this option is 30%</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="3">
+<li>Display side-by-side.</li>
+</ol>
+</td>
+<td>This option allows for you to display the question type beside another question as seen in the image to the left. By default, this option is disabled.</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="4">
+<li>Append to previous question</li>
+</ol>
+</td>
+<td>The question is attached to the question which precedes it in the survey. By default, this option is disabled</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="5">
+<li>Width</li>
+</ol>
+</td>
+<td>You can adjust the width based on a percentage. By default, the value is 100%.</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="6">
+<li>Show Borders</li>
+</ol>
+</td>
+<td>Show borders around the question type. By default, this option is disabled.</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="7">
+<li>Alternate Background Color</li>
+</ol>
+</td>
+<td>Each row will be an alternate color. By default, this option is disabled.</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils">
+<caption>Options</caption>
+<colgroup>
+<col width="35%" />
+<col width="65%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Options</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><ol class="first last arabic simple">
+<li>Randomize Variables</li>
+</ol>
+</td>
+<td>Selecting this option will randomize the choices within the Checkbox question type on each survey refresh. By default, this option is disabled</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="2">
+<li>Alphabetize Variables</li>
+</ol>
+</td>
+<td>Choices within your Checkbox will follow alphabetization (A-Z). By default, this option is disabled</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="3">
+<li>Force Unique</li>
+</ol>
+</td>
+<td>Force a choice in a column to remain unique. No two options in a column can be identical. By default, this option is disabled.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="n-atrix">
+<h2>N-atrix<a class="headerlink" href="#n-atrix" title="Permalink to this headline">¶</a></h2>
+<p>The N-Atrix Question type allows for any question type to exist on any given row, such as text response, dropdown, checkboxes or radio buttons. A typical use for such a question type, is asking for detailed personal information where the types of questions can range between the available types (Dropdown for title, Text area for Name, or a Checkbox/Radio Button for types of phone numbers, or contact times). To change the question type of a row, click on the &#8220;Variables&#8221; on the left-hand side, and select &#8220;Switch to type&#8221;</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/natrix.png"><img alt="N-Atrix Question Type" class="screenshot" src="../../_images/natrix.png" style="width: 595.0px; height: 133.7px;" /></a>
+<p class="caption"><em>Figure 5.1</em> N-Atrix Question Type</p>
+</div>
+<table border="1" class="docutils">
+<caption>Display Options</caption>
+<colgroup>
+<col width="35%" />
+<col width="65%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Display Option</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><ol class="first last arabic simple">
+<li>1st Column Size</li>
+</ol>
+</td>
+<td>Adjusts the first columns width. By default, this option is 30%</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="2">
+<li>Display side-by-side</li>
+</ol>
+</td>
+<td>Display side-by-side: This option allows for you to display the question type beside another question. By default, this option is disabled</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="3">
+<li>Append to previous question</li>
+</ol>
+</td>
+<td>This question type will be appended to the question directly before it. By default, this option is disabled.</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="4">
+<li>Width</li>
+</ol>
+</td>
+<td>You can adjust the width based on a percentage. By default, the value is 100%.</td>
+</tr>
+</tbody>
+</table>
+<p>A n-atrix has the following Question Choices available</p>
+<blockquote>
+<div><ul class="simple">
+<li>Switch to type</li>
+<li>Optional</li>
+<li>Multiline</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="drill-down">
+<h2>Drill Down<a class="headerlink" href="#drill-down" title="Permalink to this headline">¶</a></h2>
+<p>Drill Down questions allow respondents to select an answer by narrowing down their choice from a general category to a specific category. For example, you could first have respondents select which state they reside in, and then select which city within that state they reside in.</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/drilldown.png"><img alt="Drill Down Question Type" class="screenshot" src="../../_images/drilldown.png" style="width: 596.4px; height: 105.0px;" /></a>
+<p class="caption"><em>Figure 5.1</em> Drill Down Question Type</p>
+</div>
+<table border="1" class="docutils">
+<caption>Display Options</caption>
+<colgroup>
+<col width="35%" />
+<col width="65%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Display Option</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><ol class="first last arabic simple">
+<li>Appearance</li>
+</ol>
+</td>
+<td>By default, Default (Vertical) is selected. The available appearance choices are dropdown, and likert. They appear exactly as their respective parts.</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="2">
+<li>Randomize choices</li>
+</ol>
+</td>
+<td>Selecting this option will randomize the choices within the Checkbox question type on each survey refresh. By default, this option is disabled</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="3">
+<li>Alphabetize choices</li>
+</ol>
+</td>
+<td>Choices within your Checkbox will follow alphabetization (A-Z). By default, this option is disabled</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="4">
+<li>Display side-by-side</li>
+</ol>
+</td>
+<td>Display side-by-side: This option allows for you to display the question type beside another question. By default, this option is disabled</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="5">
+<li>Append to previous question</li>
+</ol>
+</td>
+<td>This question type will be appended to the question directly before it. By default, this option is disabled.</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="6">
+<li>Width</li>
+</ol>
+</td>
+<td>You can adjust the width based on a percentage. By default, the value is 100%.</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils">
+<caption>Options</caption>
+<colgroup>
+<col width="35%" />
+<col width="65%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Options</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><ol class="first last arabic simple">
+<li>Optional</li>
+</ol>
+</td>
+<td>Unchecking this option forces the question to be answered when the user is filling out your survey. By default, this option is enabled</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="d-matrix">
+<h2>3D Matrix<a class="headerlink" href="#d-matrix" title="Permalink to this headline">¶</a></h2>
+<p>Similar to the N-Atrix question type, a 3D Matrix question can have different question types within each column. A 3D Matrix question is an amazing source of information when you are trying to get as much information within one question, in so far that the reports generated by responses for a 3D Matrix are broken up into pieces, as seen in the example under section 130.2</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/3dmatrix.png"><img alt="3D Matrix Question Type" class="screenshot" src="../../_images/3dmatrix.png" style="width: 597.1px; height: 123.2px;" /></a>
+<p class="caption"><em>Figure 5.1</em> 3D Matrix Question Type</p>
+</div>
+<table border="1" class="docutils">
+<caption>Display Options</caption>
+<colgroup>
+<col width="35%" />
+<col width="65%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Display Option</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><ol class="first last arabic simple">
+<li>Make First Column Static</li>
+</ol>
+</td>
+<td>Forces the first column to always be present. By default, this option is disabled.</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="2">
+<li>1st Column Size.</li>
+</ol>
+</td>
+<td>Adjusts the first columns width. By default, this option is 30%</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="3">
+<li>Top left Label</li>
+</ol>
+</td>
+<td>Attaches a label to the top left of the 3D Matrix. By default, this option is blank.</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="4">
+<li>Sum Label</li>
+</ol>
+</td>
+<td>The label, Total, will reside beside numeric validation, if any, to indicate the Total. By default, this option is “Total”</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="5">
+<li>Display side-by-side.</li>
+</ol>
+</td>
+<td>This option allows for you to display the question type beside another question as seen in the image to the left. By default, this option is disabled.</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="6">
+<li>Append to previous question</li>
+</ol>
+</td>
+<td>The question is attached to the question which precedes it in the survey. By default, this option is disabled</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="7">
+<li>Width</li>
+</ol>
+</td>
+<td>You can adjust the width based on a percentage. By default, the value is 100%.</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="8">
+<li>Show Borders</li>
+</ol>
+</td>
+<td>Show borders around the question type. By default, this option is disabled.</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="9">
+<li>Alternate Background Color</li>
+</ol>
+</td>
+<td>Each row will be an alternate color. By default, this option is disabled.</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils">
+<caption>Options</caption>
+<colgroup>
+<col width="35%" />
+<col width="65%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Options</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><ol class="first last arabic simple">
+<li>Randomize Variables</li>
+</ol>
+</td>
+<td>Selecting this option will randomize the choices within the Checkbox question type on each survey refresh. By default, this option is disabled</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="2">
+<li>Alphabetize Variables</li>
+</ol>
+</td>
+<td>Choices within your Checkbox will follow alphabetization (A-Z). By default, this option is disabled</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="3">
+<li>Force Unique</li>
+</ol>
+</td>
+<td>Force a choice in a column to remain unique. No two options in a column can be identical. By default, this option is disabled.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="semantic-differential">
+<h2>Semantic Differential<a class="headerlink" href="#semantic-differential" title="Permalink to this headline">¶</a></h2>
+<p>A Semantic Differential question allows respondents to rate a variable, or set of variables, on a scale of choices such as “Y to X” or “Very Unsatisfied to Very Satisfied”. The labels are shown at either ends of the question, and the choices are shown horizontally.</p>
+<p>This is a great question type to use if you want respondents to rank a specific, or set of items. For example, if you wanted to know how customers felt about your customer service and affordability on a scale of “Very Poor to Great”, you could use a Semantic Differential question.</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/semantic_differential.png"><img alt="Semantic Differential Question Type" class="screenshot" src="../../_images/semantic_differential.png" style="width: 593.6px; height: 128.8px;" /></a>
+<p class="caption"><em>Figure 5.1</em> Semantic Differential Question Type</p>
+</div>
+<table border="1" class="docutils">
+<caption>Display Options</caption>
+<colgroup>
+<col width="35%" />
+<col width="65%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Display Option</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><ol class="first last arabic simple">
+<li>1st Column Size.</li>
+</ol>
+</td>
+<td>Adjusts the first columns width. By default, this option is 30%</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="2">
+<li>Display side-by-side.</li>
+</ol>
+</td>
+<td>This option allows for you to display the question type beside another question as seen in the image to the left. By default, this option is disabled.</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="3">
+<li>Append to previous question</li>
+</ol>
+</td>
+<td>The question is attached to the question which precedes it in the survey. By default, this option is disabled</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="4">
+<li>Width</li>
+</ol>
+</td>
+<td>You can adjust the width based on a percentage. By default, the value is 100%.</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="5">
+<li>Show Borders</li>
+</ol>
+</td>
+<td>Show borders around the question type. By default, this option is disabled.</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="6">
+<li>Alternate Background Color</li>
+</ol>
+</td>
+<td>Each row will be an alternate color. By default, this option is disabled.</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils">
+<caption>Options</caption>
+<colgroup>
+<col width="35%" />
+<col width="65%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Options</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><ol class="first last arabic simple">
+<li>Randomize Variables</li>
+</ol>
+</td>
+<td>Selecting this option will randomize the choices within the Checkbox question type on each survey refresh. By default, this option is disabled</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="2">
+<li>Alphabetize Variables</li>
+</ol>
+</td>
+<td>Choices within your Checkbox will follow alphabetization (A-Z). By default, this option is disabled</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="3">
+<li>Force Unique</li>
+</ol>
+</td>
+<td>Force a choice in a column to remain unique. No two options in a column can be identical. By default, this option is disabled.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="file-upload">
+<h2>File Upload<a class="headerlink" href="#file-upload" title="Permalink to this headline">¶</a></h2>
+<p>File upload questions allows respondents to upload files alongside their responses. For example, a respondent could upload their resume, a video, pictures, etc. There’s no limit on the type of file that can be uploaded, or on the number of files.</p>
+<p>In analytics, the survey administrator will have the option of viewing, or downloading, the uploaded file.</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/file_upload.png"><img alt="File Upload Question Type" class="screenshot" src="../../_images/file_upload.png" style="width: 595.0px; height: 62.3px;" /></a>
+<p class="caption"><em>Figure 5.1</em> File Upload Question Type</p>
+</div>
+<table border="1" class="docutils">
+<caption>Display Options</caption>
+<colgroup>
+<col width="35%" />
+<col width="65%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Display Option</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><ol class="first last arabic simple">
+<li>Display side-by-side.</li>
+</ol>
+</td>
+<td>This option allows for you to display the question type beside another question as seen in the image to the left. By default, this option is disabled.</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="2">
+<li>Append to previous question</li>
+</ol>
+</td>
+<td>The question is attached to the question which precedes it in the survey. By default, this option is disabled</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="3">
+<li>Width</li>
+</ol>
+</td>
+<td>You can adjust the width based on a percentage. By default, the value is 100%.</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils">
+<caption>Options</caption>
+<colgroup>
+<col width="35%" />
+<col width="65%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Options</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><ol class="first last arabic simple">
+<li>Optional</li>
+</ol>
+</td>
+<td>Unchecking this option forces the question to be answered when the user is filling out your survey. By default, this option is enabled</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="2">
+<li>Upload to another server</li>
+</ol>
+</td>
+<td>Selecting this option will allow for you to upload any files the user provides to an entirely different server, separate from FluidSurveys</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="net-promoter">
+<h2>Net Promoter<a class="headerlink" href="#net-promoter" title="Permalink to this headline">¶</a></h2>
+<p>The Net Promoter question type is a fast and easy way for an organization to obtain their Net Promoter Score <sup>®</sup></p>
+<p>It appears as a likert scale and can be inserted anywhere within a survey. The question asks respondents to rate how likely they’d be to recommend your offering to a friend, on a scale of “Not Likely at All to Very Likely”.</p>
+<p>In Analytics, your Net Promoter Score <sup>®</sup> is automatically calculated by taking the % of people who gave you a score of 9 or 10 (promoters) and subtracting the % of people who gave you a score of 0-6 (detractors).</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/net_promoter.png"><img alt="Net Promoter Question Type" class="screenshot" src="../../_images/net_promoter.png" style="width: 596.4px; height: 84.0px;" /></a>
+<p class="caption"><em>Figure 5.1</em> Net Promoter Question Type</p>
+</div>
+<table border="1" class="docutils">
+<caption>Display Options</caption>
+<colgroup>
+<col width="35%" />
+<col width="65%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Display Option</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><ol class="first last arabic simple">
+<li>Flip choice order</li>
+</ol>
+</td>
+<td>Change the wording for the <strong>Left Label</strong> and <strong>Right Label</strong></td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="2">
+<li>Display side-by-side.</li>
+</ol>
+</td>
+<td>This option allows for you to display the question type beside another question as seen in the image to the left. By default, this option is disabled.</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="3">
+<li>Append to previous question</li>
+</ol>
+</td>
+<td>The question is attached to the question which precedes it in the survey. By default, this option is disabled</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="4">
+<li>Width</li>
+</ol>
+</td>
+<td>You can adjust the width based on a percentage. By default, the value is 100%.</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils">
+<caption>Options</caption>
+<colgroup>
+<col width="35%" />
+<col width="65%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Display Option</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><ol class="first last arabic simple">
+<li>Optional</li>
+</ol>
+</td>
+<td>Unchecking this option forces the question to be answered when the user is filling out your survey. By default, this option is enabled</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="hidden-field">
+<h2>Hidden Field<a class="headerlink" href="#hidden-field" title="Permalink to this headline">¶</a></h2>
+<p>Hidden fields are questions that are only visible to the survey creator while editing the survey. They do not appear to respondents; however, the contents do appear in Analytics alongside responses.</p>
+<p>Hidden fields can store existing information, trigger survey logic, etc.</p>
+<p><strong>A Possible Use Case</strong></p>
+<p>A survey creator might have a variety of information about their respondents already in their records, such as their name, age, phone number, etc. Since they already have this information, there’s no need to ask for it in the survey.</p>
+<p>However, they may want to trigger survey logic based on some of this information. For example, show respondents in different age groups different questions.</p>
+<p>They can now pipe information from their contact list into a hidden field(s), and then create a branching condition based on it. In this case, they could say: If hidden field is 18 years old, show Question 1.</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/hidden_field.png"><img alt="Hidden Field Question Type" class="screenshot" src="../../_images/hidden_field.png" style="width: 596.4px; height: 57.4px;" /></a>
+<p class="caption"><em>Figure 5.1</em> Hidden Field Question Type</p>
+</div>
+</div>
+<div class="section" id="timer">
+<h2>Timer<a class="headerlink" href="#timer" title="Permalink to this headline">¶</a></h2>
+<p>Timer questions are perfect for tablets, or even for online quizzes, that allow for you to time exactly when an individual started their survey, and how long it took for them to complete it.</p>
+<div class="figure align-center">
+<a class="screenshot reference internal image-reference" href="../../_images/timer.png"><img alt="Timer Question Type" class="screenshot" src="../../_images/timer.png" style="width: 595.7px; height: 61.6px;" /></a>
+<p class="caption"><em>Figure 5.1</em> Timer Question Type</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Advanced Questions</a><ul>
+<li><a class="reference internal" href="#score-display">Score Display</a></li>
+<li><a class="reference internal" href="#checkbox-grid">Checkbox Grid</a></li>
+<li><a class="reference internal" href="#n-atrix">N-atrix</a></li>
+<li><a class="reference internal" href="#drill-down">Drill Down</a></li>
+<li><a class="reference internal" href="#d-matrix">3D Matrix</a></li>
+<li><a class="reference internal" href="#semantic-differential">Semantic Differential</a></li>
+<li><a class="reference internal" href="#file-upload">File Upload</a></li>
+<li><a class="reference internal" href="#net-promoter">Net Promoter</a></li>
+<li><a class="reference internal" href="#hidden-field">Hidden Field</a></li>
+<li><a class="reference internal" href="#timer">Timer</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../http-routingtable.html" title="HTTP Routing Table"
+             >routing table</a> |</li>
+        <li class="right" >
+          <a href="questionoptions.html" title="Question Options"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="basicquestions.html" title="Basic Questions"
+             >previous</a> |</li>
+        <li><a href="../../index.html">FluidSurveys 4.0 documentation</a> &raquo;</li>
+          <li><a href="index.html" >Editor</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012, FluidSurveys.
+    </div>
+  </body>
+</html>
